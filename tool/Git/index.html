@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Git - Listen</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Listen</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">grammar</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../python/grammar/%E5%87%BD%E6%95%B0/" class="dropdown-item">函数</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E7%B1%BB/" class="dropdown-item">类</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E8%A3%85%E9%A5%B0%E5%99%A8/" class="dropdown-item">装饰器</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Library</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../python/library/time/" class="dropdown-item">Time</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">WebPage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pass" class="dropdown-item">None</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Automated testing</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pass" class="dropdown-item">None</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Servers</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../pass" class="dropdown-item">None</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deploy</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../deploy/Linux/" class="dropdown-item">Linux</a>
+</li>
+                                    
+<li>
+    <a href="../../deploy/nginx/" class="dropdown-item">Nginx</a>
+</li>
+                                    
+<li>
+    <a href="../../deploy/Docker/" class="dropdown-item">Docker</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">tool</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Git</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../deploy/Docker/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#git" class="nav-link">Git简介</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">工作区暂存区和仓库区</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#git_1" class="nav-link">Git单人本地仓库操作</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#gitgithub" class="nav-link">Git远程仓库Github</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_14" class="nav-link">进阶</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<div class="toc">
+<ul>
+<li><a href="#git">Git简介</a><ul>
+<li><a href="#_1">工作区暂存区和仓库区</a><ul>
+<li><a href="#_2">工作区</a></li>
+<li><a href="#_3">暂存区</a></li>
+<li><a href="#_4">仓库区</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#git_1">Git单人本地仓库操作</a><ul>
+<li><a href="#ubuntu2204-git">ubuntu22.04 git操作</a><ul>
+<li><a href="#1git">1.安装git</a></li>
+<li><a href="#2git">2.查看git版本</a></li>
+<li><a href="#3">3.创建目录</a></li>
+<li><a href="#4">4.初始化本地仓库</a></li>
+<li><a href="#5">5.配置个人信息</a></li>
+<li><a href="#6loginpy">6.新建login.py文件</a></li>
+<li><a href="#7">7.查看文件状态</a></li>
+<li><a href="#8">8.将工作区文件添加到暂存区</a></li>
+<li><a href="#_5">取消暂存（从暂存区恢复到工作区）</a></li>
+<li><a href="#9">9.将暂存区文件提交到仓库区</a></li>
+<li><a href="#10loginpy">10.编写login.py</a></li>
+<li><a href="#11">11.查看历史版本</a></li>
+<li><a href="#12">12.回退版本</a><ul>
+<li><a href="#_6">方案一</a></li>
+<li><a href="#_7">方案二</a></li>
+</ul>
+</li>
+<li><a href="#13">13.撤销修改</a><ul>
+<li><a href="#_8">撤销工作区的代码</a></li>
+<li><a href="#_9">撤销暂存区代码</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#gitgithub">Git远程仓库Github</a><ul>
+<li><a href="#1">1.创建远程仓库</a></li>
+<li><a href="#2ssh">2.配置SSH</a></li>
+<li><a href="#3_1">3.克隆项目</a><ul>
+<li><a href="#manager">manager</a></li>
+<li><a href="#leo">Leo</a></li>
+</ul>
+</li>
+<li><a href="#4_1">4.多人协同开发</a><ul>
+<li><a href="#leo_1">Leo</a></li>
+<li><a href="#manager_1">Manager</a></li>
+<li><a href="#leo_2">Leo</a></li>
+<li><a href="#_10">总结</a></li>
+</ul>
+</li>
+<li><a href="#5_1">5.代码冲突</a><ul>
+<li><a href="#_11">制造冲突</a></li>
+<li><a href="#_12">解决冲突</a></li>
+<li><a href="#_13">补充：</a></li>
+</ul>
+</li>
+<li><a href="#6">6.分支</a><ul>
+<li><a href="#manager_2">Manager</a></li>
+<li><a href="#leo_3">Leo</a></li>
+</ul>
+</li>
+<li><a href="#7_1">7.标签</a><ul>
+<li><a href="#manager_3">Manager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_14">进阶</a></li>
+</ul>
+</div>
+<h1 id="git">Git简介</h1>
+<blockquote>
+<p>源代码管理</p>
+<p>方便多人协同开发</p>
+<p>方便版本控制</p>
+</blockquote>
+<h2 id="_1"><strong>工作区暂存区和仓库区</strong></h2>
+<p><img alt="img" src="https://px60te123t5.feishu.cn/space/api/box/stream/download/asynccode/?code=ODU5MTVlZmExYTRmMGVkYWE5M2M3ZWRhNjM2OWMyNTVfODRENUZiRm1WWVMzY0pYc0w3anJyMlV5d0dzaWZSUjZfVG9rZW46QzRybWJOTjlib0QyYWx4VUhnc2M5QVlkbllkXzE3MjY2MjcwMzg6MTcyNjYzMDYzOF9WNA" /></p>
+<h4 id="_2"><strong>工作区</strong></h4>
+<ul>
+<li>对于<code>添加</code>、<code>修改</code>、<code>删除</code>文件的操作，都发生在工作区中</li>
+</ul>
+<h4 id="_3"><strong>暂存区</strong></h4>
+<ul>
+<li>暂存区指将工作区中的操作完成小阶段的存储，是版本库的一部分</li>
+</ul>
+<h4 id="_4"><strong>仓库区</strong></h4>
+<ul>
+<li>仓库区表示个人开发的一个小阶段的完成</li>
+<li>仓库区中记录的各版本是可以查看并回退的</li>
+<li>但是在暂存区的版本一旦提交就再也没有了</li>
+</ul>
+<h1 id="git_1">Git单人本地仓库操作</h1>
+<h3 id="ubuntu2204-git"><strong>ubuntu22.04 git操作</strong></h3>
+<h4 id="1git">1.安装git</h4>
+<pre><code class="language-Shell">sudo apt install git
+</code></pre>
+<h4 id="2git">2.查看git版本</h4>
+<pre><code class="language-SQL">leo@jammy:~$ git --version
+git version 2.34.1
+</code></pre>
+<h4 id="3">3.创建目录</h4>
+<pre><code class="language-Shell">leo@jammy:~$ cd Desktop/
+leo@jammy:~/Desktop$ mkdir test
+</code></pre>
+<h4 id="4">4.初始化本地仓库</h4>
+<pre><code class="language-Bash">leo@jammy:~/Desktop$ cd test/
+leo@jammy:~/Desktop/test$ git init
+提示：使用 'master' 作为初始分支的名称。这个默认分支名称可能会更改。要在新仓库中
+提示：配置使用初始分支名，并消除这条警告，请执行：
+提示：
+提示：        git config --global init.defaultBranch &lt;名称&gt;
+提示：
+提示：除了 'master' 之外，通常选定的名字有 'main'、'trunk' 和 'development'。
+提示：可以通过以下命令重命名刚创建的分支：
+提示：
+提示：        git branch -m &lt;name&gt;
+已初始化空的 Git 仓库于 /home/leo/Desktop/test/.git/
+
+# 配置使用初始分支名
+leo@jammy:~/Desktop/test$ git config --global init.defaultBranch master
+</code></pre>
+<h4 id="5">5.配置个人信息</h4>
+<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ git config user.name 'leo'
+leo@jammy:~/Desktop/test$ git config user.email 'leo@163.com'
+
+# 查看配置信息
+leo@jammy:~/Desktop/test$ cd .git/
+leo@jammy:~/Desktop/test/.git$ ls
+branches  config  description  HEAD  hooks  info  objects  refs
+leo@jammy:~/Desktop/test/.git$ cat config 
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[user]
+        name = leo
+        email = leo@163.com
+</code></pre>
+<h4 id="6loginpy">6.新建login.py文件</h4>
+<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ touch login.py
+</code></pre>
+<h4 id="7">7.查看文件状态</h4>
+<blockquote>
+<ul>
+<li>红色表示新建文件或者新修改的文件,都在工作区.</li>
+<li>绿色表示文件在暂存区</li>
+<li>新建的<code>login.py</code>文件在工作区，需要添加到暂存区并提交到仓库区</li>
+</ul>
+</blockquote>
+<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ git status
+</code></pre>
+<p><img alt="img" src="https://px60te123t5.feishu.cn/space/api/box/stream/download/asynccode/?code=NDI4ZTllY2RhNWQ1ZmZmM2IzZDg1ZTQwNzEwM2M0ZTlfUzhYNVI0Z2FXbWNHbUlJTkhpR3hqWG43YkhBcGpPTzZfVG9rZW46VGNXN2IwWUpFb0xKZGx4aExjQ2NJM0lXblFlXzE3MjY2MjcwMzg6MTcyNjYzMDYzOF9WNA" /></p>
+<h4 id="8">8.将工作区文件添加到暂存区</h4>
+<pre><code class="language-Bash">  # 添加项目中所有文件
+  git add .
+  或者
+  # 添加指定文件
+  git add login.py
+</code></pre>
+<p><img alt="img" src="https://px60te123t5.feishu.cn/space/api/box/stream/download/asynccode/?code=YWYyOTM0YmMxNzk0YzRiZjM4MjcwOWNkZGYzODFmY2NfcUVHS2hhc2N0bzdycHVwblU1UVZhQmJiNnJMMDFvdnFfVG9rZW46R0g5bmJwR01Tb01wbEF4dkIxV2NlYW1lbkVlXzE3MjY2MjcwMzg6MTcyNjYzMDYzOF9WNA" /></p>
+<h4 id="_5">取消暂存（从暂存区恢复到工作区）</h4>
+<pre><code class="language-Bash">git rm --cached &lt;文件&gt;...
+</code></pre>
+<p><img alt="img" src="https://px60te123t5.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdjY2ZlODM2YWYyMzUyNzc2ZWE2M2E0NTFiODk3YmZfOURTeTI4MVVZTW8wRTc2eklmT0JnN1RabHo4d0hDeTNfVG9rZW46TW5FNGJkbDlLb2t6Nkd4RWVLQmNaelFhbmxoXzE3MjY2MjcwMzg6MTcyNjYzMDYzOF9WNA" /></p>
+<h4 id="9">9.将暂存区文件提交到仓库区</h4>
+<blockquote>
+<ul>
+<li><code>commit</code>会生成一条版本记录</li>
+<li><code>-m</code>后面是版本描述信息</li>
+<li><strong>39c39c3---版本号</strong></li>
+</ul>
+</blockquote>
+<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ git commit -m '版本描述'
+[master （根提交） 39c39c3] 版本描述
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 login.py
+
+leo@jammy:~/Desktop/test$ git status
+位于分支 master
+无文件要提交，干净的工作区
+</code></pre>
+<h4 id="10loginpy">10.编写login.py</h4>
+<blockquote>
+<ul>
+<li>代码编辑完成后即可进行<code>add</code>和<code>commit</code>操作</li>
+<li>提示：添加和提交合并命令</li>
+</ul>
+<p><code>Plaintext
+  git commit -am "版本描述"</code></p>
+</blockquote>
+<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ git status
+位于分支 master
+尚未暂存以备提交的变更：
+  （使用 &quot;git add &lt;文件&gt;...&quot; 更新要提交的内容）
+  （使用 &quot;git restore &lt;文件&gt;...&quot; 丢弃工作区的改动）
+        修改：     login.py
+
+修改尚未加入提交（使用 &quot;git add&quot; 和/或 &quot;git commit -a&quot;）
+
+
+leo@jammy:~/Desktop/test$ git commit -am '添加一个函数'
+[master 745e228] 添加一个函数
+ 1 file changed, 4 insertions(+)
+</code></pre>
+<h4 id="11">11.查看历史版本</h4>
+<blockquote>
+<p>git reflog </p>
+<p><strong>可以查看所有分支的所有操作记录（包括commit和reset的操作），包括已经被删除的commit记录</strong> git log </p>
+<p><strong>则不能察看已经删除了的commit记录</strong></p>
+</blockquote>
+<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ git log
+# 版本号
+commit 745e2284fcdc4db917eef3c764db67b985622166 (HEAD -&gt; master)
+# 提交人
+Author: leo &lt;leo@163.com&gt;
+# 提交时间
+Date:   Mon Apr 29 09:08:40 2024 +0800
+    # 版本描述
+    添加一个函数
+
+commit 39c39c376a3f5fb74608012822b0e615500f68a9
+Author: leo &lt;leo@163.com&gt;
+Date:   Mon Apr 29 08:59:58 2024 +0800
+
+    版本描述
+
+
+leo@jammy:~/Desktop/test$ git reflog 
+745e228 (HEAD -&gt; master) HEAD@{0}: commit: 添加一个函数
+39c39c3 HEAD@{1}: commit (initial): 版本描述
+</code></pre>
+<p><strong>查看提交历史及分支图</strong>：</p>
+<pre><code class="language-Bash">git log --graph --all --decorate --oneline
+</code></pre>
+<p><img alt="img" src="https://px60te123t5.feishu.cn/space/api/box/stream/download/asynccode/?code=MTQzYmYwNDVhODlmNmY2MDczOTI4MTA5YzljMzJhZmZfZDZ3UW5NeVNMeEFFM1ZacG9xSFEwWDFhNnlsdlhzZVBfVG9rZW46VzJTMWI5SHNMb0s2MUJ4SVJWd2M3WGQ3bmxIXzE3MjY2MjcwMzg6MTcyNjYzMDYzOF9WNA" /></p>
+<h4 id="12">12.回退版本</h4>
+<h5 id="_6">方案一</h5>
+<blockquote>
+<p>通过每个版本的版本号回退到指定版本</p>
+</blockquote>
+<pre><code class="language-Bash">  git reset --hard 版本号
+leo@jammy:~/Desktop/test$ cat login.py 
+def demo_git():
+    return 'Hello Git!!!'
+
+print(demo_git())
+
+
+
+class Git:
+    pass
+
+leo@jammy:~/Desktop/test$ git reset --hard 745e228
+HEAD 现在位于 745e228 添加一个函数
+leo@jammy:~/Desktop/test$ cat login.py 
+def demo_git():
+    return 'Hello Git!!!'
+
+print(demo_git())
+</code></pre>
+<h5 id="_7">方案二</h5>
+<ul>
+<li><code>HEAD</code>表示当前最新版本</li>
+<li><code>HEAD^</code>表示当前最新版本的前一个版本</li>
+<li><code>HEAD^^</code>表示当前最新版本的前两个版本，<strong>以此类推...</strong></li>
+<li><code>HEAD~1</code>表示当前最新版本的前一个版本</li>
+<li><code>HEAD~10</code>表示当前最新版本的前10个版本，<strong>以此类推...</strong></li>
+</ul>
+<pre><code class="language-Bash">git reset --hard HEAD^
+leo@jammy:~/Desktop/test$ git reset --hard HEAD
+HEAD 现在位于 745e228 添加一个函数
+leo@jammy:~/Desktop/test$ git reset --hard HEAD^  # 回退一个版本
+HEAD 现在位于 39c39c3 版本描述
+leo@jammy:~/Desktop/test$ git reset --hard 6028561
+HEAD 现在位于 6028561 添加一个类
+leo@jammy:~/Desktop/test$ git reset --hard HEAD^^  # 回退二个版本
+HEAD 现在位于 39c39c3 版本描述
+
+
+leo@jammy:~/Desktop/test$ git reset --hard HEAD~1  # 回退一个版本
+HEAD 现在位于 745e228 添加一个函数
+leo@jammy:~/Desktop/test$ git reset --hard 6028561
+HEAD 现在位于 6028561 添加一个类
+leo@jammy:~/Desktop/test$ git reset --hard HEAD~2  # 回退二个版本
+HEAD 现在位于 39c39c3 版本描述
+</code></pre>
+<h4 id="13">13.撤销修改</h4>
+<ul>
+<li>只能撤销工作区、暂存区的代码,不能撤销仓库区的代码</li>
+<li>撤销仓库区的代码就相当于回退版本操作</li>
+<li>git checkout -- <file>  这个操作是不可逆的</li>
+</ul>
+<h5 id="_8">撤销工作区的代码</h5>
+<pre><code class="language-Python">leo@jammy:~/Desktop/test$ cat login.py 
+def demo_git():
+    return 'Hello Git!!!'
+
+print(demo_git())
+
+
+class Git:
+    pass
+
+
+def checkout():
+    &quot;&quot;&quot;工作区撤销修改&quot;&quot;&quot;
+    pass
+
+leo@jammy:~/Desktop/test$ git status
+位于分支 master
+尚未暂存以备提交的变更：
+  （使用 &quot;git add &lt;文件&gt;...&quot; 更新要提交的内容）
+  （使用 &quot;git restore &lt;文件&gt;...&quot; 丢弃工作区的改动）
+        修改：     login.py
+
+修改尚未加入提交（使用 &quot;git add&quot; 和/或 &quot;git commit -a&quot;）
+leo@jammy:~/Desktop/test$ 
+leo@jammy:~/Desktop/test$ git checkout login.py
+从索引区更新了 1 个路径
+leo@jammy:~/Desktop/test$ cat login.py 
+def demo_git():
+    return 'Hello Git!!!'
+
+print(demo_git())
+</code></pre>
+<h5 id="_9">撤销暂存区代码</h5>
+<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ git reset HEAD login.py
+重置后取消暂存的变更：
+M        login.py
+
+leo@jammy:~/Desktop/test$ git checkout login.py
+从索引区更新了 1 个路径
+</code></pre>
+<h1 id="gitgithub">Git远程仓库Github</h1>
+<h3 id="1">1.创建远程仓库</h3>
+<h3 id="2ssh">2.配置SSH</h3>
+<p><a href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">生成新的 SSH 密钥并将其添加到 ssh-agent - GitHub 文档</a></p>
+<pre><code class="language-Bash">ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;
+
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/lighthouse/.ssh/id_ed25519): 
+
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+
+Your identification has been saved in /home/lighthouse/.ssh/id_ed25519
+
+Your public key has been saved in /home/lighthouse/.ssh/id_ed25519.pub
+
+The key fingerprint is:
+SHA256:FnvDP1PsSdtnfSgHFrQov6NEVkOgZv0V6ZcueiorkEg listen24352@163.com
+The key's randomart image is:
++--[ED25519 256]--+
+|        ... o.   |
+|       o . o.o   |
+|      + + +.+  . |
+|  E  o   O o.oo  |
+| . . .  S * oo+  |
+|  . o  + . =.=.=.|
+|     .  . o.=.* *|
+|      .......= .o|
+|       .oo.o     |
++----[SHA256]-----+
+</code></pre>
+<p>测试 ssh -T git@github.com Hi listen24352! You've successfully authenticated, but GitHub does not provide shell access.</p>
+<h3 id="3_1">3.克隆项目</h3>
+<h4 id="manager">manager</h4>
+<pre><code class="language-Bash">cd Desktop
+mkdir git
+cd git
+mkdir leo
+mkdir manager
+
+cd manager
+git clone git@github.com:listen24352/study_git.git
+cd study_git
+
+git config user.name 'manager'
+git config user.email 'manager@qq.com'
+
+mkdir test
+touch login.py
+
+git add .
+git commit -m '立项'
+git push
+</code></pre>
+<h4 id="leo">Leo</h4>
+<pre><code class="language-Bash">cd leo
+git clone git@github.com:listen24352/study_git.git
+cd study_git
+
+git config user.name 'leo'
+git config user.email 'leo@qq.com'
+</code></pre>
+<h3 id="4_1">4.多人协同开发</h3>
+<h4 id="leo_1">Leo</h4>
+<pre><code class="language-Python">cd leo/study_git 
+Vim home.py
+
+def register():
+    &quot;&quot;&quot;注册&quot;&quot;&quot;
+    print(&quot;注册成功&quot;)
+
+git add .
+git commit -m 'register'
+git push
+</code></pre>
+<h4 id="manager_1">Manager</h4>
+<pre><code class="language-Python">cd manager/study_git
+git pull
+
+vim home.py
+def login():
+    &quot;&quot;&quot;登录&quot;&quot;&quot;
+    print('登录成功')
+
+# 没有添加新文本
+git commit -am 'login'
+git push
+</code></pre>
+<h4 id="leo_2">Leo</h4>
+<pre><code class="language-Python">cd leo/study_git 
+# 同步服务器代码
+git pull
+</code></pre>
+<h4 id="_10">总结</h4>
+<blockquote>
+<ul>
+<li>循环操作，协同开发</li>
+<li>要使用git命令操作仓库，需要进入到仓库内部</li>
+<li>要同步服务器代码就执行：<code>git pull</code></li>
+<li>本地仓库记录版本就执行：<code>git commit -am '版本描述'</code></li>
+<li>推送代码到服务器就执行：<code>git push</code></li>
+<li>编辑代码前要先<code>pull</code>，编辑完再<code>commit</code>，最后推送是<code>push</code></li>
+</ul>
+</blockquote>
+<h3 id="5_1">5.代码冲突</h3>
+<blockquote>
+<ul>
+<li><strong>提示</strong>：多人协同开发时，避免不了会出现代码冲突的情况</li>
+<li><strong>原因</strong>：多人同时修改了同一个文件</li>
+<li><strong>危害</strong>：会影响正常的开发进度</li>
+<li><strong>注意</strong>：一旦出现代码冲突，必须先解决再做后续开发</li>
+</ul>
+</blockquote>
+<h4 id="_11">制造冲突</h4>
+<p>Leo</p>
+<pre><code class="language-Python">cd leo/study_git 
+Vim dev.py
+
+# 添加代码
+a = '制造冲突'
+
+git commit -am '制造冲突'
+git push
+</code></pre>
+<p>Manager </p>
+<pre><code class="language-Python">cd manager/study_git
+
+vim dev.py
+
+def manager():
+    a = '制造冲突'
+
+
+
+git commit -am '制造冲突manager'
+[main 4b3b55c] 制造冲突manager
+ 1 file changed, 5 insertions(+)
+
+git push
+To github.com:listen24352/study_git.git
+ ! [rejected]        main -&gt; main (fetch first)
+error: 无法推送一些引用到 'github.com:listen24352/study_git.git'
+提示：更新被拒绝，因为远程仓库包含您本地尚不存在的提交。这通常是因为另外
+提示：一个仓库已向该引用进行了推送。再次推送前，您可能需要先整合远程变更
+提示：（如 'git pull ...'）。
+提示：详见 'git push --help' 中的 'Note about fast-forwards' 小节。
+
+
+
+leo@jammy:~/Desktop/git/manager/study_git/test$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+展开对象中: 100% (4/4), 394 字节 | 98.00 KiB/s, 完成.
+来自 github.com:listen24352/study_git
+   5b1e293..3a5a81c  main       -&gt; origin/main
+提示：您有偏离的分支，需要指定如何调和它们。您可以在执行下一次
+提示：pull 操作之前执行下面一条命令来抑制本消息：
+提示：
+提示：  git config pull.rebase false  # 合并（缺省策略）
+提示：  git config pull.rebase true   # 变基
+提示：  git config pull.ff only       # 仅快进
+提示：
+提示：您可以将 &quot;git config&quot; 替换为 &quot;git config --global&quot; 以便为所有仓库设置
+提示：缺省的配置项。您也可以在每次执行 pull 命令时添加 --rebase、--no-rebase，
+提示：或者 --ff-only 参数覆盖缺省设置。
+fatal: 需要指定如何调和偏离的分支。
+</code></pre>
+<h4 id="_12">解决冲突</h4>
+<pre><code class="language-Python">leo@jammy:~/Desktop/git/leo/study_git/test$ cat login.py 
+def demo_git():
+    return 'Hello Git!!!'
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD  冲突区域通常会被特殊的标记包围
+=======
+
+print(demo_git())
+
+
+
+class Git:
+    pass
+
+print(abs(-1))
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 4a7845d (abs)
+git config pull.rebase false
+git pull
+自动合并 test/dev.py
+冲突（内容）：合并冲突于 test/dev.py
+自动合并失败，修正冲突然后提交修正的结果。
+
+删掉冲突代码
+
+git commit -am '解决冲突'
+git push
+NOTE ABOUT FAST-FORWARDS  快进注意事项
+    When an update changes a branch (or more in general, a ref) that used to point at commit A to point at another commit B, it is called a fast-forward update if and only if B is a descendant of A.
+    当更新将一个分支(或者更一般地说，一个ref)从指向提交a更改为指向另一个提交B时，当且仅当B是a的后代时，它被称为快进更新。
+
+    In a fast-forward update from A to B, the set of commits that the original commit A built on top of is a subset of the commits the new commit B builds on top of. Hence, it does not lose any history.
+    在从a到B的快速更新中，构建在原始提交a之上的提交集是构建在新提交B之上的提交的子集。因此，它不会丢失任何历史。
+
+    In contrast, a non-fast-forward update will lose history. For example, suppose you and somebody else started at the same commit X, and you built a history leading to commit B while the other person built a history leading to commit A. The history looks like this:
+    相反，非快进更新将丢失历史记录。例如，假设你和另一个人从同一个提交X开始，你创建了一个提交B的历史记录，而另一个人创建了一个提交a的历史记录，历史记录是这样的:
+                 B
+                /
+            ---X---A
+    Further suppose that the other person already pushed changes leading to A back to the original repository from which you two obtainedthe original commit X.
+    进一步假设另一个人已经将导致A的更改推回了原始存储库，你们两个从中获得了原始提交X。
+
+    The push done by the other person updated the branch that used to point at commit X to point at commit A. It is a fast-forward.
+    由另一个人完成的推送将过去指向提交X的分支更新为指向提交a的分支，这是一个快进。
+
+    But if you try to push, you will attempt to update the branch (that now points at A) with commit B. This does not fast-forward. If you did so, the changes introduced by commit A will be lost, because everybody will now start building on top of B.
+    但是，如果您尝试推送，您将尝试用提交b更新分支(现在指向A)。这不会快进。如果这样做，提交A所引入的更改将丢失，因为现在每个人都将开始在B的基础上进行构建。
+
+    The command by default does not allow an update that is not a fast-forward to prevent such loss of history.
+    默认情况下，该命令不允许非快进的更新，以防止此类历史记录丢失。
+
+    If you do not want to lose your work (history from X to B) or the work by the other person (history from X to A), you would need to first fetch the history from the repository, create a history that contains changes done by both parties, and push the result back.
+    如果您不想丢失您的工作(从X到B的历史记录)或其他人的工作(从X到A的历史记录)，则需要首先从存储库中获取历史记录，创建包含双方所做更改的历史记录，并将结果发回。
+
+    You can perform &quot;git pull&quot;, resolve potential conflicts, and &quot;git push&quot; the result. A &quot;git pull&quot; will create a merge commit C between commits A and B.
+    你可以执行“git pull”，解决潜在的冲突，然后“git push”结果。“git pull”会在提交A和提交B之间创建一个合并提交C。
+
+                B---C
+                /   /
+            ---X---A
+
+    Updating A with the resulting merge commit will fast-forward and your push will be accepted.
+    使用合并提交结果更新A将快速前进，并且您的推送将被接受。
+
+    Alternatively, you can rebase your change between X and B on top of A, with &quot;git pull --rebase&quot;, and push the result back. The rebase will create a new commit D that builds the change between X and B on top of A.
+    或者，您可以使用“git pull --rebase”将X和B之间的更改重新置于A之上，然后将结果推回去。rebase将创建一个新的提交D，在a的基础上构建X和B之间的更改。
+                 B   D
+                /   /
+            ---X---A
+
+    Again, updating A with this commit will fast-forward and your push will be accepted.
+    同样，使用此提交更新A将快速前进，并且您的推送将被接受。
+
+    There is another common situation where you may encounter non-fast-forward rejection when you try to push, and it is possible even whenyou are pushing into a repository nobody else pushes into. After you push commit A yourself (in the first picture in this section),
+replace it with &quot;git commit --amend&quot; to produce commit B, and you try to push it out, because forgot that you have pushed A out already. In such a case, and only if you are certain that nobody in the meantime fetched your earlier commit A (and started building on top of it), you can run &quot;git push --force&quot; to overwrite it. In other words, &quot;git push --force&quot; is a method reserved for a case where you do mean to lose history.
+    还有另一种常见的情况是，当您尝试推进时，可能会遇到非快速推进的拒绝，甚至当您推进到没有其他人推进的存储库时也是可能的。在你自己推送提交A之后(在本节的第一张图片中)，
+将其替换为“git commit --amend”以生成提交B，并且您试图推出它，因为忘记了您已经推出了A。在这种情况下，只有当您确定没有人同时获取您先前的提交a(并开始在其上构建)时，您才能运行“git push --force”来覆盖它。换句话说，“git push --force”是为您确实想要丢失历史记录的情况保留的方法。
+</code></pre>
+<h4 id="_13"><strong>补充：</strong></h4>
+<ul>
+<li><strong>容易冲突的操作方式</strong></li>
+<li>多个人同时操作了同一个文件</li>
+<li>一个人一直写不提交</li>
+<li>修改之前不更新最新代码</li>
+<li>提交之前不更新最新代码</li>
+<li>擅自修改同事代码</li>
+<li><strong>减少冲突的操作方式</strong></li>
+<li>养成良好的操作习惯,先<code>pull</code>在修改,修改完立即<code>commit</code>和<code>push</code></li>
+<li>一定要确保自己正在修改的文件是最新版本的</li>
+<li>各自开发各自的模块</li>
+<li>如果要修改公共文件,一定要先确认有没有人正在修改</li>
+<li>下班前一定要提交代码,上班第一件事拉取最新代码</li>
+<li>一定不要擅自修改同事的代码</li>
+</ul>
+<h3 id="6">6.分支</h3>
+<ul>
+<li>作用：</li>
+<li>区分生产环境代码以及开发环境代码</li>
+<li>研究新的功能或者攻关难题</li>
+<li>解决线上bug</li>
+<li>特点：</li>
+<li>项目开发中公用分支包括main、dev</li>
+<li>分支main是默认分支，用于发布，当需要发布时将dev分支合并到main分支</li>
+<li>分支dev是用于开发的分支，开发完阶段性的代码后，需要合并到main分支</li>
+</ul>
+<h4 id="manager_2">Manager</h4>
+<pre><code class="language-Python"># 1.进入到经理的本地仓库
+cd manager/study_git
+
+# 2.查看当前分支
+git branch 
+* main
+
+# 3.经理创建并切换到dev分支
+git checkout -b dev
+切换到一个新分支 'dev'
+
+# 4.设置本地分支跟踪远程指定分支（将分支推送到远程）
+git push --set-upstream origin dev
+
+# 5.经理在dev分支编辑代码
+vim dev.py
+def dev():
+    print('dev分支')
+
+# 6.管理dev分支源代码：add、commit、push
+git add .
+git commit -m 'dev'
+git push
+
+# 7.dev分支合并到main分支
+# 提示：只有当dev分支合并到master分支成功，leo才能获取到最新代码 或者
+# 1.切换主分支
+git switch main
+# 2.dev分支合并到main分支
+git merge dev
+# 3.合并分支默认在本地完成，合并后直接推送
+git push
+</code></pre>
+<h4 id="leo_3">Leo</h4>
+<pre><code class="language-Bash">cd leo/study_git
+# 同步服务器代码
+git pull
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+展开对象中: 100% (4/4), 356 字节 | 89.00 KiB/s, 完成.
+来自 github.com:listen24352/study_git
+   f7beebc..5b1e293  main       -&gt; origin/main
+ * [新分支]          dev        -&gt; origin/dev
+更新 f7beebc..5b1e293
+Fast-forward
+ test/dev.py | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 test/dev.py
+</code></pre>
+<h3 id="7_1">7.标签</h3>
+<blockquote>
+<ul>
+<li>当某一个大版本完成之后,需要打一个标签</li>
+<li>作用：</li>
+<li>记录大版本</li>
+<li>备份大版本代码</li>
+</ul>
+</blockquote>
+<h4 id="manager_3">Manager</h4>
+<pre><code class="language-Python"># 1.进入到经理的本地仓库
+cd manager/study_git
+
+# 2.经理在本地打标签
+# git tag -a 标签名 -m '标签描述'
+git tag -a 1.0 -m '标签'
+
+# 3.经理推送标签到远程仓库
+# git push origin 标签名
+git push origin 1.0
+枚举对象中: 1, 完成.
+对象计数中: 100% (1/1), 完成.
+写入对象中: 100% (1/1), 156 字节 | 156.00 KiB/s, 完成.
+总共 1（差异 0），复用 0（差异 0），包复用 0
+To github.com:listen24352/study_git.git
+ * [new tag]         1.0 -&gt; 1.0
+</code></pre>
+<p>4.github查看标签</p>
+<p><img alt="img" src="https://px60te123t5.feishu.cn/space/api/box/stream/download/asynccode/?code=ZjA0NzgwYjBkMzBhYWY1NWRmMjEwMzcwODQyOTFhNzhfUVN4cWs4c1ZIV0ZQNm11RDN6VXlkS1NFbGU0bnNOaGlfVG9rZW46RUVQTGJOOENOb3JLazN4eVdmR2MwMkJpbkJnXzE3MjY2MjcwMzg6MTcyNjYzMDYzOF9WNA" /></p>
+<p>5.删除本地和远程标签</p>
+<pre><code class="language-Python"># 删除本地标签
+git tag -d &lt;tagname&gt;...
+
+
+# 删除远程标签
+git push origin --delete tag &lt;tagname&gt;...
+</code></pre>
+<h1 id="_14">进阶</h1>
+<pre><code>git pull --rebase 是一个 Git 命令，它结合了 git fetch 和 git rebase 的功能。下面我将详细解释这条命令的各个部分：
+git pull:
+git pull 是从另一个存储库或本地分支获取并集成（整合）更改的命令。
+默认情况下，git pull 会执行一个 git fetch（从远程获取最新的更改，但不合并或应用它们）和一个 git merge（将远程的更改合并到当前分支）。
+--rebase:
+当使用 --rebase 选项时，git pull 将不再执行 git merge，而是执行 git rebase。
+git rebase 的主要目的是将一个分支上的所有提交重新应用到另一个分支上。
+与 git merge 不同，git rebase 会尝试保留一个线性提交历史。它取出你在当前分支上的所有提交，保存为临时文件，然后更新你当前分支的基准点（即你上一次从另一个分支拉取代码时的位置），最后把你的提交逐一重新应用上去。
+使用 git pull --rebase 的好处是：
+保持提交历史的清晰：与 git merge 可能会引入一个合并提交不同，git rebase 会保持一个线性的提交历史，这使得查看和理解项目的历史变得更加容易。
+避免不必要的合并提交：如果你经常与远程分支同步，使用 git rebase 可以避免产生大量的合并提交，从而保持提交历史的整洁。
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>函数 - Listen</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Listen</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">grammar</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">函数</a>
+</li>
+            
+<li>
+    <a href="../%E7%B1%BB/" class="dropdown-item">类</a>
+</li>
+            
+<li>
+    <a href="../%E8%A3%85%E9%A5%B0%E5%99%A8/" class="dropdown-item">装饰器</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Library</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../library/time/" class="dropdown-item">Time</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">WebPage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../pass" class="dropdown-item">None</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Automated testing</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../pass" class="dropdown-item">None</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Servers</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../pass" class="dropdown-item">None</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deploy</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../deploy/Linux/" class="dropdown-item">Linux</a>
+</li>
+                                    
+<li>
+    <a href="../../../deploy/nginx/" class="dropdown-item">Nginx</a>
+</li>
+                                    
+<li>
+    <a href="../../../deploy/Docker/" class="dropdown-item">Docker</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">tool</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../tool/Git/" class="dropdown-item">Git</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../%E7%B1%BB/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">函数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#global" class="nav-link">可以使用一次global对多个全局变量进行声明</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#global_1" class="nav-link">还可以用多次global声明都是可以的</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#global-a" class="nav-link">global a</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#global-b" class="nav-link">global b</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<div class="toc">
+<ul>
+<li><a href="#_1">函数</a><ul>
+<li><a href="#1">1.函数介绍</a></li>
+<li><a href="#2">2.函数定义和调用</a></li>
+<li><a href="#3">3.函数的文档说明</a></li>
+<li><a href="#4">4.函数的参数（一）</a></li>
+<li><a href="#5">5.函数的返回值（一）</a></li>
+<li><a href="#6">6.函数的嵌套调用</a></li>
+<li><a href="#7">7.局部变量</a></li>
+<li><a href="#8">8.全局变量</a><ul>
+<li><a href="#01">01.什么是全局变量</a></li>
+<li><a href="#02">02.全局变量和局部变量名字相同问题</a></li>
+<li><a href="#03">03.函数中修改全局变量</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#global">可以使用一次global对多个全局变量进行声明</a></li>
+<li><a href="#global_1">还可以用多次global声明都是可以的</a></li>
+<li><a href="#global-a">global a</a></li>
+<li><a href="#global-b">global b</a><ul>
+<li><a href="#9">9.多函数程序的基本执行流程</a><ul>
+<li><a href="#01_1">01.使用全局变量</a></li>
+<li><a href="#02_1">02.使用函数的返回值、参数</a></li>
+<li><a href="#03_1">03.函数嵌套调用</a></li>
+</ul>
+</li>
+<li><a href="#10">10.函数的参数（二）</a><ul>
+<li><a href="#01return">01.多个return</a></li>
+<li><a href="#02_2">02.一个函数返回多个数据的方式</a></li>
+</ul>
+</li>
+<li><a href="#11">11.函数的返回值（二）</a><ul>
+<li><a href="#01_2">01.缺省参数</a></li>
+<li><a href="#02_3">02.不定长参数</a></li>
+<li><a href="#03args">03.缺省参数在*args后面</a></li>
+</ul>
+</li>
+<li><a href="#12">12.拆包、交换俩个变量的值</a><ul>
+<li><a href="#01_3">01.返回的数据直接拆包</a></li>
+<li><a href="#022">02.交换2个变量的值</a></li>
+</ul>
+</li>
+<li><a href="#13">13.引用（一）</a></li>
+<li><a href="#14">14.可变、不可变类型</a></li>
+<li><a href="#15">15.引用（二）</a><ul>
+<li><a href="#_2">引用当做实参</a></li>
+</ul>
+</li>
+<li><a href="#16">16.函数的注意事项</a><ul>
+<li><a href="#01_4">01.自定义函数</a><ul>
+<li><a href="#_3">无参数、无返回值</a></li>
+<li><a href="#_4">无参数、有返回值</a></li>
+<li><a href="#_5">有参数、无返回值</a></li>
+<li><a href="#_6">有参数、有返回值</a></li>
+<li><a href="#_7">函数名不能重复</a></li>
+</ul>
+</li>
+<li><a href="#02_4">02.函数调用方式</a></li>
+<li><a href="#03_2">03.作用域</a></li>
+</ul>
+</li>
+<li><a href="#17">17.递归函数</a><ul>
+<li><a href="#01_5">01.什么是递归函数</a></li>
+<li><a href="#02_5">02.递归函数的作用</a></li>
+</ul>
+</li>
+<li><a href="#18">18.匿名函数</a><ul>
+<li><a href="#01_6">01.语法格式</a></li>
+<li><a href="#02_6">02.和普通函数的区别</a></li>
+<li><a href="#03_3">03.应用场景</a><ul>
+<li><a href="#1_1">1.定义简单的单行函数</a></li>
+<li><a href="#2_1">2.作为函数的参数进行传递(重点、难点)</a></li>
+<li><a href="#3_1">3.匿名函数做为函数参数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#map-reduce-filter">高阶函数: map reduce filter</a><ul>
+<li><a href="#1-map">1. map 用法</a></li>
+<li><a href="#2-reduce">2. reduce 用法</a></li>
+<li><a href="#3-filter">3. filter 用法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_1">函数</h2>
+<h3 id="1">1.函数介绍</h3>
+<blockquote>
+<ul>
+<li>如果在开发程序时，需要某块代码多次，但是为了提高编写的效率以及代码的重用，所以把具有独立功能的代码块组织为一个小模块，这就是函数</li>
+</ul>
+</blockquote>
+<h3 id="2">2.函数定义和调用</h3>
+<pre><code class="language-Python">def demo():  # demo 函数名
+    pass
+
+demo() # 调用函数
+</code></pre>
+<blockquote>
+<ul>
+<li>每次调用函数时，函数都会从头开始执行，当这个函数中的代码执行完毕后，意味着调用结束了</li>
+<li>当然了如果函数中执行到了return也会结束函数</li>
+</ul>
+</blockquote>
+<h3 id="3">3.函数的文档说明</h3>
+<pre><code class="language-python">def demo(a, b):
+    &quot;&quot;&quot;求a + b 的和&quot;&quot;&quot;
+    print(a + b)
+
+
+demo(10, 20)
+help(demo)  # 能够看到demo函数的相关说明
+
+30
+Help on function demo in module __main__:
+
+demo(a, b)
+    求a + b 的和
+</code></pre>
+<h3 id="4">4.函数的参数（一）</h3>
+<pre><code class="language-Python">def add_num(a, b):
+    print(a + b)
+
+
+add_num(10, 20)  # 调用带有参数的函数时，需要在小括号中，传递数据
+
+# 调用函数时参数的顺序
+add_num(b=100, a=200)  # 如果使用关键字，必须都使用。否则按顺序传。
+</code></pre>
+<blockquote>
+<ul>
+<li>定义时小括号中的参数，用来接收参数用的，称为 “形参”</li>
+<li>调用时小括号中的参数，用来传递给函数用的，称为 “实参”</li>
+</ul>
+</blockquote>
+<h3 id="5">5.函数的返回值（一）</h3>
+<pre><code class="language-Python">def add_num(a, b):
+    return a + b
+
+
+result = add_num(100, 200)
+print(result)  
+
+print(add_num(10, 20))  # 函数的返回值必须要打印
+</code></pre>
+<h3 id="6">6.函数的嵌套调用</h3>
+<pre><code class="language-Python">def test_a():
+    print(f&quot;函数{test_a.__name__}开始&quot;)
+    print(f&quot;我是{test_a.__name__}函数&quot;)
+    print(f&quot;函数{test_a.__name__}结束&quot;)
+
+
+def test_b():
+    print(f&quot;函数{test_b.__name__}开始&quot;)
+    test_a()
+    print(f&quot;函数{test_b.__name__}结束&quot;)
+
+
+test_b()
+
+函数test_b开始
+函数test_a开始
+我是test_a函数
+函数test_a结束
+函数test_b结束
+</code></pre>
+<blockquote>
+<p>一个函数里面又调用了另外一个函数，这就是所谓的函数嵌套调用</p>
+</blockquote>
+<h3 id="7">7.局部变量</h3>
+<pre><code class="language-Python">g = 1000  # 全局变量
+
+
+def test1():
+    a = 300  # 局部变量
+    print(f&quot;test1修改前a={a}&quot;)
+    a = 200
+    print(f&quot;test1修改后a={a}&quot;)
+    print(g - a)
+
+
+def test2():
+    a = 400  # 局部变量
+    print(f&quot;test2a={a}&quot;)
+    print(g - a)
+
+
+test1()
+test2()
+
+
+test1修改前a=300
+test1修改后a=200
+800
+test2a=400
+600
+</code></pre>
+<blockquote>
+<ul>
+<li>局部变量，就是在函数内部定义的变量</li>
+<li>其作用范围是这个函数内部，即只能在这个函数中使用，在函数的外部是不能使用的</li>
+<li>因为其作用范围只是在自己的函数内部，所以不同的函数可以定义相同名字的局部变量</li>
+<li>局部变量的作用，为了临时保存数据需要在函数中定义变量来进行存储</li>
+<li>当函数调用时，局部变量被创建，当函数调用完成后这个变量就不能够使用了</li>
+</ul>
+</blockquote>
+<h3 id="8">8.全局变量</h3>
+<h4 id="01">01.什么是全局变量</h4>
+<pre><code class="language-Python"># 定义全局变量
+a = 100
+
+def test1():
+    print(a)  # 虽然没有定义变量a但是依然可以获取其数据
+
+def test2():
+    print(a)  # 虽然没有定义变量a但是依然可以获取其数据
+
+# 调用函数
+test1()
+test2()
+</code></pre>
+<blockquote>
+<ul>
+<li>在函数外边定义的变量叫做<code>全局变量</code></li>
+<li>全局变量能够在所有的函数中进行访问</li>
+</ul>
+</blockquote>
+<h4 id="02">02.全局变量和局部变量名字相同问题</h4>
+<pre><code class="language-Python">a = 100  # 全局变量
+
+
+def test1():
+    a = 300  # 局部变量
+    print(f&quot;test1修改前a={a}&quot;)
+    a = 200
+    print(f&quot;test1修改后a={a}&quot;)
+
+
+def test2():
+    print(f&quot;test2a={a}&quot;)
+
+
+test1()
+test2()
+
+
+test1修改前a=300
+test1修改后a=200
+test2a=100
+</code></pre>
+<blockquote>
+<ul>
+<li>当函数内出现局部变量和全局变量相同名字时，函数内部中的 <code>变量名 = 数据</code> 此时理解为定义了一个局部变量，而不是修改全局变量的值</li>
+</ul>
+</blockquote>
+<h4 id="03">03.函数中修改全局变量</h4>
+<pre><code class="language-Python">a = 100  # 全局变量
+
+
+def test1():
+    global a
+    print(f&quot;test1修改前a={a}&quot;)
+    a = 200
+    print(f&quot;test1修改后a={a}&quot;)
+
+
+def test2():
+    print(f&quot;test2a={a}&quot;)
+
+
+test1()
+test2()
+
+test1修改前a=100
+test1修改后a=200
+test2a=200
+</code></pre>
+<blockquote>
+<ul>
+<li>如果在函数中出现<code>global 全局变量的名字</code> 那么这个函数中即使出现和全局变量名相同的<code>变量名 = 数据</code> 也理解为对全局变量进行修改，而不是定义局部变量</li>
+<li>如果在一个函数中需要对多个全局变量进行修改，那么可以使用</li>
+</ul>
+<p>```Python</p>
+<h1 id="global">可以使用一次global对多个全局变量进行声明</h1>
+<p>global a, b</p>
+<h1 id="global_1">还可以用多次global声明都是可以的</h1>
+<h1 id="global-a">global a</h1>
+<h1 id="global-b">global b</h1>
+<p>```</p>
+</blockquote>
+<h3 id="9">9.多函数程序的基本执行流程</h3>
+<blockquote>
+<p>一般在实际开发过程中，一个程序往往由多个函数（后面知识中会讲解类）组成，并且多个函数共享某些数据，这种场景是经常出现的，因此下面来总结下，多个函数中共享数据的几种方式</p>
+</blockquote>
+<h4 id="01_1">01.使用全局变量</h4>
+<pre><code class="language-python">g_num = 0
+
+
+def test1():
+    global g_num
+    g_num = 100
+
+
+def test2():
+    print(g_num)
+
+
+test1()
+test2()
+
+100
+</code></pre>
+<h4 id="02_1">02.使用函数的返回值、参数</h4>
+<pre><code class="language-Python">def test1():
+    return 50
+
+
+def test2(num):
+    print(num)
+
+
+result = test1()
+test2(result)
+
+50
+</code></pre>
+<h4 id="03_1">03.函数嵌套调用</h4>
+<pre><code class="language-Python">def test1():
+    return 20
+
+
+def test2():
+    result = test1()
+    print(result)
+
+
+test2()
+
+20
+</code></pre>
+<h3 id="10">10.函数的参数（二）</h3>
+<h4 id="01return">01.多个return</h4>
+<pre><code class="language-Python">def test1():
+    print('111111')
+    return 1
+    print('22222')
+    return 2
+    print('3333')
+
+
+print(test1())
+
+111111
+1
+</code></pre>
+<blockquote>
+<ul>
+<li>一个函数中可以有多个return语句，但是只要有一个return语句被执行到，那么这个函数就会结束了，因此后面的return没有什么用处</li>
+<li>如果程序设计为如下，是可以的因为不同的场景下执行不同的return</li>
+</ul>
+</blockquote>
+<pre><code class="language-Python">def test1(a):
+    if a &gt; 10:
+        return a + 10
+    else:
+        return -1
+
+
+print(test1(1))
+</code></pre>
+<h4 id="02_2">02.一个函数返回多个数据的方式</h4>
+<pre><code class="language-Python">def divid(a, b):
+    shang = a // b
+    yushu = a % b
+    return shang, yushu
+
+
+result = divid(10, 5)
+print(result)  # 默认是元组
+
+(2, 0)
+</code></pre>
+<blockquote>
+<ul>
+<li>return后面可以是元组，列表、字典等，只要是能够存储多个数据的类型，就可以一次性返回多个数据</li>
+</ul>
+<p><code>python
+      def function():
+          # return [1, 2, 3]
+          # return (1, 2, 3)
+          return {"num1": 1, "num2": 2, "num3": 3}</code></p>
+<ul>
+<li>如果return后面有多个数据，那么默认是元组</li>
+</ul>
+<p>```Python
+      In [1]: a = 1, 2
+      In [2]: a
+      Out[2]: (1, 2)</p>
+<pre><code>  In [3]:
+  In [3]: b = (1, 2)
+  In [4]: b
+  Out[4]: (1, 2)
+
+  In [5]:
+</code></pre>
+<p>```</p>
+</blockquote>
+<h3 id="11">11.函数的返回值（二）</h3>
+<h4 id="01_2">01.缺省参数</h4>
+<blockquote>
+<p>调用函数时，缺省参数的值如果没有传入，则取默认值。</p>
+<p>下例会打印默认的age，如果age没有被传入：</p>
+</blockquote>
+<pre><code class="language-Python">def test(name, age=35):
+    print(f'name={name}')
+    print(f'age={age}')
+
+
+test('ruiwen')
+test('ruiwen', 20)
+
+
+name=ruiwen
+age=35
+name=ruiwen
+age=20
+</code></pre>
+<blockquote>
+<ul>
+<li>在形参中默认有值的参数，称之为缺省参数</li>
+<li>注意：带有默认值的参数一定要位于参数列表的最后面</li>
+</ul>
+</blockquote>
+<pre><code class="language-Python">def test(name, age=35, sex, ):
+    print(f'name={name}')
+    print(f'age={age}')
+
+
+test('ruiwen', 'nan')
+test('ruiwen', 20, 'nan')
+
+# SyntaxError: non-default argument follows default argument
+</code></pre>
+<h4 id="02_3">02.不定长参数</h4>
+<blockquote>
+<p>有时可能需要一个函数能处理比当初声明时更多的参数, 这些参数叫做不定长参数，声明时不会命名。</p>
+</blockquote>
+<pre><code class="language-Python"># 基本语法
+
+def functionname([formal_args,] *args, **kwargs):
+   &quot;&quot;&quot;函数_文档字符串&quot;&quot;&quot;
+   function_suite
+   return [expression]
+</code></pre>
+<blockquote>
+<ul>
+<li>加了星号（*）的变量args会存放所有未命名的变量参数，args为元组</li>
+<li>而加**的变量kwargs会存放命名参数，即形如key=value的参数， kwargs为字典.</li>
+</ul>
+</blockquote>
+<pre><code class="language-Python">def fun(a, b, *args, **kwargs):
+    &quot;&quot;&quot;可变参数演示实例&quot;&quot;&quot;
+    print(f'a={a}')
+    print(f'b={b}')
+    print(f'args={args}')
+    for k, v in kwargs.items():
+        print(f'kwargs: k={k},v={v}')
+
+
+fun(10, 20, 30, 40, 50, x=3, y=4, z=5)
+
+
+a=10
+b=20
+args=(30, 40, 50)
+kwargs: k=x,v=3
+kwargs: k=y,v=4
+kwargs: k=z,v=5
+
+
+c = (3, 4, 5)
+d = dict(m=6, n=7, p=8)
+fun(1, 2, *c, **d)
+
+a=1
+b=2
+args=(3, 4, 5)
+kwargs: k=m,v=6
+kwargs: k=n,v=7
+kwargs: k=p,v=8
+
+
+c = (3, 4, 5)
+d = dict(m=6, n=7, p=8)
+fun(1, 2, c, d, [1, 2, 3], (1, 2, 3), &quot;123&quot;, {&quot;a&quot;: 1})
+
+a=1
+b=2
+args=((3, 4, 5), {'m': 6, 'n': 7, 'p': 8}, [1, 2, 3], (1, 2, 3), '123', {'a': 1})
+</code></pre>
+<h4 id="03args">03.缺省参数在*args后面</h4>
+<pre><code class="language-Python">def test(a, *args, b=22, c=23, **kwargs):
+    print(a)
+    print(args)
+    print(b)
+    print(c)
+    print(kwargs)
+
+
+test(100, 200, 300, 400, 500, 600, 700, b=1, c=2, mm=800, nn=900)
+
+
+100
+(200, 300, 400, 500, 600, 700)
+1
+2
+{'mm': 800, 'nn': 900}
+</code></pre>
+<blockquote>
+<ul>
+<li>如果很多个值都是不定长参数，那么这种情况下，可以将缺省参数放到 <em>args的后面， 但如果有</em><em>kwargs的话，</em>*kwargs必须是最后的</li>
+</ul>
+</blockquote>
+<h3 id="12">12.拆包、交换俩个变量的值</h3>
+<h4 id="01_3">01.返回的数据直接拆包</h4>
+<pre><code class="language-Python">def test():
+    a = 1
+    b = 2
+    c = 3
+    return a, b, c
+
+
+x, y, z = test()
+print(x, y, z)
+
+print(test())
+for i in test():  # 元组可以遍历
+    print(i)
+</code></pre>
+<blockquote>
+<ul>
+<li>拆包时要注意，需要拆的数据的个数要与变量的个数相同，否则程序会异常</li>
+<li>除了对元组拆包之外，还可以对列表、字典等拆包</li>
+</ul>
+</blockquote>
+<pre><code class="language-Python">  In [17]: a, b = (11, 22)
+  In [18]: a
+  Out[18]: 11
+  In [19]: b
+  Out[19]: 22
+
+  In [20]: a, b = [11, 22]
+  In [21]: a
+  Out[21]: 11
+  In [22]: b
+  Out[22]: 22
+
+  In [23]: a, b = {&quot;m&quot;:11, &quot;n&quot;:22}  # 取出来的是key，而不是键值对
+  In [24]: a
+  Out[24]: 'm'
+  In [25]: b
+  Out[25]: 'n'
+</code></pre>
+<h4 id="022">02.交换2个变量的值</h4>
+<pre><code class="language-Python">a, b = 10, 20
+print(a, b)
+a, b = b, a
+print(a, b)
+</code></pre>
+<h3 id="13">13.引用（一）</h3>
+<pre><code class="language-Python">a = 1
+b = a
+print(b)
+
+a = 2
+print(a)
+
+1
+2
+a = [1,2]
+b = a
+print(b)
+
+a.append(3)
+print(a)
+
+[1, 2]
+[1, 2, 3]
+</code></pre>
+<blockquote>
+<p>在python中，值是靠引用来传递来的。</p>
+<p><strong>我们可以用id()来判断两个变量是否为同一个值的引用。</strong></p>
+<p>我们可以将id值理解为那块内存的地址标示。</p>
+</blockquote>
+<pre><code class="language-Python">&gt;&gt;&gt; a = 1
+&gt;&gt;&gt; b = a
+&gt;&gt;&gt; id(a) 
+13033816
+&gt;&gt;&gt; id(b)   # 注意两个变量的id值相同
+13033816
+&gt;&gt;&gt; a = 2
+&gt;&gt;&gt; id(a)   # 注意a的id值已经变了
+13033792
+&gt;&gt;&gt; id(b)   # b的id值依旧
+13033816
+&gt;&gt;&gt; a = [1, 2]
+&gt;&gt;&gt; b = a
+&gt;&gt;&gt; id(a)
+139935018544808
+&gt;&gt;&gt; id(b)
+139935018544808
+&gt;&gt;&gt; a.append(3)
+&gt;&gt;&gt; a
+[1, 2, 3]
+&gt;&gt;&gt; id(a)
+139935018544808
+&gt;&gt;&gt; id(b)       # 注意a与b始终指向同一个地址
+139935018544808
+</code></pre>
+<blockquote>
+<ul>
+<li>之前为了更好的理解变量，咱们可以把<code>a=100</code>理解为变量a中存放了100，事实上变量a存储是100的引用（可理解为在内存中的一个编号）</li>
+</ul>
+</blockquote>
+<h3 id="14">14.可变、不可变类型</h3>
+<blockquote>
+<ul>
+<li>所谓可变类型与不可变类型是指：数据能够直接进行修改，如果能直接修改那么就是可变，否则是不可变</li>
+<li>可变类型有： 列表、字典、集合</li>
+<li>不可变类型有： 数字、字符串、元组</li>
+</ul>
+</blockquote>
+<h3 id="15">15.引用（二）</h3>
+<h4 id="_2">引用当做实参</h4>
+<blockquote>
+<ul>
+<li>可变类型与不可变类型的变量分别作为函数参数时，会有什么不同吗？</li>
+<li>Python有没有类似C语言中的指针传参呢？</li>
+</ul>
+</blockquote>
+<pre><code class="language-Python">def test1(b):  # 变量b一定是一个局部变量，就看它指向的是谁？可变还是不可变
+    b += b  # += 是直接对b指向的空间进行修改,而不是让b指向一个新的
+    # b = b+b  # xx = xx+yyy 先把=号右边的结果计算出来,然后让b指向这个新的地方,不管原来b指向谁
+                # 现在b一定指向这个新的地方
+
+# a = [11, 22]
+a = 100
+test1(a)
+print(a)
+
+100
+</code></pre>
+<blockquote>
+<ul>
+<li>Python中函数参数是引用传递（注意不是值传递）</li>
+<li>对于不可变类型，因变量不能修改，所以运算不会影响到变量自身</li>
+<li>而对于可变类型来说，函数体中的运算有可能会更改传入的参数变量</li>
+</ul>
+</blockquote>
+<h3 id="16">16.函数的注意事项</h3>
+<h4 id="01_4">01.自定义函数</h4>
+<h5 id="_3">无参数、无返回值</h5>
+<pre><code class="language-Python">def 函数名():
+    语句
+</code></pre>
+<h5 id="_4">无参数、有返回值</h5>
+<pre><code class="language-Python">def 函数名():
+    语句
+    return 需要返回的数值
+</code></pre>
+<blockquote>
+<p>注意:</p>
+<ul>
+<li>一个函数到底有没有返回值，就看有没有return，因为只有return才可以返回数据</li>
+<li>在开发中往往根据需求来设计函数需不需要返回值</li>
+<li>函数中，可以有多个return语句，但是只要执行到一个return语句，那么就意味着这个函数的调用完成</li>
+</ul>
+</blockquote>
+<h5 id="_5">有参数、无返回值</h5>
+<pre><code class="language-Python">def 函数名(形参列表):
+    语句
+</code></pre>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li>在调用函数时，如果需要把一些数据一起传递过去，被调用函数就需要用参数来接收</li>
+<li>参数列表中变量的个数根据实际传递的数据的多少来确定</li>
+</ul>
+</blockquote>
+<h5 id="_6">有参数、有返回值</h5>
+<pre><code class="language-Python">def 函数名(形参列表):
+    语句
+    return 需要返回的数值
+</code></pre>
+<h5 id="_7">函数名不能重复</h5>
+<blockquote>
+<ul>
+<li>如果在同一个程序中出现了多个相同函数名的函数，那么在调用函数时就会出现问题，所以要避免名字相同</li>
+<li>还有一点 不仅要避免函数名之间不能相同，还要避免 变量名和函数名相同的，否则都会出现问题</li>
+<li>详细的讲解在python就业班中进行学习，此阶段只要注意这些问题即可</li>
+</ul>
+</blockquote>
+<h4 id="02_4">02.函数调用方式</h4>
+<blockquote>
+<p>调用的方式为：</p>
+<p><code>函数名([实参列表])</code></p>
+<p>调用时，到底写不写 实参 如果调用的函数 在定义时有形参，那么在调用的时候就应该传递参数</p>
+<p>调用时，实参的个数和先后顺序应该和定义函数中要求的一致 如果调用的函数有返回值，那么就可以用一个变量来进行保存这个值</p>
+</blockquote>
+<h4 id="03_2">03.作用域</h4>
+<blockquote>
+<p>在一个函数中定义的变量，只能在本函数中用(局部变量)</p>
+<p>在函数外定义的变量，可以在所有的函数中使用(全局变量)</p>
+</blockquote>
+<h3 id="17">17.递归函数</h3>
+<h4 id="01_5">01.什么是递归函数</h4>
+<blockquote>
+<p>一个函数可以调用其他函数。</p>
+<p>如果一个函数在内部不调用其它的函数，而是自己本身的话，这个函数就是递归函数。</p>
+</blockquote>
+<h4 id="02_5">02.递归函数的作用</h4>
+<blockquote>
+<p>计算阶乘</p>
+</blockquote>
+<pre><code class="language-Python">def calNum(num):
+    i = 1
+    result = 1
+    while i &lt;= num:
+        result *= i
+        i += 1
+    return result
+
+
+ret = calNum(3)
+print(ret)
+
+
+def calNum(num):
+    if num &gt;= 1:
+        result = num * calNum(num - 1)
+    else:
+        result = 1
+    return result
+
+
+ret = calNum(3)
+print(ret)
+</code></pre>
+<h3 id="18">18.匿名函数</h3>
+<h4 id="01_6">01.语法格式</h4>
+<blockquote>
+<p>定义的函数没有名字,这样的函数叫做<strong>匿名函数.</strong></p>
+</blockquote>
+<pre><code># lambda [形参1], [形参2], ... : [单行表达式] 或 [函数调用]
+</code></pre>
+<blockquote>
+<p>使用匿名函数, 上面的函数我们就可以定义为单行的函数.</p>
+</blockquote>
+<pre><code class="language-Python"># 不带参数
+fun = lambda: 10 + 20
+print(fun())
+
+# 带参数
+add = lambda a, b: a + b
+print(add(10, 20))
+</code></pre>
+<h4 id="02_6">02.和普通函数的区别</h4>
+<pre><code class="language-Python">def my_function(start, end):
+
+    my_sum = 0
+
+    while start &lt;= end:
+        my_sum += start
+        start += 1
+
+    return my_sum
+</code></pre>
+<blockquote>
+<ol>
+<li>匿名函数中<strong>不能使用 if 语句、while 循环、for 循环</strong>, 只能编写单行的表达式，或函数调用, 普通函数都可以.</li>
+<li>匿名函数中返回结果<strong>不需要使用 return</strong>, 表达式的运行结果就是返回结果, 普通函数返回结果必须 return.</li>
+<li>匿名函数中也可以不返回结果. 例如: <code>lambda : print('hello world')</code></li>
+</ol>
+</blockquote>
+<h4 id="03_3">03.应用场景</h4>
+<h5 id="1_1">1.定义简单的单行函数</h5>
+<pre><code>def my_function(a, b):
+    return a + b
+</code></pre>
+<p>使用 lambda 定义格式如下:</p>
+<pre><code>my_function = lambda a, b: a + b
+</code></pre>
+<h5 id="2_1">2.作为函数的参数进行传递(重点、难点)</h5>
+<blockquote>
+<p>作为函数的参数进行传递(重点、难点)</p>
+</blockquote>
+<pre><code class="language-Python">def my_function1():
+
+    a = 100
+    b = 200
+    result = a + b
+    print('result:', result)
+
+
+def my_function2():
+
+    a = 100
+    b = 200
+    result = a - b
+    print('result:', result)
+
+
+def my_function3():
+
+    a = 100
+    b = 200
+    result = a * b
+    print('result:', result)
+
+上面函数定义的缺点是:
+函数名要定义多个, 使用起来不方便. 需要记忆, 那个函数完成什么事情.
+上面函数只定义了三种计算方式: a + b、a -b、a * b, 如果用户希望 a 和 b 进行除法运算, 那么显然还需要再写函数.
+</code></pre>
+<blockquote>
+<p>解决目标: 1、提高函数的通用性 2、减少代码量</p>
+<p>可以通过传递给 my_function 一个函数来完成.</p>
+</blockquote>
+<pre><code class="language-Python">def my_function(func):
+
+    a = 100
+    b = 200
+    # 把 cucalate_rule 当做函数来调用
+    result = func(a, b)
+    print('result:', result)
+
+
+def caculate_rule(a, b):
+    return a / b
+
+
+my_function(caculate_rule)
+</code></pre>
+<h5 id="3_1">3.匿名函数做为函数参数</h5>
+<pre><code class="language-Python">def my_function(func):
+
+    a = 100
+    b = 200
+    # 把 cucalate_rule 当做函数来调用
+    result = func(a, b)
+    print('result:', result)
+
+
+def caculate_rule1(a, b):
+    return a / b
+
+def caculate_rule2(a, b):
+    return a // b
+
+def caculate_rule3(a, b):
+    return a % b
+
+my_function(caculate_rule1)
+my_function(caculate_rule2)
+my_function(caculate_rule3)
+</code></pre>
+<blockquote>
+<p>我们为了调用 my_function 函数要写很多规则, 整个文件中可能就有很多定义的函数代码, 问题是:</p>
+<ol>
+<li>这些函数只会用一次</li>
+<li>这些函数也比较简单</li>
+</ol>
+<p>就没有必要 py 文件中出现这么多无用的代码. 如何改进:</p>
+</blockquote>
+<pre><code class="language-Python">def my_function(func):
+
+    a = 100
+    b = 200
+    # 把 cucalate_rule 当做函数来调用
+    result = func(a, b)
+    print('result:', result)
+
+
+my_function(lambda a, b: a / b)
+my_function(lambda a, b: a // b)
+my_function(lambda a, b: a % b)
+</code></pre>
+<blockquote>
+<ol>
+<li>函数可以做为参数传递给另外一个函数, 可以使得函数的实现更加通用.</li>
+<li>匿名函数也可以作为参数传递给另外一个函数, 对于只需要用到一次函数, 可以通过匿名函数减少代码量</li>
+</ol>
+</blockquote>
+<h3 id="map-reduce-filter">高阶函数: map reduce filter</h3>
+<h4 id="1-map">1. map 用法</h4>
+<p><strong>map()</strong> 会根据提供的函数对指定序列做映射.</p>
+<p>第一个参数 function 以参数序列中的每一个元素调用 function 函数，返回包含每次 function 函数返回值的新列表.</p>
+<p><strong>计算每一个元素的平方值:</strong></p>
+<pre><code class="language-python">my_list = [1, 2, 3, 4, 5]
+
+
+def f(x):
+    return x ** 2
+
+
+result = map(f, my_list)
+print(type(result), result, list(result))
+</code></pre>
+<p>输出结果:</p>
+<pre><code class="language-python">&lt;class 'map'&gt; &lt;map object at 0x000000C9729591D0&gt; [1, 4, 9, 16, 25]
+</code></pre>
+<p>示例解释:</p>
+<p><strong>首字母大写:</strong></p>
+<pre><code class="language-python">my_list = ['smith', 'edward', 'john', 'obama', 'tom']
+
+
+def f(x):
+    return x[0].upper() + x[1:]
+
+
+result = map(f, my_list)
+print(list(result))
+</code></pre>
+<p>输出结果:</p>
+<pre><code class="language-python">['Smith', 'Edward', 'John', 'Obama', 'Tom']
+</code></pre>
+<h4 id="2-reduce">2. reduce 用法</h4>
+<p><strong>reduce()</strong> 函数会对参数序列中元素进行累计.</p>
+<p>函数将一个数据集合中的所有数据进行下列操作:</p>
+<ol>
+<li>用传给 reduce 中的函数 function（有两个参数）先对集合中的第 1、2 个元素进行操作.</li>
+<li>得到的结果再与第三个数据用 function 函数运算, 最后得到一个结果.</li>
+</ol>
+<p><strong>计算列表中的累加和:</strong></p>
+<pre><code class="language-python">import functools
+
+my_list = [1, 2, 3, 4, 5]
+
+
+def f(x1, x2):
+    return x1 + x2
+
+
+result = functools.reduce(f, my_list)
+print(result)
+</code></pre>
+<p>输出结果:</p>
+<pre><code class="language-python">15
+</code></pre>
+<h4 id="3-filter">3. filter 用法</h4>
+<p><strong>filter()</strong> 函数用于过滤序列, 过滤掉不符合条件的元素, 返回一个 filter 对象, 如果要转换为列表, 可以使用 list() 来转换.</p>
+<p>该接收两个参数, 第一个为函数, 第二个为序列, 序列的每个元素作为参数传递给函数进行判, 然后返回 True 或 False, 最后将返回 True 的元素放到新列表中.</p>
+<p><strong>过滤列表中的偶数:</strong></p>
+<pre><code class="language-python">my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+def f(x):
+    return x % 2 == 0
+
+
+result = filter(f, my_list)
+print(list(result))
+</code></pre>
+<p>输出结果:</p>
+<pre><code class="language-python">[2, 4, 6, 8, 10]
+</code></pre>
+<p><strong>过滤列表中首字母为大写的单词:</strong></p>
+<pre><code class="language-python">my_list = ['edward', 'Smith', 'Obama', 'john', 'tom']
+
+
+def f(x):
+    return x[0].isupper()
+
+
+result = filter(f, my_list)
+print(list(result))
+</code></pre>
+<p>输出结果:</p>
+<pre><code class="language-pythjon">['Smith', 'Obama']
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
