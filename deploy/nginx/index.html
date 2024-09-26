@@ -19,6 +19,9 @@
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <link href="../../code.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
@@ -44,7 +47,15 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../python/grammar/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="dropdown-item">数据结构</a>
+</li>
+            
+<li>
     <a href="../../python/grammar/%E5%87%BD%E6%95%B0/" class="dropdown-item">函数</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="dropdown-item">内置函数</a>
 </li>
             
 <li>
@@ -62,7 +73,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../python/library/time/" class="dropdown-item">Time</a>
+    <a href="../../python/library/os/" class="dropdown-item">os</a>
+</li>
+            
+<li>
+    <a href="../../python/library/shutil/" class="dropdown-item">shutil</a>
 </li>
     </ul>
   </li>
@@ -71,6 +86,10 @@
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Automated testing</a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../testing/Selenium/" class="dropdown-item">Selenium</a>
+</li>
                                     
 <li>
     <a href="../../testing/PyAutoGUI%20and%20pyperclip/" class="dropdown-item">PyAutoGUI</a>
@@ -100,6 +119,14 @@
                                     
 <li>
     <a href="../../tool/Git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/Openpyxl/" class="dropdown-item">Openpyxl</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/Pandas/" class="dropdown-item">Pandas</a>
 </li>
                                 </ul>
                             </li>
@@ -213,11 +240,6 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#optional_modifierlocation_match" class="nav-link">optional_modifier是匹配条件，location_match是匹配的样式，{}是要执行的操作。</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
             <li class="nav-item" data-bs-level="1"><a href="#_7" class="nav-link">反向代理</a>
               <ul class="nav flex-column">
               </ul>
@@ -232,20 +254,20 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="_1">简介</h1>
+<h1 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>伊戈尔·赛索耶夫</p>
 </blockquote>
-<h2 id="_2">优点</h2>
+<h2 id="_2">优点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>高并发量、内存消耗少、简单稳定、模块化程度高、支持Rewrite重写规则、低成本、支持多系统。</p>
 </blockquote>
-<h2 id="_3">缺点</h2>
+<h2 id="_3">缺点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>动态请求处理差、rewrite</p>
 </blockquote>
-<h1 id="nginx">nginx安装</h1>
-<pre><code class="language-shell"># ubuntu22.04
+<h1 id="nginx">nginx安装<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h1>
+<pre class="highlight"><code class="language-shell"># ubuntu22.04
 # 安装条件
 sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring
 
@@ -253,26 +275,24 @@ sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring
 curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
     | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg &gt;/dev/null
 # 要为稳定的 nginx 软件包设置 apt 存储库，请运行以下命令：
-echo &quot;deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
-http://nginx.org/packages/ubuntu `lsb_release -cs` nginx&quot; \
+echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
+http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" \
     | sudo tee /etc/apt/sources.list.d/nginx.list
 # 设置存储库固定以优先选择我们的包而不是发行版提供的包：
-echo -e &quot;Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n&quot; \
+echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" \
     | sudo tee /etc/apt/preferences.d/99nginx
 # 安装
-sudo apt update &amp;&amp; sudo apt install nginx
-</code></pre>
-<h1 id="_4">启动、停止和重新加载配置</h1>
-<pre><code class="language-shell">systemctl start nginx  # 启动
+sudo apt update &amp;&amp; sudo apt install nginx</code></pre>
+<h1 id="_4">启动、停止和重新加载配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<pre class="highlight"><code class="language-shell">systemctl start nginx  # 启动
 nginx -s stop  # 停止
 nginx -s reload  # 修改配置文件之后 重新加载
 nginx -t  # 修改配置文件之后 检查
 nginx -t -c file.conf  # 检查指定文件
 kill -s QUIT 1628 # 杀死进程为1628的nginx服务
-ps -ax | grep nginx # 所有正在运行的 nginx 进程的列表
-</code></pre>
-<h1 id="_5">配置文件的结构</h1>
-<pre><code class="language-nginx">/etc/nginx/             # root家目录
+ps -ax | grep nginx # 所有正在运行的 nginx 进程的列表</code></pre>
+<h1 id="_5">配置文件的结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
+<pre class="highlight"><code class="language-nginx">/etc/nginx/             # root家目录
 /etc/nginx/nginx.conf   # Nginx 主配置文件Nginx 启动时会读取 nginx.conf文件
 /var/log/nginx          # 日志目录
 /var/www/html           # 默认网站目录
@@ -284,9 +304,8 @@ http配置段
         location 配置
         location 配置
     server 配置
-        location 配置
-</code></pre>
-<h2 id="_6">全局配置块</h2>
+        location 配置</code></pre>
+<h2 id="_6">全局配置块<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -320,7 +339,7 @@ http配置段
 <blockquote>
 <p>PID通常是指进程ID（Process ID）。在操作系统中，每个进程都有一个唯一的标识符，即进程ID。PID是用于标识和区分不同进程的数字标签。通过使用PID，操作系统可以对进程进行跟踪和调度，以便对系统资源进行有效的管理和分配。</p>
 </blockquote>
-<pre><code class="language-nginx">user www-data;          #  设置使用用户
+<pre class="highlight"><code class="language-nginx">user www-data;          #  设置使用用户
 worker_processes auto;  #  子进程 工作进程和cup核数一致或者是它的倍数
 pid /run/nginx.pid;     #  服务启动后的进程id  （Process ID）
 include /etc/nginx/modules-enabled/*.conf;
@@ -389,8 +408,8 @@ http {
 #   # http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
 #
 #   # auth_http localhost/auth.php;
-#   # pop3_capabilities &quot;TOP&quot; &quot;USER&quot;;
-#   # imap_capabilities &quot;IMAP4rev1&quot; &quot;UIDPLUS&quot;;
+#   # pop3_capabilities "TOP" "USER";
+#   # imap_capabilities "IMAP4rev1" "UIDPLUS";
 #
 #   server {
 #       listen     localhost:110;
@@ -434,13 +453,12 @@ http {
     error_log
     events
     http
-    mail
-</code></pre>
-<h2 id="http">HTTP配置块</h2>
+    mail</code></pre>
+<h2 id="http">HTTP配置块<a class="headerlink" href="#http" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><code>http</code>块用于配置与HTTP服务器相关的参数和指令</p>
 </blockquote>
-<pre><code class="language-nginx">server：定义一个虚拟服务器，用于处理特定主机名或IP地址的请求。
+<pre class="highlight"><code class="language-nginx">server：定义一个虚拟服务器，用于处理特定主机名或IP地址的请求。
 listen：指定服务器监听的IP地址和端口号。
 server_name：定义服务器的域名或IP地址。
 index：指定默认的索引文件。
@@ -449,13 +467,12 @@ include：包含其他配置文件。
 proxy_pass：将请求转发到后端服务器。
 proxy_set_header：设置转发请求的头部信息。
 ssl_certificate：指定SSL证书的位置。
-ssl_certificate_key：指定SSL证书的私钥位置。
-</code></pre>
-<h2 id="server">server配置块</h2>
+ssl_certificate_key：指定SSL证书的私钥位置。</code></pre>
+<h2 id="server">server配置块<a class="headerlink" href="#server" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Nginx的<code>server</code>块主要用于配置虚拟主机，即通过监听特定的IP地址和端口来处理来自不同主机的请求。每个<code>server</code>块可以配置多个<code>location</code>块，用于匹配不同的请求路径和处理方式。</p>
 </blockquote>
-<h3 id="listenip"><code>listen</code>：指定服务器监听的IP地址和端口号。</h3>
+<h3 id="listenip"><code>listen</code>：指定服务器监听的IP地址和端口号。<a class="headerlink" href="#listenip" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>作用：定义Server监听的ip和port，当ip/port匹配时候才进行下一步匹配</p>
 </blockquote>
@@ -499,7 +516,7 @@ ssl_certificate_key：指定SSL证书的私钥位置。
 <blockquote>
 <p>使用原则：首先将所有样式补全成IP:Port,然后匹配,匹配Server多，那么接着使用Server_name匹配</p>
 </blockquote>
-<h3 id="server_nameip"><code>server_name</code>：定义服务器的域名或IP地址。</h3>
+<h3 id="server_nameip"><code>server_name</code>：定义服务器的域名或IP地址。<a class="headerlink" href="#server_nameip" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>作用：定义Server监听的域名，当域名匹配时候才进行下一步操作</p>
 </blockquote>
@@ -527,22 +544,20 @@ ssl_certificate_key：指定SSL证书的私钥位置。
 <blockquote>
 <p>使用原则：优先使用完整样式,然后使用前缀正则样式,最后使用后缀正则样式,如果正则样式相同的时候,匹配最长,否则就走非法规则。非法域名/IP，表示请求到该主机上一个不存在的IP或者域名</p>
 </blockquote>
-<h3 id="root"><code>root</code>：定义服务器的根目录。</h3>
+<h3 id="root"><code>root</code>：定义服务器的根目录。<a class="headerlink" href="#root" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>作用：定义Server相应请求的html文件所在路径</p>
 </blockquote>
 <p>表现形式：</p>
-<pre><code>root /var/www/html;
-</code></pre>
-<h3 id="index"><code>index</code>：指定默认的索引文件。</h3>
+<pre class="highlight"><code>root /var/www/html;</code></pre>
+<h3 id="index"><code>index</code>：指定默认的索引文件。<a class="headerlink" href="#index" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>作用：定义响应请求后返回的文件名称或格式</p>
 </blockquote>
 <p>表现形式：</p>
-<pre><code>index index.html index.htm index.nginx-debian.html;
-</code></pre>
-<h3 id="example">example</h3>
-<pre><code class="language-nginx"># 在`/etc/nginx/conf.d`目录下创建server.conf配置文件
+<pre class="highlight"><code>index index.html index.htm index.nginx-debian.html;</code></pre>
+<h3 id="example">example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-nginx"># 在`/etc/nginx/conf.d`目录下创建server.conf配置文件
 server {
     #监听端口
     listen 7000;
@@ -562,16 +577,13 @@ nginx -t
 systemctl reload nginx
 
 # 测试访问 
-192.168.19.130:7000
-</code></pre>
-<h2 id="location">location配置块</h2>
+192.168.19.130:7000</code></pre>
+<h2 id="location">location配置块<a class="headerlink" href="#location" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>```nginx
-location optional_modifier location_match {
+<pre class="highlight"><code class="language-nginx">location optional_modifier location_match {
     # 执行操作...
-}</p>
-<h1 id="optional_modifierlocation_match">optional_modifier是匹配条件，location_match是匹配的样式，{}是要执行的操作。</h1>
-<p>```</p>
+}
+# optional_modifier是匹配条件，location_match是匹配的样式，{}是要执行的操作。</code></pre>
 </blockquote>
 <p>1.<strong>匹配规则</strong></p>
 <table>
@@ -632,7 +644,7 @@ location optional_modifier location_match {
 <blockquote>
 <p>优先级：<code>精确匹配</code>＞<code>location 完整路径</code>＞<code>优先匹配</code>＞<code>正则匹配</code>＞<code>location 部分路径</code>＞<code>通用匹配</code></p>
 </blockquote>
-<pre><code class="language-nginx">location = / {                     
+<pre class="highlight"><code class="language-nginx">location = / {                     
     # 精确规则A                      
 } 
 
@@ -662,26 +674,23 @@ location / {
 访问 http://a.com/b.png：规则D和E均适合，按顺序优先使用规则D
 访问 http://a.com/static/c.png：则优先匹配到规则C
 访问 http://a.com/a.PNG：则匹配规则E，因为规则E不区分大小写
-访问 http://a.com/category/id/1111：则最终匹配到规则F
-</code></pre>
+访问 http://a.com/category/id/1111：则最终匹配到规则F</code></pre>
 <blockquote>
 <p><code>try_files</code>指令用于尝试按顺序查找文件或目录，并返回找到的第一个存在的文件或目录。它通常用于配置重定向或默认文件处理。</p>
 </blockquote>
-<pre><code class="language-nginx">location / {
+<pre class="highlight"><code class="language-nginx">location / {
         root   /var/www/html;                    # 指定响应请求的文件所在路径
         index  index.php index.html index.htm;    # 指定响应请求的默认文件名称
         try_files $uri $uri/ =404;                # 如果root指定的路径下有查找的文件，就返回，否则报错
-}
-</code></pre>
+}</code></pre>
 <blockquote>
 <p>root VS alias</p>
 </blockquote>
-<pre><code>root和alias所起的作用都是指定响应请求所用文件的路径，只是他们有些许的区别
+<pre class="highlight"><code>root和alias所起的作用都是指定响应请求所用文件的路径，只是他们有些许的区别
 root 表示location匹配内容的相对路径
-alias表示一个绝对路径,而且必须以&quot;/&quot;结尾，否则找不到文件
-一般情况下，在location /中配置root，在location /other中配置alias
-</code></pre>
-<pre><code class="language-nginx">demo01：                                         
+alias表示一个绝对路径,而且必须以"/"结尾，否则找不到文件
+一般情况下，在location /中配置root，在location /other中配置alias</code></pre>
+<pre class="highlight"><code class="language-nginx">demo01：                                         
 location /txt/ {
     alias /var/www/txt/;
     index  index.php index.html index.htm;
@@ -693,17 +702,15 @@ location /txt/ {
     root /var/www/txt/;
     index  index.php index.html index.htm;
 }
-http://localhost/txt/index.html，nginx找/var/www/txt/txt/index.html
-</code></pre>
-<h1 id="_7">反向代理</h1>
+http://localhost/txt/index.html，nginx找/var/www/txt/txt/index.html</code></pre>
+<h1 id="_7">反向代理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><code>nginx
-location / {
+<pre class="highlight"><code class="language-nginx">location / {
   proxy_pass        http://localhost:8000;    # 设定请求跳转后的地址，可以使用hostname或IP:Port形式
   proxy_set_header  X-Real-IP  $remote_addr;  # 后端请求携带原始请求的真实IP地址
-}</code></p>
+}</code></pre>
 </blockquote>
-<pre><code class="language-nginx">server {
+<pre class="highlight"><code class="language-nginx">server {
     # 监听的端口号
     listen 8001;
 
@@ -714,14 +721,13 @@ location / {
         # 指向代理
         proxy_pass http://192.168.19.130:8000/;
     }
-}
-</code></pre>
-<h1 id="_8">负载均衡</h1>
+}</code></pre>
+<h1 id="_8">负载均衡<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>当一台服务器的性能达到极限时，我们可以使用服务器集群来提高网站的整体性能。那么，在服务器集群中，需要有一台服务器充当调度者的角色，用户的所有请求都会首先由它接收，调度者再根据每台服务器的负载情况将请求分配给某一台后端服务器去处理。</p>
 <p>那么在这个过程中，调度者如何合理分配任务，保证所有后端服务器都将性能充分发挥，从而保持服务器集群的整体性能最优，这就是负载均衡问题。</p>
 </blockquote>
-<pre><code class="language-nginx">upstream backend  {
+<pre class="highlight"><code class="language-nginx">upstream backend  {
   server backend1.example.com weight=5;
   server backend2.example.com:8080;
   server unix:/tmp/backend3;
@@ -735,9 +741,8 @@ server {
 
 # upstream 主要是定义一个后端服务地址的集合列表，每个后端服务使用一个server命令表示
 # upstream {} 和 Server {} 两部分内容属于平级关系。
-
 </code></pre>
-<h3 id="upstream">upstream配置块</h3>
+<h3 id="upstream">upstream配置块<a class="headerlink" href="#upstream" title="Permanent link">&para;</a></h3>
 <p>在upstream模块中，可以使用server命令指定后端服务器的地址，同时还可以设置后端服务器在负载均衡调度中的状态，常用的状态有以下几种：</p>
 <ul>
 <li>down： 表示当前server主机暂时不参与负载均衡。</li>
@@ -745,7 +750,7 @@ server {
 <li>max_fails：允许请求的最大失败数，默认为1，配合fail_timeout一起使用</li>
 <li>fail_timeout：经历max_fails次失败后，暂停服务的时间，默认为10s。</li>
 </ul>
-<pre><code class="language-nginx"># upstream.conf
+<pre class="highlight"><code class="language-nginx"># upstream.conf
 
 upstream backends {
     server 192.168.0.101:9999;
@@ -764,9 +769,8 @@ server {
 
 python manage.py runserver 192.168.0.101:9999
 python manage.py runserver 192.168.0.101:9998
-python manage.py runserver 192.168.0.101:9997
-</code></pre>
-<h3 id="nginx_1">Nginx提供的负载均衡策略有两种：</h3>
+python manage.py runserver 192.168.0.101:9997</code></pre>
+<h3 id="nginx_1">Nginx提供的负载均衡策略有两种：<a class="headerlink" href="#nginx_1" title="Permanent link">&para;</a></h3>
 <p><strong>内置策略：nginx自带的算法</strong></p>
 <ul>
 <li>雨露均沾型：轮训、加权轮训、哈希</li>
@@ -786,7 +790,7 @@ python manage.py runserver 192.168.0.101:9997
 <li>fair：基于后端服务器的响应时间来分配请求，响应时间短的优先分配。</li>
 <li>url_hash：按访问URL的哈希结果分配请求，使同URL定向到同一台后端服务器，可提高后端缓存服务器的效率。</li>
 </ul>
-<pre><code class="language-nginx"># 加权轮训实践
+<pre class="highlight"><code class="language-nginx"># 加权轮训实践
 #负载均衡
 upstream backends {
     server 192.168.0.101:9999 backup;    # 后备主机，当所有非backup机器出现故障或者繁忙的时候，才会请求backup机器
@@ -805,9 +809,8 @@ server {
 
 python manage.py runserver 192.168.0.101:9999
 python manage.py runserver 192.168.0.101:9998
-python manage.py runserver 192.168.0.101:9997
-</code></pre>
-<pre><code class="language-nginx">在 Nginx 中，ip_hash 算法是一种用于确保请求按客户端 IP 地址的顺序进行路由的算法。它的主要目的是防止某些类型的攻击，例如拒绝服务攻击（DoS），其中攻击者可能会使用大量不同的 IP 地址来发起请求，导致服务器过载。
+python manage.py runserver 192.168.0.101:9997</code></pre>
+<pre class="highlight"><code class="language-nginx">在 Nginx 中，ip_hash 算法是一种用于确保请求按客户端 IP 地址的顺序进行路由的算法。它的主要目的是防止某些类型的攻击，例如拒绝服务攻击（DoS），其中攻击者可能会使用大量不同的 IP 地址来发起请求，导致服务器过载。
 
 ip_hash 算法的工作原理如下：
 
@@ -836,8 +839,7 @@ server {
         # 指向代理
         proxy_pass http://backends/;
     }
-}
-</code></pre></div>
+}</code></pre></div>
             </div>
         </div>
 

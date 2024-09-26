@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh_CN" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>内置函数 - Listen</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../../code.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Listen</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">grammar</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="dropdown-item">数据结构</a>
+</li>
+            
+<li>
+    <a href="../%E5%87%BD%E6%95%B0/" class="dropdown-item">函数</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">内置函数</a>
+</li>
+            
+<li>
+    <a href="../%E7%B1%BB/" class="dropdown-item">类</a>
+</li>
+            
+<li>
+    <a href="../%E8%A3%85%E9%A5%B0%E5%99%A8/" class="dropdown-item">装饰器</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Library</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../library/os/" class="dropdown-item">os</a>
+</li>
+            
+<li>
+    <a href="../../library/shutil/" class="dropdown-item">shutil</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Automated testing</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../testing/Selenium/" class="dropdown-item">Selenium</a>
+</li>
+                                    
+<li>
+    <a href="../../../testing/PyAutoGUI%20and%20pyperclip/" class="dropdown-item">PyAutoGUI</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deploy</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../deploy/Linux/" class="dropdown-item">Linux</a>
+</li>
+                                    
+<li>
+    <a href="../../../deploy/nginx/" class="dropdown-item">Nginx</a>
+</li>
+                                    
+<li>
+    <a href="../../../deploy/Docker/" class="dropdown-item">Docker</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">tool</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../tool/Git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../../tool/Openpyxl/" class="dropdown-item">Openpyxl</a>
+</li>
+                                    
+<li>
+    <a href="../../../tool/Pandas/" class="dropdown-item">Pandas</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../%E5%87%BD%E6%95%B0/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../%E7%B1%BB/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="true">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../../../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">内置函数</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">函数式编程</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">数学相关的</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">进制相关</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#unicode" class="nav-link">Unicode</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">数据类型转换</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<div class="toc">
+<ul>
+<li><a href="#_1">内置函数</a><ul>
+<li><a href="#_2">函数式编程</a></li>
+<li><a href="#_3">数学相关的</a></li>
+<li><a href="#_4">进制相关</a></li>
+<li><a href="#unicode">Unicode</a></li>
+<li><a href="#_5">数据类型转换</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="_1">内置函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">函数式编程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-python">filter
+map</code></pre>
+<h2 id="_3">数学相关的<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-python"># abs 返回一个数的绝对值。 
+max
+min
+divmod  # 以两个（非复数）数字为参数，在作整数除法时，返回商和余数。
+pow
+round
+float</code></pre>
+<h2 id="_4">进制相关<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-python">bin # 将一个整数转换为带前缀 "0b" 的二进制数字符串。
+oct # 将整数转换为带前缀 "0o" 的八进制数字符串。
+int # 
+hex # 将整数转换为带前缀 "0x" 前缀的小写十六进制数字符串。</code></pre>
+<h2 id="unicode">Unicode<a class="headerlink" href="#unicode" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-python">ord
+chr  # 返回 Unicode 码位为整数 i 的字符的字符串格式。例如，chr(97) 返回字符串 'a'，chr(8364) 返回字符串 '€'。这是 ord() 的逆函数。实参的合法范围是 0 到 1,114,111（16 进制表示是 0x10FFFF）。如果 i 超过这个范围，会触发 ValueError 异常。</code></pre>
+<pre class="highlight"><code class="language-python">all  # 如果 iterable 的所有元素均为真值（或可迭代对象为空）则返回 True 。
+any  # 如果 iterable 的任一元素为真值则返回 True。 如果可迭代对象为空，返回 False。</code></pre>
+<h2 id="_5">数据类型转换<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-python">list
+dict
+str
+tuple
+int
+set</code></pre>
+<pre class="highlight"><code class="language-python">print
+input
+id
+len
+range
+sorted
+type
+'reversed'  #  返回一个反向的 iterator。</code></pre>
+<pre class="highlight"><code class="language-python">bool  # 返回布尔值，即 True 或 False 两者之一。
+breakpoint  # 此函数会在调用点进入调试器。
+bytearray  # 返回一个新的 bytes 数组。 bytearray 类是一个可变序列，包含范围为 0 &lt;= x &lt; 256 的整数。
+bytes  # 返回一个新的“bytes”对象，这是一个不可变序列，包含范围为 0 &lt;= x &lt; 256 的整数。
+callable  # 如果 object 参数是可调用的则返回 True，否则返回 False。
+classmethod  # 把一个方法封装成类方法
+complex #   返回值为 real + imag*1j 的复数，或将字符串或数字转换为复数。
+dir  # 如果没有实参，则返回当前本地作用域中的名称列表。如果有实参，它会尝试返回该对象的有效属性列表。
+enumerate  # 返回一个枚举对象。iterable 必须是一个序列，或 iterator，或其他支持迭代的对象。
+
+
+'aiter'  
+'anext'
+'ascii'
+'compile'
+'delattr',
+'eval', 
+'exec', 
+'exit', 
+'format', 
+'frozenset', 
+'getattr', 
+'globals', 
+'hasattr', 
+'hash', 
+'help', 
+'isinstance', 
+'issubclass', 
+'', 
+'license
+'locals'  # 更新并返回表示当前本地符号表的字典。
+'memoryview' 
+'iter'
+'next' 
+'object' 
+'open' # 打开 file 并返回对应的 file object。 如果该文件不能被打开，则引发 OSError
+'property'  # 返回 property 属性。
+'quit' 
+'repr'  # 返回包含一个对象的可打印表示形式的字符串。
+
+'setattr'  # 本函数与 getattr() 相对应。其参数为一个对象、一个字符串和一个任意值。字符串可以为某现有属性的名称，或为新属性。只要对象允许，函数会将值赋给属性。如 setattr(x, 'foobar', 123) 等价于 x.foobar = 123。
+'slice'  # 返回一个表示由 range(start, stop, step) 指定的索引集的 slice 对象。 start 和 step 参数默认为 None。
+staticmethod  # 将方法转换为静态方法。
+super  # 返回一个代理对象，它会将方法调用委托给 type 的父类或兄弟类。 这对于访问已在类中被重写的继承方法很有用。 
+vars  # 返回模块、类、实例或任何其它具有 __dict__ 属性的对象的 __dict__ 属性。
+zip  # 在多个迭代器上并行迭代，从每个迭代器返回一个数据项组成元组。</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

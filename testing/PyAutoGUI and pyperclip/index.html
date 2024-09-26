@@ -19,6 +19,9 @@
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <link href="../../code.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
@@ -44,7 +47,15 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../python/grammar/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="dropdown-item">数据结构</a>
+</li>
+            
+<li>
     <a href="../../python/grammar/%E5%87%BD%E6%95%B0/" class="dropdown-item">函数</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="dropdown-item">内置函数</a>
 </li>
             
 <li>
@@ -62,7 +73,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../python/library/time/" class="dropdown-item">Time</a>
+    <a href="../../python/library/os/" class="dropdown-item">os</a>
+</li>
+            
+<li>
+    <a href="../../python/library/shutil/" class="dropdown-item">shutil</a>
 </li>
     </ul>
   </li>
@@ -71,6 +86,10 @@
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Automated testing</a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Selenium/" class="dropdown-item">Selenium</a>
+</li>
                                     
 <li>
     <a href="./" class="dropdown-item active" aria-current="page">PyAutoGUI</a>
@@ -101,6 +120,14 @@
 <li>
     <a href="../../tool/Git/" class="dropdown-item">Git</a>
 </li>
+                                    
+<li>
+    <a href="../../tool/Openpyxl/" class="dropdown-item">Openpyxl</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/Pandas/" class="dropdown-item">Pandas</a>
+</li>
                                 </ul>
                             </li>
                         </ul>
@@ -112,7 +139,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../python/library/time/" class="nav-link">
+                                <a rel="prev" href="../Selenium/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -183,11 +210,11 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="pyautogui">PyAutoGUI</h1>
+<h1 id="pyautogui">PyAutoGUI<a class="headerlink" href="#pyautogui" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>PyAutoGUI是一个纯Python编写的GUI自动化库，它可以模拟鼠标和键盘操作，如移动鼠标、点击鼠标、滚动鼠标滚轮、输入文本等。以下是PyAutoGUI库中常用的一些方法：</p>
 </blockquote>
-<pre><code class="language-python">pip install pyautogui
+<pre class="highlight"><code class="language-python">pip install pyautogui
 import time  
 
 pyautogui.moveTo(800, 556, duration=0.1)
@@ -224,7 +251,7 @@ time.sleep(2)  # 等待2秒，给你时间切换到目标窗口
 
 # 向上滚动5次  
 pyautogui.scroll(5)  
-print(&quot;鼠标滚轮向上滚动了5次&quot;)  
+print("鼠标滚轮向上滚动了5次")  
 
 # 等待一点时间，以便你可以看到效果  
 time.sleep(1)  
@@ -234,7 +261,7 @@ screen_width, screen_height = pyautogui.size()  # 获取屏幕尺寸
 x = screen_width // 2  # 屏幕宽度的一半  
 y = screen_height // 2  # 屏幕高度的一半  
 pyautogui.scroll(-3, x=x, y=y)  
-print(&quot;在屏幕中央，鼠标滚轮向下滚动了3次&quot;)  
+print("在屏幕中央，鼠标滚轮向下滚动了3次")  
 
 # 注意：在实际应用中，可能需要调整time.sleep()的等待时间，以确保pyautogui的操作有足够的时间来执行和响应。  
 # 此外，确保你的目标窗口在pyautogui执行操作时是活动状态。
@@ -253,21 +280,19 @@ pyautogui.hotkey(*keys)：模拟组合键操作，如pyautogui.hotkey('ctrl', 'c
 
 # 5. 其他功能
 故障保险：通过pyautogui.FAILSAFE = True启用故障安全模式，当鼠标移动到屏幕左上角时，程序将抛出FailSafeException异常以中断运行。
-停顿：pyautogui.PAUSE可以设置每次操作后的暂停时间（以秒为单位），但更推荐使用time.sleep()进行精确控制。
-</code></pre>
-<h1 id="pyperclip">pyperclip</h1>
+停顿：pyautogui.PAUSE可以设置每次操作后的暂停时间（以秒为单位），但更推荐使用time.sleep()进行精确控制。</code></pre>
+<h1 id="pyperclip">pyperclip<a class="headerlink" href="#pyperclip" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>1.用于复制剪贴板里的内容、</p>
 <p>2.向剪贴板写入内容。</p>
 </blockquote>
-<pre><code class="language-python">pip install pyperclip
+<pre class="highlight"><code class="language-python">pip install pyperclip
 
 # # 将图片文件复制到剪贴板上
 pyperclip.copy(r'C:\Users\Admin\Desktop\UIAutomation\test.docx')  
 pyperclip.paste()  # 获取剪贴板上的内容
 pyautogui.hotkey('ctrl', 'v')  # 将剪贴板上的文件路径粘贴到应用窗口
-pyautogui.press('enter')  # 模拟回车
-</code></pre></div>
+pyautogui.press('enter')  # 模拟回车</code></pre></div>
             </div>
         </div>
 

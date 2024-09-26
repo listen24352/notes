@@ -19,6 +19,9 @@
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <link href="code.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
@@ -44,7 +47,15 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="python/grammar/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="dropdown-item">数据结构</a>
+</li>
+            
+<li>
     <a href="python/grammar/%E5%87%BD%E6%95%B0/" class="dropdown-item">函数</a>
+</li>
+            
+<li>
+    <a href="python/grammar/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="dropdown-item">内置函数</a>
 </li>
             
 <li>
@@ -62,7 +73,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="python/library/time/" class="dropdown-item">Time</a>
+    <a href="python/library/os/" class="dropdown-item">os</a>
+</li>
+            
+<li>
+    <a href="python/library/shutil/" class="dropdown-item">shutil</a>
 </li>
     </ul>
   </li>
@@ -71,6 +86,10 @@
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Automated testing</a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="testing/Selenium/" class="dropdown-item">Selenium</a>
+</li>
                                     
 <li>
     <a href="testing/PyAutoGUI%20and%20pyperclip/" class="dropdown-item">PyAutoGUI</a>
@@ -100,6 +119,14 @@
                                     
 <li>
     <a href="tool/Git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="tool/Openpyxl/" class="dropdown-item">Openpyxl</a>
+</li>
+                                    
+<li>
+    <a href="tool/Pandas/" class="dropdown-item">Pandas</a>
 </li>
                                 </ul>
                             </li>
@@ -172,24 +199,28 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
+<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">&para;</a></h1>
 <p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="test">test</h2>
-<h3 id="commands">Commands</h3>
+<h2 id="test">test<a class="headerlink" href="#test" title="Permanent link">&para;</a></h2>
+<h3 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
 <li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
 <li><code>mkdocs build</code> - Build the documentation site.</li>
 <li><code>mkdocs -h</code> - Print help message and exit.</li>
 </ul>
-<h3 id="project-layout">Project layout</h3>
-<pre><code>mkdocs.yml    # The configuration file.
+<h3 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code class="linenums">mkdocs.yml    # The configuration file.
 docs/
     index.md  # The documentation homepage.
     ...       # Other markdown pages, images and other files.
 </code></pre>
+
 <p><a href="https://python-markdown.github.io/">python-markdown</a></p>
-<p>html <a href="html/test.html">html demo</a> for further details.</p></div>
+<p><a href="html/test.html">html demo</a> for further details.</p>
+<p><a href="pdf/progit.pdf">progit</a></p>
+<p><a href="pdf/NGINX.pdf">nginx</a></p>
+<p>python -m pydoc -b</p></div>
             </div>
         </div>
 
@@ -271,5 +302,5 @@ docs/
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2024-09-18 09:42:32.817494+00:00
+Build Date UTC : 2024-09-26 10:10:35.277706+00:00
 -->

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh_CN" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Openpyxl - Listen</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../code.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Listen</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">grammar</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../python/grammar/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="dropdown-item">数据结构</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E5%87%BD%E6%95%B0/" class="dropdown-item">函数</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="dropdown-item">内置函数</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E7%B1%BB/" class="dropdown-item">类</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E8%A3%85%E9%A5%B0%E5%99%A8/" class="dropdown-item">装饰器</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Library</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../python/library/os/" class="dropdown-item">os</a>
+</li>
+            
+<li>
+    <a href="../../python/library/shutil/" class="dropdown-item">shutil</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Automated testing</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../testing/Selenium/" class="dropdown-item">Selenium</a>
+</li>
+                                    
+<li>
+    <a href="../../testing/PyAutoGUI%20and%20pyperclip/" class="dropdown-item">PyAutoGUI</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deploy</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../deploy/Linux/" class="dropdown-item">Linux</a>
+</li>
+                                    
+<li>
+    <a href="../../deploy/nginx/" class="dropdown-item">Nginx</a>
+</li>
+                                    
+<li>
+    <a href="../../deploy/Docker/" class="dropdown-item">Docker</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">tool</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Openpyxl</a>
+</li>
+                                    
+<li>
+    <a href="../Pandas/" class="dropdown-item">Pandas</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../Git/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Pandas/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="true">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#openpyxl" class="nav-link">openpyxl</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1" class="nav-link">1.安装</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2" class="nav-link">2.打开与保存</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3" class="nav-link">3.操作工作表</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4" class="nav-link">4.访问单元格</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5" class="nav-link">5.操作单元格</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6" class="nav-link">6.使用公式</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7" class="nav-link">7.设置样式</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8" class="nav-link">8.过滤和排序</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9" class="nav-link">9.插入图表</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#10" class="nav-link">10.只读只写</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#11" class="nav-link">11.加密保护</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#12xlsxlsx" class="nav-link">12.xls转xlsx</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<div class="toc">
+<ul>
+<li><a href="#openpyxl">openpyxl</a><ul>
+<li><a href="#1">1.安装</a></li>
+<li><a href="#2">2.打开与保存</a><ul>
+<li><a href="#_1">新建</a></li>
+<li><a href="#_2">保存</a></li>
+<li><a href="#_3">打开工作簿</a></li>
+</ul>
+</li>
+<li><a href="#3">3.操作工作表</a></li>
+<li><a href="#4">4.访问单元格</a></li>
+<li><a href="#5">5.操作单元格</a></li>
+<li><a href="#6">6.使用公式</a></li>
+<li><a href="#7">7.设置样式</a></li>
+<li><a href="#8">8.过滤和排序</a></li>
+<li><a href="#9">9.插入图表</a></li>
+<li><a href="#10">10.只读只写</a></li>
+<li><a href="#11">11.加密保护</a></li>
+<li><a href="#12xlsxlsx">12.xls转xlsx</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="openpyxl">openpyxl<a class="headerlink" href="#openpyxl" title="Permanent link">&para;</a></h1>
+<h2 id="1">1.安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-python">pip install openpyxl
+pip install lxml</code></pre>
+<h2 id="2">2.打开与保存<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="_1">新建<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-python">from openpyxl import Workbook
+
+# 新建Excel
+wb = Workbook()
+# 保存
+wb.save('./wb.xlsx')</code></pre>
+<h3 id="_2">保存<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-python">import os.path
+from openpyxl import Workbook
+wb = Workbook()
+
+path = "./excel_ files/aa"  # 不包含文件名的文件路径
+file_name = "test.xlsx"  # 文件名
+file_path = os.path.join(path,file_name)  # 拼接文件路径和文件名
+print( file_path)  # 输出：./excel_ files\test.xlsx
+
+# 如果文件路径不存在则新建
+if not os.path.exists(path):
+    os.makedirs(path)
+wb.save( file_path)</code></pre>
+<h3 id="_3">打开工作簿<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-python"># 打开工作簿
+from openpyxl import load_workbook
+
+lw = load_workbook('discipline.xlsx')</code></pre>
+<h2 id="3">3.操作工作表<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-python">from openpyxl import Workbook, load_workbook
+
+
+def hr():
+    print("_" * 100)
+
+
+# 1获取默认工作表
+wb = Workbook()
+ws = wb.active
+print(type(ws), ws)
+hr()
+
+# 2工作表属性
+lwb = load_workbook('discipline.xlsx')
+
+# 获取第一张表
+ws = lwb.active
+print(ws.title)
+
+# 修改 sheet 名
+# ws.title = '计算机科学与技术'
+# print(ws.title)
+
+# 保存
+# lwb.save('discipline.xlsx')
+
+# 最大行数
+print(ws.max_row)
+
+# 最大列数
+print(ws.max_column)
+
+# 使用的矩阵范围
+print(ws.dimensions)
+
+# 编码类型
+print(ws.encoding)
+hr()
+
+# 3获取工作表
+# 获取表名
+print(lwb.sheetnames)
+
+# 通过表名获取工作表
+s1 = lwb['计算机科学与技术']
+print(s1.title)
+hr()
+
+# 4新建工作表
+wb1 = load_workbook('wb.xlsx')
+print(wb1.sheetnames)
+new_sheet1 = wb1.create_sheet('NewSheet1', 0)
+new_sheet2 = wb1.create_sheet('NewSheet2')
+print(f'wb1.sheetnames:{wb1.sheetnames}')
+print(new_sheet1.title)
+print(new_sheet2.title)
+hr()
+
+# 5删除工作表
+wb1.remove(new_sheet1)
+print(wb1.sheetnames)
+
+
+# 6移动工作表
+Workbook().move_sheet("Sheet1", -1)
+
+# 7复制工作表
+Workbook().copy_worksheet(wb.active)</code></pre>
+<h2 id="4">4.访问单元格<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-python">from openpyxl import Workbook, load_workbook
+from openpyxl.utils import rows_from_range
+import pprint
+
+
+def hr():
+    print("_" * 100)
+
+
+# 1获取单个单元格
+wb = Workbook()
+ws = wb.active
+
+cell1 = ws["a6"]  # 通过坐标获取
+cell2 = ws.cell(1, 2)  # 通过行列下标获取
+cell3 = ws.cell(2, 5, "test value")  # 通过行列下标获取
+print(type(cell1))  # 输出：&lt;class 'openpyxl.cell.cell.Cell'&gt;
+print(type(cell2))  # 输出：&lt;class 'openpyxl.cell.cell.Cell'&gt;
+print(type(cell3))  # 输出：&lt;class 'openpyxl.cell.cell.Cell'&gt;
+
+# 2单元格属性
+# 3修改单元格
+# from openpyxl import Workbook
+# wb = Workbook()
+# ws = wb.active
+# i = 1
+# for x in range(1,11):
+#     for y in range(1,21):
+#          ws.cell(x,y,i)
+#          i += 1
+# wb.save("test.xlsx")
+
+hr()
+# 4获取多个单元格
+wb = load_workbook('test.xlsx')
+ws = wb.active
+# 选取第2行(下标从1开始),返回一个元祖
+row_cells = ws[2]
+print(row_cells)
+
+# 选取A列，返回一个元组
+col_cells = ws['B']
+print(col_cells)
+
+# 选取2、3、4行
+rows_range_cells = ws[2:4]
+print(rows_range_cells)
+
+# 选取B、C、D共3列
+col_range_cells = ws["B:D"]
+# pprint.pprint(col_range_cells)
+print(col_range_cells)
+
+# 选取c3到f6区域
+range_cells = ws["c3:f6"]
+print(range_cells)
+
+hr()
+from openpyxl.utils import get_column_letter, column_index_from_string
+
+# 数字转字母
+col_letter = get_column_letter(1)
+print(col_letter)
+
+# 字母转数字
+col_idx = column_index_from_string(col_letter)
+print(col_idx)
+hr()
+wb = load_workbook('test.xlsx')
+ws = wb.active
+# 前4个参数分别是最小列、最大列、最小行、最大行，
+cells = ws.iter_rows(min_col=2, max_col=5, min_row=1, max_row=3)
+for cell in cells:
+    print(cell)
+
+# 第5个参数是values_only，表示是否只取值
+cells = ws.iter_rows(min_col=2, max_col=5, min_row=1, max_row=3, values_only=True)
+for cell in cells:
+    print(cell)
+
+#
+for cells in ws.rows:
+    print(cells)
+hr()
+for cells in ws.columns:
+    print(cells)
+hr()
+for rows in ws.values:
+    for value in rows:
+        print(value)</code></pre>
+<h2 id="5">5.操作单元格<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h2 id="6">6.使用公式<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h2 id="7">7.设置样式<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h2 id="8">8.过滤和排序<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h2 id="9">9.插入图表<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<h2 id="10">10.只读只写<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<h2 id="11">11.加密保护<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<h2 id="12xlsxlsx">12.xls转xlsx<a class="headerlink" href="#12xlsxlsx" title="Permanent link">&para;</a></h2></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

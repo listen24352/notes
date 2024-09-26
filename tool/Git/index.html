@@ -19,6 +19,9 @@
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <link href="../../code.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
@@ -44,7 +47,15 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../python/grammar/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="dropdown-item">数据结构</a>
+</li>
+            
+<li>
     <a href="../../python/grammar/%E5%87%BD%E6%95%B0/" class="dropdown-item">函数</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="dropdown-item">内置函数</a>
 </li>
             
 <li>
@@ -62,7 +73,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../python/library/time/" class="dropdown-item">Time</a>
+    <a href="../../python/library/os/" class="dropdown-item">os</a>
+</li>
+            
+<li>
+    <a href="../../python/library/shutil/" class="dropdown-item">shutil</a>
 </li>
     </ul>
   </li>
@@ -71,6 +86,10 @@
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Automated testing</a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../testing/Selenium/" class="dropdown-item">Selenium</a>
+</li>
                                     
 <li>
     <a href="../../testing/PyAutoGUI%20and%20pyperclip/" class="dropdown-item">PyAutoGUI</a>
@@ -101,6 +120,14 @@
 <li>
     <a href="./" class="dropdown-item active" aria-current="page">Git</a>
 </li>
+                                    
+<li>
+    <a href="../Openpyxl/" class="dropdown-item">Openpyxl</a>
+</li>
+                                    
+<li>
+    <a href="../Pandas/" class="dropdown-item">Pandas</a>
+</li>
                                 </ul>
                             </li>
                         </ul>
@@ -117,7 +144,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../Openpyxl/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -271,43 +298,40 @@
 <li><a href="#_14">进阶</a></li>
 </ul>
 </div>
-<h1 id="git">Git简介</h1>
+<h1 id="git">Git简介<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>源代码管理</p>
 <p>方便多人协同开发</p>
 <p>方便版本控制</p>
 </blockquote>
-<h2 id="_1"><strong>工作区暂存区和仓库区</strong></h2>
+<h2 id="_1"><strong>工作区暂存区和仓库区</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><img alt="img" src="https://px60te123t5.feishu.cn/space/api/box/stream/download/asynccode/?code=ODU5MTVlZmExYTRmMGVkYWE5M2M3ZWRhNjM2OWMyNTVfODRENUZiRm1WWVMzY0pYc0w3anJyMlV5d0dzaWZSUjZfVG9rZW46QzRybWJOTjlib0QyYWx4VUhnc2M5QVlkbllkXzE3MjY2MjcwMzg6MTcyNjYzMDYzOF9WNA" /></p>
-<h4 id="_2"><strong>工作区</strong></h4>
+<h4 id="_2"><strong>工作区</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>对于<code>添加</code>、<code>修改</code>、<code>删除</code>文件的操作，都发生在工作区中</li>
 </ul>
-<h4 id="_3"><strong>暂存区</strong></h4>
+<h4 id="_3"><strong>暂存区</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>暂存区指将工作区中的操作完成小阶段的存储，是版本库的一部分</li>
 </ul>
-<h4 id="_4"><strong>仓库区</strong></h4>
+<h4 id="_4"><strong>仓库区</strong><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>仓库区表示个人开发的一个小阶段的完成</li>
 <li>仓库区中记录的各版本是可以查看并回退的</li>
 <li>但是在暂存区的版本一旦提交就再也没有了</li>
 </ul>
-<h1 id="git_1">Git单人本地仓库操作</h1>
-<h3 id="ubuntu2204-git"><strong>ubuntu22.04 git操作</strong></h3>
-<h4 id="1git">1.安装git</h4>
-<pre><code class="language-Shell">sudo apt install git
-</code></pre>
-<h4 id="2git">2.查看git版本</h4>
-<pre><code class="language-SQL">leo@jammy:~$ git --version
-git version 2.34.1
-</code></pre>
-<h4 id="3">3.创建目录</h4>
-<pre><code class="language-Shell">leo@jammy:~$ cd Desktop/
-leo@jammy:~/Desktop$ mkdir test
-</code></pre>
-<h4 id="4">4.初始化本地仓库</h4>
-<pre><code class="language-Bash">leo@jammy:~/Desktop$ cd test/
+<h1 id="git_1">Git单人本地仓库操作<a class="headerlink" href="#git_1" title="Permanent link">&para;</a></h1>
+<h3 id="ubuntu2204-git"><strong>ubuntu22.04 git操作</strong><a class="headerlink" href="#ubuntu2204-git" title="Permanent link">&para;</a></h3>
+<h4 id="1git">1.安装git<a class="headerlink" href="#1git" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Shell">sudo apt install git</code></pre>
+<h4 id="2git">2.查看git版本<a class="headerlink" href="#2git" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-SQL">leo@jammy:~$ git --version
+git version 2.34.1</code></pre>
+<h4 id="3">3.创建目录<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Shell">leo@jammy:~$ cd Desktop/
+leo@jammy:~/Desktop$ mkdir test</code></pre>
+<h4 id="4">4.初始化本地仓库<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Bash">leo@jammy:~/Desktop$ cd test/
 leo@jammy:~/Desktop/test$ git init
 提示：使用 'master' 作为初始分支的名称。这个默认分支名称可能会更改。要在新仓库中
 提示：配置使用初始分支名，并消除这条警告，请执行：
@@ -321,10 +345,9 @@ leo@jammy:~/Desktop/test$ git init
 已初始化空的 Git 仓库于 /home/leo/Desktop/test/.git/
 
 # 配置使用初始分支名
-leo@jammy:~/Desktop/test$ git config --global init.defaultBranch master
-</code></pre>
-<h4 id="5">5.配置个人信息</h4>
-<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ git config user.name 'leo'
+leo@jammy:~/Desktop/test$ git config --global init.defaultBranch master</code></pre>
+<h4 id="5">5.配置个人信息<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Bash">leo@jammy:~/Desktop/test$ git config user.name 'leo'
 leo@jammy:~/Desktop/test$ git config user.email 'leo@163.com'
 
 # 查看配置信息
@@ -339,12 +362,10 @@ leo@jammy:~/Desktop/test/.git$ cat config
         logallrefupdates = true
 [user]
         name = leo
-        email = leo@163.com
-</code></pre>
-<h4 id="6loginpy">6.新建login.py文件</h4>
-<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ touch login.py
-</code></pre>
-<h4 id="7">7.查看文件状态</h4>
+        email = leo@163.com</code></pre>
+<h4 id="6loginpy">6.新建login.py文件<a class="headerlink" href="#6loginpy" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Bash">leo@jammy:~/Desktop/test$ touch login.py</code></pre>
+<h4 id="7">7.查看文件状态<a class="headerlink" href="#7" title="Permanent link">&para;</a></h4>
 <blockquote>
 <ul>
 <li>红色表示新建文件或者新修改的文件,都在工作区.</li>
@@ -352,22 +373,19 @@ leo@jammy:~/Desktop/test/.git$ cat config
 <li>新建的<code>login.py</code>文件在工作区，需要添加到暂存区并提交到仓库区</li>
 </ul>
 </blockquote>
-<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ git status
-</code></pre>
+<pre class="highlight"><code class="language-Bash">leo@jammy:~/Desktop/test$ git status</code></pre>
 <p><img alt="img" src="https://px60te123t5.feishu.cn/space/api/box/stream/download/asynccode/?code=NDI4ZTllY2RhNWQ1ZmZmM2IzZDg1ZTQwNzEwM2M0ZTlfUzhYNVI0Z2FXbWNHbUlJTkhpR3hqWG43YkhBcGpPTzZfVG9rZW46VGNXN2IwWUpFb0xKZGx4aExjQ2NJM0lXblFlXzE3MjY2MjcwMzg6MTcyNjYzMDYzOF9WNA" /></p>
-<h4 id="8">8.将工作区文件添加到暂存区</h4>
-<pre><code class="language-Bash">  # 添加项目中所有文件
+<h4 id="8">8.将工作区文件添加到暂存区<a class="headerlink" href="#8" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Bash">  # 添加项目中所有文件
   git add .
   或者
   # 添加指定文件
-  git add login.py
-</code></pre>
+  git add login.py</code></pre>
 <p><img alt="img" src="https://px60te123t5.feishu.cn/space/api/box/stream/download/asynccode/?code=YWYyOTM0YmMxNzk0YzRiZjM4MjcwOWNkZGYzODFmY2NfcUVHS2hhc2N0bzdycHVwblU1UVZhQmJiNnJMMDFvdnFfVG9rZW46R0g5bmJwR01Tb01wbEF4dkIxV2NlYW1lbkVlXzE3MjY2MjcwMzg6MTcyNjYzMDYzOF9WNA" /></p>
-<h4 id="_5">取消暂存（从暂存区恢复到工作区）</h4>
-<pre><code class="language-Bash">git rm --cached &lt;文件&gt;...
-</code></pre>
+<h4 id="_5">取消暂存（从暂存区恢复到工作区）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Bash">git rm --cached &lt;文件&gt;...</code></pre>
 <p><img alt="img" src="https://px60te123t5.feishu.cn/space/api/box/stream/download/asynccode/?code=OTdjY2ZlODM2YWYyMzUyNzc2ZWE2M2E0NTFiODk3YmZfOURTeTI4MVVZTW8wRTc2eklmT0JnN1RabHo4d0hDeTNfVG9rZW46TW5FNGJkbDlLb2t6Nkd4RWVLQmNaelFhbmxoXzE3MjY2MjcwMzg6MTcyNjYzMDYzOF9WNA" /></p>
-<h4 id="9">9.将暂存区文件提交到仓库区</h4>
+<h4 id="9">9.将暂存区文件提交到仓库区<a class="headerlink" href="#9" title="Permanent link">&para;</a></h4>
 <blockquote>
 <ul>
 <li><code>commit</code>会生成一条版本记录</li>
@@ -375,45 +393,42 @@ leo@jammy:~/Desktop/test/.git$ cat config
 <li><strong>39c39c3---版本号</strong></li>
 </ul>
 </blockquote>
-<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ git commit -m '版本描述'
+<pre class="highlight"><code class="language-Bash">leo@jammy:~/Desktop/test$ git commit -m '版本描述'
 [master （根提交） 39c39c3] 版本描述
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 login.py
 
 leo@jammy:~/Desktop/test$ git status
 位于分支 master
-无文件要提交，干净的工作区
-</code></pre>
-<h4 id="10loginpy">10.编写login.py</h4>
+无文件要提交，干净的工作区</code></pre>
+<h4 id="10loginpy">10.编写login.py<a class="headerlink" href="#10loginpy" title="Permanent link">&para;</a></h4>
 <blockquote>
 <ul>
 <li>代码编辑完成后即可进行<code>add</code>和<code>commit</code>操作</li>
 <li>提示：添加和提交合并命令</li>
 </ul>
-<p><code>Plaintext
-  git commit -am "版本描述"</code></p>
+<pre class="highlight"><code class="language-Plaintext">  git commit -am "版本描述"</code></pre>
 </blockquote>
-<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ git status
+<pre class="highlight"><code class="language-Bash">leo@jammy:~/Desktop/test$ git status
 位于分支 master
 尚未暂存以备提交的变更：
-  （使用 &quot;git add &lt;文件&gt;...&quot; 更新要提交的内容）
-  （使用 &quot;git restore &lt;文件&gt;...&quot; 丢弃工作区的改动）
+  （使用 "git add &lt;文件&gt;..." 更新要提交的内容）
+  （使用 "git restore &lt;文件&gt;..." 丢弃工作区的改动）
         修改：     login.py
 
-修改尚未加入提交（使用 &quot;git add&quot; 和/或 &quot;git commit -a&quot;）
+修改尚未加入提交（使用 "git add" 和/或 "git commit -a"）
 
 
 leo@jammy:~/Desktop/test$ git commit -am '添加一个函数'
 [master 745e228] 添加一个函数
- 1 file changed, 4 insertions(+)
-</code></pre>
-<h4 id="11">11.查看历史版本</h4>
+ 1 file changed, 4 insertions(+)</code></pre>
+<h4 id="11">11.查看历史版本<a class="headerlink" href="#11" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>git reflog </p>
 <p><strong>可以查看所有分支的所有操作记录（包括commit和reset的操作），包括已经被删除的commit记录</strong> git log </p>
 <p><strong>则不能察看已经删除了的commit记录</strong></p>
 </blockquote>
-<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ git log
+<pre class="highlight"><code class="language-Bash">leo@jammy:~/Desktop/test$ git log
 # 版本号
 commit 745e2284fcdc4db917eef3c764db67b985622166 (HEAD -&gt; master)
 # 提交人
@@ -432,18 +447,16 @@ Date:   Mon Apr 29 08:59:58 2024 +0800
 
 leo@jammy:~/Desktop/test$ git reflog 
 745e228 (HEAD -&gt; master) HEAD@{0}: commit: 添加一个函数
-39c39c3 HEAD@{1}: commit (initial): 版本描述
-</code></pre>
+39c39c3 HEAD@{1}: commit (initial): 版本描述</code></pre>
 <p><strong>查看提交历史及分支图</strong>：</p>
-<pre><code class="language-Bash">git log --graph --all --decorate --oneline
-</code></pre>
+<pre class="highlight"><code class="language-Bash">git log --graph --all --decorate --oneline</code></pre>
 <p><img alt="img" src="https://px60te123t5.feishu.cn/space/api/box/stream/download/asynccode/?code=MTQzYmYwNDVhODlmNmY2MDczOTI4MTA5YzljMzJhZmZfZDZ3UW5NeVNMeEFFM1ZacG9xSFEwWDFhNnlsdlhzZVBfVG9rZW46VzJTMWI5SHNMb0s2MUJ4SVJWd2M3WGQ3bmxIXzE3MjY2MjcwMzg6MTcyNjYzMDYzOF9WNA" /></p>
-<h4 id="12">12.回退版本</h4>
-<h5 id="_6">方案一</h5>
+<h4 id="12">12.回退版本<a class="headerlink" href="#12" title="Permanent link">&para;</a></h4>
+<h5 id="_6">方案一<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
 <blockquote>
 <p>通过每个版本的版本号回退到指定版本</p>
 </blockquote>
-<pre><code class="language-Bash">  git reset --hard 版本号
+<pre class="highlight"><code class="language-Bash">  git reset --hard 版本号
 leo@jammy:~/Desktop/test$ cat login.py 
 def demo_git():
     return 'Hello Git!!!'
@@ -461,9 +474,8 @@ leo@jammy:~/Desktop/test$ cat login.py
 def demo_git():
     return 'Hello Git!!!'
 
-print(demo_git())
-</code></pre>
-<h5 id="_7">方案二</h5>
+print(demo_git())</code></pre>
+<h5 id="_7">方案二<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
 <ul>
 <li><code>HEAD</code>表示当前最新版本</li>
 <li><code>HEAD^</code>表示当前最新版本的前一个版本</li>
@@ -471,7 +483,7 @@ print(demo_git())
 <li><code>HEAD~1</code>表示当前最新版本的前一个版本</li>
 <li><code>HEAD~10</code>表示当前最新版本的前10个版本，<strong>以此类推...</strong></li>
 </ul>
-<pre><code class="language-Bash">git reset --hard HEAD^
+<pre class="highlight"><code class="language-Bash">git reset --hard HEAD^
 leo@jammy:~/Desktop/test$ git reset --hard HEAD
 HEAD 现在位于 745e228 添加一个函数
 leo@jammy:~/Desktop/test$ git reset --hard HEAD^  # 回退一个版本
@@ -487,16 +499,15 @@ HEAD 现在位于 745e228 添加一个函数
 leo@jammy:~/Desktop/test$ git reset --hard 6028561
 HEAD 现在位于 6028561 添加一个类
 leo@jammy:~/Desktop/test$ git reset --hard HEAD~2  # 回退二个版本
-HEAD 现在位于 39c39c3 版本描述
-</code></pre>
-<h4 id="13">13.撤销修改</h4>
+HEAD 现在位于 39c39c3 版本描述</code></pre>
+<h4 id="13">13.撤销修改<a class="headerlink" href="#13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>只能撤销工作区、暂存区的代码,不能撤销仓库区的代码</li>
 <li>撤销仓库区的代码就相当于回退版本操作</li>
 <li>git checkout -- <file>  这个操作是不可逆的</li>
 </ul>
-<h5 id="_8">撤销工作区的代码</h5>
-<pre><code class="language-Python">leo@jammy:~/Desktop/test$ cat login.py 
+<h5 id="_8">撤销工作区的代码<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h5>
+<pre class="highlight"><code class="language-Python">leo@jammy:~/Desktop/test$ cat login.py 
 def demo_git():
     return 'Hello Git!!!'
 
@@ -508,17 +519,17 @@ class Git:
 
 
 def checkout():
-    &quot;&quot;&quot;工作区撤销修改&quot;&quot;&quot;
+    """工作区撤销修改"""
     pass
 
 leo@jammy:~/Desktop/test$ git status
 位于分支 master
 尚未暂存以备提交的变更：
-  （使用 &quot;git add &lt;文件&gt;...&quot; 更新要提交的内容）
-  （使用 &quot;git restore &lt;文件&gt;...&quot; 丢弃工作区的改动）
+  （使用 "git add &lt;文件&gt;..." 更新要提交的内容）
+  （使用 "git restore &lt;文件&gt;..." 丢弃工作区的改动）
         修改：     login.py
 
-修改尚未加入提交（使用 &quot;git add&quot; 和/或 &quot;git commit -a&quot;）
+修改尚未加入提交（使用 "git add" 和/或 "git commit -a"）
 leo@jammy:~/Desktop/test$ 
 leo@jammy:~/Desktop/test$ git checkout login.py
 从索引区更新了 1 个路径
@@ -526,21 +537,19 @@ leo@jammy:~/Desktop/test$ cat login.py
 def demo_git():
     return 'Hello Git!!!'
 
-print(demo_git())
-</code></pre>
-<h5 id="_9">撤销暂存区代码</h5>
-<pre><code class="language-Bash">leo@jammy:~/Desktop/test$ git reset HEAD login.py
+print(demo_git())</code></pre>
+<h5 id="_9">撤销暂存区代码<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h5>
+<pre class="highlight"><code class="language-Bash">leo@jammy:~/Desktop/test$ git reset HEAD login.py
 重置后取消暂存的变更：
 M        login.py
 
 leo@jammy:~/Desktop/test$ git checkout login.py
-从索引区更新了 1 个路径
-</code></pre>
-<h1 id="gitgithub">Git远程仓库Github</h1>
-<h3 id="1">1.创建远程仓库</h3>
-<h3 id="2ssh">2.配置SSH</h3>
+从索引区更新了 1 个路径</code></pre>
+<h1 id="gitgithub">Git远程仓库Github<a class="headerlink" href="#gitgithub" title="Permanent link">&para;</a></h1>
+<h3 id="1">1.创建远程仓库<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h3 id="2ssh">2.配置SSH<a class="headerlink" href="#2ssh" title="Permanent link">&para;</a></h3>
 <p><a href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">生成新的 SSH 密钥并将其添加到 ssh-agent - GitHub 文档</a></p>
-<pre><code class="language-Bash">ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;
+<pre class="highlight"><code class="language-Bash">ssh-keygen -t ed25519 -C "your_email@example.com"
 
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (/home/lighthouse/.ssh/id_ed25519): 
@@ -565,12 +574,11 @@ The key's randomart image is:
 |     .  . o.=.* *|
 |      .......= .o|
 |       .oo.o     |
-+----[SHA256]-----+
-</code></pre>
++----[SHA256]-----+</code></pre>
 <p>测试 ssh -T git@github.com Hi listen24352! You've successfully authenticated, but GitHub does not provide shell access.</p>
-<h3 id="3_1">3.克隆项目</h3>
-<h4 id="manager">manager</h4>
-<pre><code class="language-Bash">cd Desktop
+<h3 id="3_1">3.克隆项目<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<h4 id="manager">manager<a class="headerlink" href="#manager" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Bash">cd Desktop
 mkdir git
 cd git
 mkdir leo
@@ -588,48 +596,43 @@ touch login.py
 
 git add .
 git commit -m '立项'
-git push
-</code></pre>
-<h4 id="leo">Leo</h4>
-<pre><code class="language-Bash">cd leo
+git push</code></pre>
+<h4 id="leo">Leo<a class="headerlink" href="#leo" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Bash">cd leo
 git clone git@github.com:listen24352/study_git.git
 cd study_git
 
 git config user.name 'leo'
-git config user.email 'leo@qq.com'
-</code></pre>
-<h3 id="4_1">4.多人协同开发</h3>
-<h4 id="leo_1">Leo</h4>
-<pre><code class="language-Python">cd leo/study_git 
+git config user.email 'leo@qq.com'</code></pre>
+<h3 id="4_1">4.多人协同开发<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<h4 id="leo_1">Leo<a class="headerlink" href="#leo_1" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Python">cd leo/study_git 
 Vim home.py
 
 def register():
-    &quot;&quot;&quot;注册&quot;&quot;&quot;
-    print(&quot;注册成功&quot;)
+    """注册"""
+    print("注册成功")
 
 git add .
 git commit -m 'register'
-git push
-</code></pre>
-<h4 id="manager_1">Manager</h4>
-<pre><code class="language-Python">cd manager/study_git
+git push</code></pre>
+<h4 id="manager_1">Manager<a class="headerlink" href="#manager_1" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Python">cd manager/study_git
 git pull
 
 vim home.py
 def login():
-    &quot;&quot;&quot;登录&quot;&quot;&quot;
+    """登录"""
     print('登录成功')
 
 # 没有添加新文本
 git commit -am 'login'
-git push
-</code></pre>
-<h4 id="leo_2">Leo</h4>
-<pre><code class="language-Python">cd leo/study_git 
+git push</code></pre>
+<h4 id="leo_2">Leo<a class="headerlink" href="#leo_2" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Python">cd leo/study_git 
 # 同步服务器代码
-git pull
-</code></pre>
-<h4 id="_10">总结</h4>
+git pull</code></pre>
+<h4 id="_10">总结<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <blockquote>
 <ul>
 <li>循环操作，协同开发</li>
@@ -640,7 +643,7 @@ git pull
 <li>编辑代码前要先<code>pull</code>，编辑完再<code>commit</code>，最后推送是<code>push</code></li>
 </ul>
 </blockquote>
-<h3 id="5_1">5.代码冲突</h3>
+<h3 id="5_1">5.代码冲突<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
 <blockquote>
 <ul>
 <li><strong>提示</strong>：多人协同开发时，避免不了会出现代码冲突的情况</li>
@@ -649,19 +652,18 @@ git pull
 <li><strong>注意</strong>：一旦出现代码冲突，必须先解决再做后续开发</li>
 </ul>
 </blockquote>
-<h4 id="_11">制造冲突</h4>
+<h4 id="_11">制造冲突<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <p>Leo</p>
-<pre><code class="language-Python">cd leo/study_git 
+<pre class="highlight"><code class="language-Python">cd leo/study_git 
 Vim dev.py
 
 # 添加代码
 a = '制造冲突'
 
 git commit -am '制造冲突'
-git push
-</code></pre>
+git push</code></pre>
 <p>Manager </p>
-<pre><code class="language-Python">cd manager/study_git
+<pre class="highlight"><code class="language-Python">cd manager/study_git
 
 vim dev.py
 
@@ -700,13 +702,12 @@ remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
 提示：  git config pull.rebase true   # 变基
 提示：  git config pull.ff only       # 仅快进
 提示：
-提示：您可以将 &quot;git config&quot; 替换为 &quot;git config --global&quot; 以便为所有仓库设置
+提示：您可以将 "git config" 替换为 "git config --global" 以便为所有仓库设置
 提示：缺省的配置项。您也可以在每次执行 pull 命令时添加 --rebase、--no-rebase，
 提示：或者 --ff-only 参数覆盖缺省设置。
-fatal: 需要指定如何调和偏离的分支。
-</code></pre>
-<h4 id="_12">解决冲突</h4>
-<pre><code class="language-Python">leo@jammy:~/Desktop/git/leo/study_git/test$ cat login.py 
+fatal: 需要指定如何调和偏离的分支。</code></pre>
+<h4 id="_12">解决冲突<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Python">leo@jammy:~/Desktop/git/leo/study_git/test$ cat login.py 
 def demo_git():
     return 'Hello Git!!!'
 &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD  冲突区域通常会被特殊的标记包围
@@ -758,7 +759,7 @@ NOTE ABOUT FAST-FORWARDS  快进注意事项
     If you do not want to lose your work (history from X to B) or the work by the other person (history from X to A), you would need to first fetch the history from the repository, create a history that contains changes done by both parties, and push the result back.
     如果您不想丢失您的工作(从X到B的历史记录)或其他人的工作(从X到A的历史记录)，则需要首先从存储库中获取历史记录，创建包含双方所做更改的历史记录，并将结果发回。
 
-    You can perform &quot;git pull&quot;, resolve potential conflicts, and &quot;git push&quot; the result. A &quot;git pull&quot; will create a merge commit C between commits A and B.
+    You can perform "git pull", resolve potential conflicts, and "git push" the result. A "git pull" will create a merge commit C between commits A and B.
     你可以执行“git pull”，解决潜在的冲突，然后“git push”结果。“git pull”会在提交A和提交B之间创建一个合并提交C。
 
                 B---C
@@ -768,7 +769,7 @@ NOTE ABOUT FAST-FORWARDS  快进注意事项
     Updating A with the resulting merge commit will fast-forward and your push will be accepted.
     使用合并提交结果更新A将快速前进，并且您的推送将被接受。
 
-    Alternatively, you can rebase your change between X and B on top of A, with &quot;git pull --rebase&quot;, and push the result back. The rebase will create a new commit D that builds the change between X and B on top of A.
+    Alternatively, you can rebase your change between X and B on top of A, with "git pull --rebase", and push the result back. The rebase will create a new commit D that builds the change between X and B on top of A.
     或者，您可以使用“git pull --rebase”将X和B之间的更改重新置于A之上，然后将结果推回去。rebase将创建一个新的提交D，在a的基础上构建X和B之间的更改。
                  B   D
                 /   /
@@ -778,11 +779,10 @@ NOTE ABOUT FAST-FORWARDS  快进注意事项
     同样，使用此提交更新A将快速前进，并且您的推送将被接受。
 
     There is another common situation where you may encounter non-fast-forward rejection when you try to push, and it is possible even whenyou are pushing into a repository nobody else pushes into. After you push commit A yourself (in the first picture in this section),
-replace it with &quot;git commit --amend&quot; to produce commit B, and you try to push it out, because forgot that you have pushed A out already. In such a case, and only if you are certain that nobody in the meantime fetched your earlier commit A (and started building on top of it), you can run &quot;git push --force&quot; to overwrite it. In other words, &quot;git push --force&quot; is a method reserved for a case where you do mean to lose history.
+replace it with "git commit --amend" to produce commit B, and you try to push it out, because forgot that you have pushed A out already. In such a case, and only if you are certain that nobody in the meantime fetched your earlier commit A (and started building on top of it), you can run "git push --force" to overwrite it. In other words, "git push --force" is a method reserved for a case where you do mean to lose history.
     还有另一种常见的情况是，当您尝试推进时，可能会遇到非快速推进的拒绝，甚至当您推进到没有其他人推进的存储库时也是可能的。在你自己推送提交A之后(在本节的第一张图片中)，
-将其替换为“git commit --amend”以生成提交B，并且您试图推出它，因为忘记了您已经推出了A。在这种情况下，只有当您确定没有人同时获取您先前的提交a(并开始在其上构建)时，您才能运行“git push --force”来覆盖它。换句话说，“git push --force”是为您确实想要丢失历史记录的情况保留的方法。
-</code></pre>
-<h4 id="_13"><strong>补充：</strong></h4>
+将其替换为“git commit --amend”以生成提交B，并且您试图推出它，因为忘记了您已经推出了A。在这种情况下，只有当您确定没有人同时获取您先前的提交a(并开始在其上构建)时，您才能运行“git push --force”来覆盖它。换句话说，“git push --force”是为您确实想要丢失历史记录的情况保留的方法。</code></pre>
+<h4 id="_13"><strong>补充：</strong><a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>容易冲突的操作方式</strong></li>
 <li>多个人同时操作了同一个文件</li>
@@ -798,7 +798,7 @@ replace it with &quot;git commit --amend&quot; to produce commit B, and you try 
 <li>下班前一定要提交代码,上班第一件事拉取最新代码</li>
 <li>一定不要擅自修改同事的代码</li>
 </ul>
-<h3 id="6">6.分支</h3>
+<h3 id="6">6.分支<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
 <ul>
 <li>作用：</li>
 <li>区分生产环境代码以及开发环境代码</li>
@@ -809,8 +809,8 @@ replace it with &quot;git commit --amend&quot; to produce commit B, and you try 
 <li>分支main是默认分支，用于发布，当需要发布时将dev分支合并到main分支</li>
 <li>分支dev是用于开发的分支，开发完阶段性的代码后，需要合并到main分支</li>
 </ul>
-<h4 id="manager_2">Manager</h4>
-<pre><code class="language-Python"># 1.进入到经理的本地仓库
+<h4 id="manager_2">Manager<a class="headerlink" href="#manager_2" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Python"># 1.进入到经理的本地仓库
 cd manager/study_git
 
 # 2.查看当前分支
@@ -841,10 +841,9 @@ git switch main
 # 2.dev分支合并到main分支
 git merge dev
 # 3.合并分支默认在本地完成，合并后直接推送
-git push
-</code></pre>
-<h4 id="leo_3">Leo</h4>
-<pre><code class="language-Bash">cd leo/study_git
+git push</code></pre>
+<h4 id="leo_3">Leo<a class="headerlink" href="#leo_3" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Bash">cd leo/study_git
 # 同步服务器代码
 git pull
 remote: Enumerating objects: 6, done.
@@ -859,9 +858,8 @@ remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
 Fast-forward
  test/dev.py | 2 ++
  1 file changed, 2 insertions(+)
- create mode 100644 test/dev.py
-</code></pre>
-<h3 id="7_1">7.标签</h3>
+ create mode 100644 test/dev.py</code></pre>
+<h3 id="7_1">7.标签<a class="headerlink" href="#7_1" title="Permanent link">&para;</a></h3>
 <blockquote>
 <ul>
 <li>当某一个大版本完成之后,需要打一个标签</li>
@@ -870,8 +868,8 @@ Fast-forward
 <li>备份大版本代码</li>
 </ul>
 </blockquote>
-<h4 id="manager_3">Manager</h4>
-<pre><code class="language-Python"># 1.进入到经理的本地仓库
+<h4 id="manager_3">Manager<a class="headerlink" href="#manager_3" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-Python"># 1.进入到经理的本地仓库
 cd manager/study_git
 
 # 2.经理在本地打标签
@@ -886,20 +884,18 @@ git push origin 1.0
 写入对象中: 100% (1/1), 156 字节 | 156.00 KiB/s, 完成.
 总共 1（差异 0），复用 0（差异 0），包复用 0
 To github.com:listen24352/study_git.git
- * [new tag]         1.0 -&gt; 1.0
-</code></pre>
+ * [new tag]         1.0 -&gt; 1.0</code></pre>
 <p>4.github查看标签</p>
 <p><img alt="img" src="https://px60te123t5.feishu.cn/space/api/box/stream/download/asynccode/?code=ZjA0NzgwYjBkMzBhYWY1NWRmMjEwMzcwODQyOTFhNzhfUVN4cWs4c1ZIV0ZQNm11RDN6VXlkS1NFbGU0bnNOaGlfVG9rZW46RUVQTGJOOENOb3JLazN4eVdmR2MwMkJpbkJnXzE3MjY2MjcwMzg6MTcyNjYzMDYzOF9WNA" /></p>
 <p>5.删除本地和远程标签</p>
-<pre><code class="language-Python"># 删除本地标签
+<pre class="highlight"><code class="language-Python"># 删除本地标签
 git tag -d &lt;tagname&gt;...
 
 
 # 删除远程标签
-git push origin --delete tag &lt;tagname&gt;...
-</code></pre>
-<h1 id="_14">进阶</h1>
-<pre><code>git pull --rebase 是一个 Git 命令，它结合了 git fetch 和 git rebase 的功能。下面我将详细解释这条命令的各个部分：
+git push origin --delete tag &lt;tagname&gt;...</code></pre>
+<h1 id="_14">进阶<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h1>
+<pre class="highlight"><code>git pull --rebase 是一个 Git 命令，它结合了 git fetch 和 git rebase 的功能。下面我将详细解释这条命令的各个部分：
 git pull:
 git pull 是从另一个存储库或本地分支获取并集成（整合）更改的命令。
 默认情况下，git pull 会执行一个 git fetch（从远程获取最新的更改，但不合并或应用它们）和一个 git merge（将远程的更改合并到当前分支）。
@@ -909,8 +905,7 @@ git rebase 的主要目的是将一个分支上的所有提交重新应用到另
 与 git merge 不同，git rebase 会尝试保留一个线性提交历史。它取出你在当前分支上的所有提交，保存为临时文件，然后更新你当前分支的基准点（即你上一次从另一个分支拉取代码时的位置），最后把你的提交逐一重新应用上去。
 使用 git pull --rebase 的好处是：
 保持提交历史的清晰：与 git merge 可能会引入一个合并提交不同，git rebase 会保持一个线性的提交历史，这使得查看和理解项目的历史变得更加容易。
-避免不必要的合并提交：如果你经常与远程分支同步，使用 git rebase 可以避免产生大量的合并提交，从而保持提交历史的整洁。
-</code></pre></div>
+避免不必要的合并提交：如果你经常与远程分支同步，使用 git rebase 可以避免产生大量的合并提交，从而保持提交历史的整洁。</code></pre></div>
             </div>
         </div>
 

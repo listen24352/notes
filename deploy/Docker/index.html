@@ -19,6 +19,9 @@
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <link href="../../code.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
@@ -44,7 +47,15 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../python/grammar/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="dropdown-item">数据结构</a>
+</li>
+            
+<li>
     <a href="../../python/grammar/%E5%87%BD%E6%95%B0/" class="dropdown-item">函数</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="dropdown-item">内置函数</a>
 </li>
             
 <li>
@@ -62,7 +73,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../python/library/time/" class="dropdown-item">Time</a>
+    <a href="../../python/library/os/" class="dropdown-item">os</a>
+</li>
+            
+<li>
+    <a href="../../python/library/shutil/" class="dropdown-item">shutil</a>
 </li>
     </ul>
   </li>
@@ -71,6 +86,10 @@
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Automated testing</a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../testing/Selenium/" class="dropdown-item">Selenium</a>
+</li>
                                     
 <li>
     <a href="../../testing/PyAutoGUI%20and%20pyperclip/" class="dropdown-item">PyAutoGUI</a>
@@ -100,6 +119,14 @@
                                     
 <li>
     <a href="../../tool/Git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/Openpyxl/" class="dropdown-item">Openpyxl</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/Pandas/" class="dropdown-item">Pandas</a>
 </li>
                                 </ul>
                             </li>
@@ -216,8 +243,8 @@
 </li>
 </ul>
 </div>
-<h1 id="docker">docker</h1>
-<h3 id="docker_1">为什么使用docker</h3>
+<h1 id="docker">docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<h3 id="docker_1">为什么使用docker<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>更高效的利用系统资源</li>
 <li>更快速的启动时间</li>
@@ -226,15 +253,13 @@
 <li>更轻松的迁移</li>
 <li>更轻松的维护和扩展</li>
 </ul>
-<h3 id="image">镜像（image）</h3>
-<pre><code>分层存储
-</code></pre>
-<h3 id="container">容器（container）</h3>
-<pre><code class="language-shell"># 镜像和容器类似于面向对象的类和实例
-</code></pre>
-<h3 id="repository">仓库（repository）</h3>
-<h3 id="docker_2">安装docker</h3>
-<pre><code class="language-shell"># ubuntu:20.04
+<h3 id="image">镜像（image）<a class="headerlink" href="#image" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code>分层存储</code></pre>
+<h3 id="container">容器（container）<a class="headerlink" href="#container" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-shell"># 镜像和容器类似于面向对象的类和实例</code></pre>
+<h3 id="repository">仓库（repository）<a class="headerlink" href="#repository" title="Permanent link">&para;</a></h3>
+<h3 id="docker_2">安装docker<a class="headerlink" href="#docker_2" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-shell"># ubuntu:20.04
 sudo apt-get update
 
 sudo apt-get install \
@@ -247,8 +272,8 @@ sudo apt-get install \
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 echo \
-  &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
 
 sudo apt-get update
 
@@ -257,24 +282,22 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 # 卸载
 sudo apt-get purge docker-ce docker-ce-cli containerd.io
 sudo rm -rf /var/lib/docker
-sudo rm -rf /var/lib/containerd
-</code></pre>
-<pre><code class="language-shell"># 镜像加速
+sudo rm -rf /var/lib/containerd</code></pre>
+<pre class="highlight"><code class="language-shell"># 镜像加速
 # https://cr.console.aliyun.com/cn-hangzhou/instances
 
 
 # /etc/docker/daemon.json 文件不存在创建
 {
-  &quot;registry-mirrors&quot;: [
-    &quot;https://registry.docker-cn.com&quot;
+  "registry-mirrors": [
+    "https://registry.docker-cn.com"
   ]
 }
 
 sudo systemctl daemon-reload
-sudo systemctl restart docker
-</code></pre>
-<h3 id="docker_3">操作docker相关命令</h3>
-<pre><code class="language-dockerfile"># https://docs.docker.com/reference/
+sudo systemctl restart docker</code></pre>
+<h3 id="docker_3">操作docker相关命令<a class="headerlink" href="#docker_3" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-dockerfile"># https://docs.docker.com/reference/
 # 查看docker版本
 
 docker -v
@@ -294,25 +317,23 @@ systemctl status docker
 systemctl stop firewalld
 
 # 开启自动启动容器
-docker update --restart=always 容器name
-</code></pre>
-<h3 id="docker-file">Docker File 指令详解</h3>
-<h6 id="from">FROM 指定基础镜像</h6>
-<pre><code class="language-dockerfile">FROM python
+docker update --restart=always 容器name</code></pre>
+<h3 id="docker-file">Docker File 指令详解<a class="headerlink" href="#docker-file" title="Permanent link">&para;</a></h3>
+<h6 id="from">FROM 指定基础镜像<a class="headerlink" href="#from" title="Permanent link">&para;</a></h6>
+<pre class="highlight"><code class="language-dockerfile">FROM python
 # 必备指令 必须是第一条指令
-FROM scratch  # 指定空白镜像
-</code></pre>
-<h6 id="run">RUN 执行命令</h6>
-<pre><code class="language-dockerfile">RUN 
+FROM scratch  # 指定空白镜像</code></pre>
+<h6 id="run">RUN 执行命令<a class="headerlink" href="#run" title="Permanent link">&para;</a></h6>
+<pre class="highlight"><code class="language-dockerfile">RUN 
 # shell 格式：RUN &lt;命令&gt; 
-# exec 格式：RUN[&quot;可执行文件&quot;,&quot;参数1&quot;,&quot;参数2&quot;]
+# exec 格式：RUN["可执行文件","参数1","参数2"]
 
 # 错误写法
 FROM debian:jessie
 
 RUN apt-get update
 RUN apt-get install -y gcc libc6-dev make
-RUN wget -O redis.tar.gz &quot;http://download.redis.io/releases/redis-3.2.5.tar.gz&quot;
+RUN wget -O redis.tar.gz "http://download.redis.io/releases/redis-3.2.5.tar.gz"
 RUN mkdir -p /usr/src/redis
 RUN tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1
 RUN make -C /usr/src/redis
@@ -325,7 +346,7 @@ FROM debian:jessie
 RUN buildDeps='gcc libc6-dev make' \
     &amp;&amp; apt-get update \
     &amp;&amp; apt-get install -y $buildDeps \
-    &amp;&amp; wget -O redis.tar.gz &quot;http://download.redis.io/releases/redis-3.2.5.tar.gz&quot; \
+    &amp;&amp; wget -O redis.tar.gz "http://download.redis.io/releases/redis-3.2.5.tar.gz" \
     &amp;&amp; mkdir -p /usr/src/redis \
     &amp;&amp; tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1 \
     &amp;&amp; make -C /usr/src/redis \
@@ -333,64 +354,55 @@ RUN buildDeps='gcc libc6-dev make' \
     &amp;&amp; rm -rf /var/lib/apt/lists/* \
     &amp;&amp; rm redis.tar.gz \
     &amp;&amp; rm -r /usr/src/redis \
-    &amp;&amp; apt-get purge -y --auto-remove $buildDeps
-</code></pre>
-<h6 id="_1">构建镜像</h6>
-<pre><code class="language-dockerfile">docker build -t nainx:v3 .
+    &amp;&amp; apt-get purge -y --auto-remove $buildDeps</code></pre>
+<h6 id="_1">构建镜像<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h6>
+<pre class="highlight"><code class="language-dockerfile">docker build -t nainx:v3 .
 docker build [选项] &lt;上下文路径/URL/-&gt;
-
 </code></pre>
-<h6 id="copy">COPY 复制文件</h6>
-<pre><code class="language-dockerfile">COPY &lt;原路径&gt;...&lt;目标路径&gt;
-COPY [&quot;&lt;原路径&gt;&quot;,...&quot;&lt;目标路径&gt;&quot;]
+<h6 id="copy">COPY 复制文件<a class="headerlink" href="#copy" title="Permanent link">&para;</a></h6>
+<pre class="highlight"><code class="language-dockerfile">COPY &lt;原路径&gt;...&lt;目标路径&gt;
+COPY ["&lt;原路径&gt;",..."&lt;目标路径&gt;"]
 
 COPY package.json /usr/src/app/
 # 通配符要满足Go的filepath.Match
 COPY hom* /mydir/
-COPY hom?.txt /mydir/
-</code></pre>
-<h6 id="add">ADD 更高级的复制文件</h6>
-<pre><code class="language-dockerfile">ADD # 不实用不推荐使用 仅在需要自动解压缩的场合使用
-</code></pre>
-<h6 id="cmd">CMD 容器启动命令</h6>
-<pre><code class="language-dockerfile">shell格式： CMD &lt;命令&gt;
-exec格式: CMD [&quot;可执行文件&quot;,&quot;参数1&quot;,&quot;参数2&quot;] # 推荐使用 必须使用&quot;,不能用单'
+COPY hom?.txt /mydir/</code></pre>
+<h6 id="add">ADD 更高级的复制文件<a class="headerlink" href="#add" title="Permanent link">&para;</a></h6>
+<pre class="highlight"><code class="language-dockerfile">ADD # 不实用不推荐使用 仅在需要自动解压缩的场合使用</code></pre>
+<h6 id="cmd">CMD 容器启动命令<a class="headerlink" href="#cmd" title="Permanent link">&para;</a></h6>
+<pre class="highlight"><code class="language-dockerfile">shell格式： CMD &lt;命令&gt;
+exec格式: CMD ["可执行文件","参数1","参数2"] # 推荐使用 必须使用",不能用单'
 
 CMD ECHO $HMOE
 
-CMD [&quot;SH&quot;, &quot;-C&quot;, &quot;ECHO $HMOE&quot;]
+CMD ["SH", "-C", "ECHO $HMOE"]
 
-CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
-
-
-</code></pre>
-<h6 id="entrypoint">ENTRYPOINT 入口点</h6>
-<pre><code>&lt;ENTRYPOINT&gt; &quot;&lt;CMD&gt;&quot;
+CMD ["nginx", "-g", "daemon off;"]
 
 </code></pre>
-<h6 id="env">ENV 设置环境变量</h6>
-<pre><code class="language-dockerfile">ENV &lt;key&gt; &lt;value&gt;
+<h6 id="entrypoint">ENTRYPOINT 入口点<a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h6>
+<pre class="highlight"><code>&lt;ENTRYPOINT&gt; "&lt;CMD&gt;"
+</code></pre>
+<h6 id="env">ENV 设置环境变量<a class="headerlink" href="#env" title="Permanent link">&para;</a></h6>
+<pre class="highlight"><code class="language-dockerfile">ENV &lt;key&gt; &lt;value&gt;
 ENV &lt;key1&gt;=&lt;value1&gt; &lt;key2&gt;=&lt;value2&gt;...
 
 ENV VERSION=1.0 DEBUG=on \
-    NAME=&quot;Happy Feet&quot;
-</code></pre>
-<h6 id="arg">ARG 构建参数</h6>
-<h6 id="volume">VOLUME 定义匿名卷</h6>
-<pre><code>VOLUME /data
+    NAME="Happy Feet"</code></pre>
+<h6 id="arg">ARG 构建参数<a class="headerlink" href="#arg" title="Permanent link">&para;</a></h6>
+<h6 id="volume">VOLUME 定义匿名卷<a class="headerlink" href="#volume" title="Permanent link">&para;</a></h6>
+<pre class="highlight"><code>VOLUME /data
 
-docker run -d -v mydata:/data xxxx
+docker run -d -v mydata:/data xxxx</code></pre>
+<h6 id="expose">EXPOSE 暴露端口<a class="headerlink" href="#expose" title="Permanent link">&para;</a></h6>
+<pre class="highlight"><code>EXPOSE &lt;端口1&gt; [&lt;端口2&gt;...]
 </code></pre>
-<h6 id="expose">EXPOSE 暴露端口</h6>
-<pre><code>EXPOSE &lt;端口1&gt; [&lt;端口2&gt;...]
-
-</code></pre>
-<h6 id="workdir">WORKDIR 指定工作目录</h6>
-<h6 id="user">USER 指定当前用户</h6>
-<h6 id="healthcheck">HEALTHCHECK 健康检查</h6>
-<h6 id="onbuild">ONBUILD 为他人做嫁衣裳</h6>
-<h3 id="_2">镜像操作</h3>
-<pre><code class="language-dockerfile"># 查看本地镜像
+<h6 id="workdir">WORKDIR 指定工作目录<a class="headerlink" href="#workdir" title="Permanent link">&para;</a></h6>
+<h6 id="user">USER 指定当前用户<a class="headerlink" href="#user" title="Permanent link">&para;</a></h6>
+<h6 id="healthcheck">HEALTHCHECK 健康检查<a class="headerlink" href="#healthcheck" title="Permanent link">&para;</a></h6>
+<h6 id="onbuild">ONBUILD 为他人做嫁衣裳<a class="headerlink" href="#onbuild" title="Permanent link">&para;</a></h6>
+<h3 id="_2">镜像操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-dockerfile"># 查看本地镜像
 docker images
 # 搜索镜像 先本地 后默认地址
 docker search tomcat
@@ -413,10 +425,9 @@ docker rm -f 容器id或者名字
 # 删除所有容器
 docker stop $(docker ps -a -q)  先停止所有的容器
 # 删除
-docker rm $(docker ps -a -q)
-</code></pre>
-<h3 id="_3">容器操作</h3>
-<pre><code class="language-dockerfile"># 查看docker run 命令  创建并且启动容器 tomcat端口 8080
+docker rm $(docker ps -a -q)</code></pre>
+<h3 id="_3">容器操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-dockerfile"># 查看docker run 命令  创建并且启动容器 tomcat端口 8080
 docker run --help
     -i  # 运行容器
     -t  # 容器启动后,进入命令行
@@ -430,30 +441,26 @@ exit
 #创建运行一个守护的容器
 docker run -id --name=mytomcat2 tomcat
 # 进入容器
-docker exec -it mytomcat2 /bin/bash
-</code></pre>
-<h3 id="docker_4">宿主机与docker容器的文件传递</h3>
-<h4 id="_4">从宿主机到容器</h4>
-<pre><code class="language-sh"># 创建 一个文件
+docker exec -it mytomcat2 /bin/bash</code></pre>
+<h3 id="docker_4">宿主机与docker容器的文件传递<a class="headerlink" href="#docker_4" title="Permanent link">&para;</a></h3>
+<h4 id="_4">从宿主机到容器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-sh"># 创建 一个文件
 touch 1.py
 # 把文件复制到容器里去
 docker cp 1.py mytomcat2:/
 # 进入根目录
 cd /
 # 查看
-ls
-</code></pre>
-<h4 id="_5">从容器到宿主机</h4>
-<pre><code class="language-sh"># 创建文件
+ls</code></pre>
+<h4 id="_5">从容器到宿主机<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-sh"># 创建文件
 touch adb.jpg
 # 退出容器
 exit
 # 复制到宿主机
-docker cp mytomcat2:/abc.jpg /root
-</code></pre>
-<pre><code>docker tag local-image:tagname new-repo:tagname
-docker push new-repo:tagname
-</code></pre></div>
+docker cp mytomcat2:/abc.jpg /root</code></pre>
+<pre class="highlight"><code>docker tag local-image:tagname new-repo:tagname
+docker push new-repo:tagname</code></pre></div>
             </div>
         </div>
 

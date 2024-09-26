@@ -19,6 +19,9 @@
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <link href="../../code.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
@@ -44,7 +47,15 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../python/grammar/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="dropdown-item">数据结构</a>
+</li>
+            
+<li>
     <a href="../../python/grammar/%E5%87%BD%E6%95%B0/" class="dropdown-item">函数</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="dropdown-item">内置函数</a>
 </li>
             
 <li>
@@ -62,7 +73,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../python/library/time/" class="dropdown-item">Time</a>
+    <a href="../../python/library/os/" class="dropdown-item">os</a>
+</li>
+            
+<li>
+    <a href="../../python/library/shutil/" class="dropdown-item">shutil</a>
 </li>
     </ul>
   </li>
@@ -71,6 +86,10 @@
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Automated testing</a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../testing/Selenium/" class="dropdown-item">Selenium</a>
+</li>
                                     
 <li>
     <a href="../../testing/PyAutoGUI%20and%20pyperclip/" class="dropdown-item">PyAutoGUI</a>
@@ -100,6 +119,14 @@
                                     
 <li>
     <a href="../../tool/Git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/Openpyxl/" class="dropdown-item">Openpyxl</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/Pandas/" class="dropdown-item">Pandas</a>
 </li>
                                 </ul>
                             </li>
@@ -198,51 +225,51 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="21">2.1 操作系统</h2>
+<h2 id="21">2.1 操作系统<a class="headerlink" href="#21" title="Permanent link">&para;</a></h2>
 <p>概念: 向下封装硬件的功能  向上层应用提供服务的软件</p>
 <blockquote>
 <p>一套硬件资源只能同时被一个操作系统控制</p>
 </blockquote>
-<h3 id="22">2.2 虚拟机软件</h3>
+<h3 id="22">2.2 虚拟机软件<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <p>作用:  将一份物理硬件 虚拟成多份虚拟硬件 每一个硬件上都可以运行一个虚拟机系统</p>
-<h3 id="23-ubuntu-linux">2.3 Ubuntu Linux</h3>
+<h3 id="23-ubuntu-linux">2.3 Ubuntu Linux<a class="headerlink" href="#23-ubuntu-linux" title="Permanent link">&para;</a></h3>
 <p>Linux:  ubuntu centos 深度 红旗</p>
 <p>windows 有盘符    每一个盘符都是一个根目录  </p>
 <p>Linux 没有盘符     整个系统只有一个根目录   所有的磁盘都是挂在到一个根目录之下的</p>
 <p>/home/xxx/Desktop</p>
 <p>假设我是 yy 用户  yy 主目录      /home/yy/   ~</p>
-<h3 id="24">2.4 内核和发行版</h3>
+<h3 id="24">2.4 内核和发行版<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
 <p>内核版   操作控制硬件的核心程序</p>
 <p>发行版  内核组合常用软件工具服务    redhat centos ubuntu</p>
 <blockquote>
 <p>打开终端                uname -a  查看内核版本</p>
 <p>Linus                      Linux /  git版本控制 </p>
 </blockquote>
-<h3 id="25">2.5 客户端服务器</h3>
+<h3 id="25">2.5 客户端服务器<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
 <p>客户端  用户使用的软件</p>
 <p>服务器  为用户的客户端提供服务的软件</p>
-<h3 id="26">2.6  命令格式</h3>
+<h3 id="26">2.6  命令格式<a class="headerlink" href="#26" title="Permanent link">&para;</a></h3>
 <p>命令     [-选项]  [参数]</p>
 <p>做什么  怎么做   对谁做 </p>
 <p>多个选项时 一般没有先后顺序 并且可以合并。</p>
 <p>ls -alh</p>
 <p>ls -lah</p>
-<h3 id="27">2.7 帮助手册</h3>
+<h3 id="27">2.7 帮助手册<a class="headerlink" href="#27" title="Permanent link">&para;</a></h3>
 <p>掌握常用命令及其常用选项  其他的使用时查询帮助手册即可</p>
 <p>命令  —help</p>
 <p>man  命令</p>
-<h2 id="3-linux">3. Linux 命令</h2>
+<h2 id="3-linux">3. Linux 命令<a class="headerlink" href="#3-linux" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>终端放大字体 ctrl shift =   缩小 ctrl -</p>
 <p>命令中  Tab 键作用     自动补齐文件、目录名</p>
 <p>清屏      ctrl l     《clear》  </p>
 </blockquote>
-<h3 id="31">3.1 简单命令预览</h3>
+<h3 id="31">3.1 简单命令预览<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <p>ls 命令          查看当前目录下的文件/目录信息</p>
 <p>tree 命令  以树状图的方式查看目录结构</p>
 <p>cd 命令    切换到指定目录  cd Desktop/</p>
 <p>pwd        查看当前所在的路径</p>
-<h3 id="32-cd">3.2 cd 命令</h3>
+<h3 id="32-cd">3.2 cd 命令<a class="headerlink" href="#32-cd" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>change directory</p>
 </blockquote>
@@ -251,19 +278,19 @@
 <p>cd ..        切换到上一级目录</p>
 <p>cd -       切换到上一次所在的目录</p>
 <p>cd .        切换到当前目录</p>
-<h3 id="33">3.3 相对和绝对路径</h3>
+<h3 id="33">3.3 相对和绝对路径<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <p>相对路径  从当前所在目录出发描述的路径  cd ../../Desktop</p>
 <p>绝对路径  从系统根目录/出发描述的路径    cd /home/python/Desktop</p>
 <p>命令中  Tab 键作用     自动补齐文件、目录名</p>
 <blockquote>
 <p>清屏      ctrl l     《clear》  </p>
 </blockquote>
-<h3 id="34">3.4 文件目录创建和删除</h3>
+<h3 id="34">3.4 文件目录创建和删除<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
 <p>touch 文件名   新建文件</p>
 <p>mkdir 目录名  新建目录</p>
 <p>rm 文件名       删除文件</p>
 <p>rm -r 目录名  删除目录</p>
-<h3 id="35">3.5 复制移动</h3>
+<h3 id="35">3.5 复制移动<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
 <p>cp   copy  复制</p>
 <p>mv  move 移动、重命名</p>
 <p>cp  拷贝</p>
@@ -279,30 +306,29 @@
 <p>​   mv ./code/ ~/Desktop/</p>
 <p>重命名</p>
 <p>​   mv 1.py project1.py</p>
-<h3 id="36-ls">3.6 ls 命令</h3>
+<h3 id="36-ls">3.6 ls 命令<a class="headerlink" href="#36-ls" title="Permanent link">&para;</a></h3>
 <p>作用:  查看目录的信息</p>
 <p>形式:  ls [选项] [默认当前目录]  </p>
 <p>常用选项:</p>
 <p>-l   详细信息</p>
 <p>-h  human being 人类友好 方式显示文件大小（需要和 l 合用才有效果）</p>
 <p>-a  all  显示指定目录下所有的文件信息(包括隐藏文件)</p>
-<pre><code class="language-shell"># 常用容量单位  bit-8-Byte-1024-KB-1024-MB-1024-GB-TB-PB-EB-ZB
+<pre class="highlight"><code class="language-shell"># 常用容量单位  bit-8-Byte-1024-KB-1024-MB-1024-GB-TB-PB-EB-ZB
 ls ~/Desktop/
 ls -l -a == ls -a -l == ls -la == ls -al  == ll
-ls -alh ~/Desktop/ready/
-</code></pre>
+ls -alh ~/Desktop/ready/</code></pre>
 <blockquote>
 <p>在 Linux 中不以后缀名区分文件类型<br />
   以点符 .开始的文件默认隐藏  需要使用-a 才能显示出来</p>
 </blockquote>
-<h3 id="37-mkdir">3.7 mkdir 命令选项</h3>
+<h3 id="37-mkdir">3.7 mkdir 命令选项<a class="headerlink" href="#37-mkdir" title="Permanent link">&para;</a></h3>
 <p>作用:创建目录</p>
 <p>形式:mkdir 选项 目录名</p>
 <p>常用选项:</p>
 <p>-p   parents 如果子目录的父目录不存在就自动创建父目录</p>
-<pre><code class="language-shell"># 不能直接创建多级目录
+<pre class="highlight"><code class="language-shell"># 不能直接创建多级目录
 python@ubuntu:~/py27$ mkdir 2/3/4
-mkdir: 无法创建目录&quot;2/3/4&quot;: 没有那个文件或目录
+mkdir: 无法创建目录"2/3/4": 没有那个文件或目录
 python@ubuntu:~/py27$ mkdir -p 2/3/4
 python@ubuntu:~/py27$ tree
 .
@@ -314,9 +340,8 @@ python@ubuntu:~/py27$ tree
 │   └── 3
 │       └── 4
 ├── haha
-└── project1.py
-</code></pre>
-<h3 id="38-rm">3.8 rm 命令选项</h3>
+└── project1.py</code></pre>
+<h3 id="38-rm">3.8 rm 命令选项<a class="headerlink" href="#38-rm" title="Permanent link">&para;</a></h3>
 <p>作用:删除文件或者目录</p>
 <p>形式:rm 选项 文件目录名 ...</p>
 <p>常用选项:</p>
@@ -325,7 +350,7 @@ python@ubuntu:~/py27$ tree
 <p>-i  交互式 需要用户确认是否删除</p>
 <p>-f  静默删除一个文件</p>
 <p>-d  删除空目录</p>
-<pre><code class="language-shell">python@ubuntu:~/py27$ rm -i 1.py
+<pre class="highlight"><code class="language-shell">python@ubuntu:~/py27$ rm -i 1.py
 rm：是否删除普通空文件 '1.py'？ yes
 
 python@ubuntu:~/py27$ rm 1.py
@@ -337,13 +362,12 @@ python@ubuntu:~/py27$ rm -d 1  # 非空出错
 rm: 无法删除'1': 目录非空
 
 rm -r /home/python/py27/
-rm -rf /  删除整个系统根目下及其所有的子目录
-</code></pre>
-<h3 id="39-cp">3.9 cp 命令</h3>
+rm -rf /  删除整个系统根目下及其所有的子目录</code></pre>
+<h3 id="39-cp">3.9 cp 命令<a class="headerlink" href="#39-cp" title="Permanent link">&para;</a></h3>
 <p>作用: 复制文件或者目录</p>
 <p>形式: cp 选项 源目录/源文件名 目的目录/</p>
 <p>常用选项:</p>
-<pre><code class="language-shell"># -r  递归拷贝目录
+<pre class="highlight"><code class="language-shell"># -r  递归拷贝目录
 cp -r ../code /home/python/Desktop
 
 # -i  交互式  默认情况会自动覆盖目的目录的同名文件 
@@ -356,18 +380,17 @@ cp -v 1.py ~/Desktop/
 
 # -a 保留原有文件的相关属性 权限时间等 默认情况不保留
 cp xjj.jpg ~/Desktop/
-cp -a xjj.jpg ~/Desktop/
-</code></pre>
+cp -a xjj.jpg ~/Desktop/</code></pre>
 <blockquote>
 <p>cp 也可以在拷贝文件的时候给文件一个新的名字</p>
 <p>cp 选项 源目录/源文件名 目的目录/新文件名</p>
 <p>cp xjj.jpg ~/Desktop/xjj2.jpg</p>
 </blockquote>
-<h3 id="310-mv">3.10 mv 命令选项</h3>
+<h3 id="310-mv">3.10 mv 命令选项<a class="headerlink" href="#310-mv" title="Permanent link">&para;</a></h3>
 <p>作用:移动、重命名     文件 、目录</p>
 <p>形式:mv 选项 源目录/源文件名 目的目录/</p>
 <p>常用选项:</p>
-<pre><code class="language-shell"># -i 如果目的路径下有同名文件默认覆盖  加-i 要求用户确认是否覆盖文件数据
+<pre class="highlight"><code class="language-shell"># -i 如果目的路径下有同名文件默认覆盖  加-i 要求用户确认是否覆盖文件数据
 mv -i xjj.jpg ~/Desktop/
 
 # -v 显示移动的文件路径信息
@@ -377,9 +400,8 @@ mv -v xjj.jpg ~/Desktop/
 mv girl.jpg ~/xjj.jpg
 
 # 目录改名
-mv Linux/ linux/
-</code></pre>
-<h3 id="311">3.11 查看文件内容</h3>
+mv Linux/ linux/</code></pre>
+<h3 id="311">3.11 查看文件内容<a class="headerlink" href="#311" title="Permanent link">&para;</a></h3>
 <p>cat 文件名</p>
 <p>more 文件名</p>
 <blockquote>
@@ -387,49 +409,46 @@ mv Linux/ linux/
 <p>文件内容很多的额情况下    cat 查看内容会直接全部显示&lt;刷屏&gt;</p>
 <p>more 会分屏显示文件内容  空格显示下一页  q 退出</p>
 </blockquote>
-<h2 id="1">1. 回顾</h2>
-<pre><code class="language-shell">cp hello.py ../code/1/2/
+<h2 id="1">1. 回顾<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-shell">cp hello.py ../code/1/2/
 cp hello.py ./code/1/2/ 等价于怎么写  cp hello.py code/1/2/
-cp hello.py /code/1/2/  
-</code></pre>
+cp hello.py /code/1/2/  </code></pre>
 <p>🌟ctrl shift t 在当前终端页面新开一个并列的终端</p>
 <blockquote>
 <p>python 用户密码为chuanzhi 不要自行修改 改了就要自己记住</p>
 <p>如果忘了问我 我也爱莫能助 o(╥﹏╥)o</p>
 </blockquote>
-<h2 id="2linux">2.Linux 进阶操作</h2>
-<h3 id="21_1">2.1 输出重定向⭐⭐⭐</h3>
+<h2 id="2linux">2.Linux 进阶操作<a class="headerlink" href="#2linux" title="Permanent link">&para;</a></h2>
+<h3 id="21_1">2.1 输出重定向⭐⭐⭐<a class="headerlink" href="#21_1" title="Permanent link">&para;</a></h3>
 <p>概念: 把原本要输出到终端的结果  转而输出到文件中&lt;输出重定向&gt;</p>
 <p>用法: 命令   符号  文件名字</p>
 <p>符号种类:  </p>
 <p>​       &gt;    覆盖输出重定向  类似文件打开方式的"w"模式</p>
 <p>​       &gt;&gt; 追加输出重定向  类似文件打开方式的"a"模式</p>
-<pre><code class="language-shell">ls -l &gt; a.txt 
+<pre class="highlight"><code class="language-shell">ls -l &gt; a.txt 
 ls -alh &gt; a.txt   # 第二次命令结果会覆盖文件原有内容 
 
- ls -alh /bin &gt;&gt; a.txt  # 本次命令结果会追加原有文件内容后面
-</code></pre>
-<h3 id="22_1">2.2 管道⭐⭐⭐</h3>
+ ls -alh /bin &gt;&gt; a.txt  # 本次命令结果会追加原有文件内容后面</code></pre>
+<h3 id="22_1">2.2 管道⭐⭐⭐<a class="headerlink" href="#22_1" title="Permanent link">&para;</a></h3>
 <p>概念:把左边命令的输出结果 给 右边的命令当做输入来用。</p>
 <p>形式:命令  | 命令</p>
 <p>用法:</p>
-<pre><code class="language-shell"> # cat a.txt | more   # more a.txt
+<pre class="highlight"><code class="language-shell"> # cat a.txt | more   # more a.txt
  ls -alh /bin | more
 
 
  显示当前目录下所有文件详细信息         搜索以-开始的行          统计行数
-ls -al | grep &quot;^-&quot; | wc -l
-</code></pre>
+ls -al | grep "^-" | wc -l</code></pre>
 <blockquote>
 <p>|右侧一般是 more grep  awk </p>
 </blockquote>
-<h3 id="23">2.3 链接⭐⭐⭐</h3>
-<p>作用:  通过链接文件<strong>间接访问</strong>、修改源文件 <strong>方便快捷</strong>  link</p>
+<h3 id="23">2.3 链接⭐⭐⭐<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>作用:  通过链接文件**间接访问**、修改源文件 <strong>方便快捷</strong>  link</p>
 <p>分类: </p>
 <p>​   软 ln -s 源文件 链接文件   <symbols  符号链接></p>
 <p>​   硬 ln 源文件 链接文件 </p>
 <p>用法:</p>
-<pre><code class="language-shell">ln -s 1.txt 1s.txt
+<pre class="highlight"><code class="language-shell">ln -s 1.txt 1s.txt
 gedit 1s.txt 
 python@ubuntu:~/Desktop/Linux$ cat 1.txt 
 hehehehehheHEIHEI
@@ -440,13 +459,12 @@ ln 1.txt 1h.txt  # 可以通过1h.txt 间接访问和修改源文件
 
 # 硬链接本质
 # 硬链接其实是一个文件数据的别名  硬链接数就是一个文件数据的名字的数量
-rm 文件 # 只是删除文件数据的一个别名 而数据只有在没有名字的情况下才会删除
-</code></pre>
+rm 文件 # 只是删除文件数据的一个别名 而数据只有在没有名字的情况下才会删除</code></pre>
 <blockquote>
 <p>工作建议:   创建  跨目录的链接文件      建议都写成 绝对路径方式</p>
 <p>工作中软链接常用 软链接可以指向一个目录 硬链接 不可以</p>
 </blockquote>
-<h3 id="24-grep">2.4 文本搜索grep⭐⭐⭐</h3>
+<h3 id="24-grep">2.4 文本搜索grep⭐⭐⭐<a class="headerlink" href="#24-grep" title="Permanent link">&para;</a></h3>
 <p>作用: 根据文本数据去文件中搜索</p>
 <p>格式: grep 选项 "文本数据" 文件名</p>
 <p>选项: </p>
@@ -454,20 +472,20 @@ rm 文件 # 只是删除文件数据的一个别名 而数据只有在没有名�
 <p>-n 显示行号</p>
 <p>-v 反选条件</p>
 <p>用法: </p>
-<pre><code class="language-shell">python@ubuntu:~/Desktop/Linux$ grep &quot;itcast.cn&quot; grep.txt
+<pre class="highlight"><code class="language-shell">python@ubuntu:~/Desktop/Linux$ grep "itcast.cn" grep.txt
 www.itcast.cn
 itcast.cn
-python@ubuntu:~/Desktop/Linux$ grep -i &quot;itcast.cn&quot; grep.txt
+python@ubuntu:~/Desktop/Linux$ grep -i "itcast.cn" grep.txt
 www.itcast.cn
 WWW.ITCAST.CN
 itcast.cn
 ITCAST.CN
-python@ubuntu:~/Desktop/Linux$ grep -ni &quot;itcast.cn&quot; grep.txt
+python@ubuntu:~/Desktop/Linux$ grep -ni "itcast.cn" grep.txt
 1:www.itcast.cn
 2:WWW.ITCAST.CN
 6:itcast.cn
 7:ITCAST.CN
-python@ubuntu:~/Desktop/Linux$ grep -niv &quot;itcast.cn&quot; grep.txt
+python@ubuntu:~/Desktop/Linux$ grep -niv "itcast.cn" grep.txt
 3:ia
 4:ib
 5:a.com.cn
@@ -475,7 +493,7 @@ python@ubuntu:~/Desktop/Linux$ grep -niv &quot;itcast.cn&quot; grep.txt
 12:www.itheima.com
 
 # 管道可以结合 grep 对前面命令的输出结果进行筛选
-python@ubuntu:~/Desktop/Linux$ ls | grep &quot;txt&quot; 
+python@ubuntu:~/Desktop/Linux$ ls | grep "txt" 
 12.txt
 1h.txt
 1s.txt
@@ -486,28 +504,26 @@ a.txt
 grep.txt
 #  grep结合正则使用 
 # 查询文件中 以itcast.cn的开始行并且显示行号 忽略大小写
-python@ubuntu:~/Desktop/Linux$ grep -ni &quot;^itcast.cn&quot; grep.txt
+python@ubuntu:~/Desktop/Linux$ grep -ni "^itcast.cn" grep.txt
 # 查询文件中 以cn的结束的行并且显示行号 忽略大小写
-python@ubuntu:~/Desktop/Linux$ grep -ni &quot;cn$&quot; grep.txt
+python@ubuntu:~/Desktop/Linux$ grep -ni "cn$" grep.txt
 # 查询文件中 i字母后为任意非换行字符的 数据
-python@ubuntu:~/Desktop/Linux$ grep -ni &quot;i.&quot; grep.txt
-</code></pre>
-<h3 id="25-find">2.5 查找文件find ⭐⭐⭐</h3>
+python@ubuntu:~/Desktop/Linux$ grep -ni "i." grep.txt</code></pre>
+<h3 id="25-find">2.5 查找文件find ⭐⭐⭐<a class="headerlink" href="#25-find" title="Permanent link">&para;</a></h3>
 <p>作用: 根据文件特征(名字)查找文件</p>
 <p>形式: find 路径 选项 参数</p>
-<p>会在路径参数对应的<strong>路径及其所有的子目录</strong>当中去查找</p>
+<p>会在路径参数对应的**路径及其所有的子目录**当中去查找</p>
 <p>用法:</p>
-<pre><code class="language-shell">find . -name &quot;.py&quot;  # 在当前下查找名字叫.py的所有文件
-find / -name &quot;.py&quot;  # 在/下查找名字叫.py的所有
+<pre class="highlight"><code class="language-shell">find . -name ".py"  # 在当前下查找名字叫.py的所有文件
+find / -name ".py"  # 在/下查找名字叫.py的所有
 
-sudo find / -name &quot;.py&quot;  # sudo 命令....  以系统管理员权限运行后面命令 输入 python 用户密码
+sudo find / -name ".py"  # sudo 命令....  以系统管理员权限运行后面命令 输入 python 用户密码
 
 # 大多数情况下可能并不知道文件的完整名字  此时可以使用通配符(非正则)
 *   任意(0)个任意字符     a*    *.txt
 ?   一个任意字符      a?     ?.txt
-python@ubuntu:~/Desktop/Linux$ find . -name &quot;?.txt&quot;
-python@ubuntu:~/Desktop/Linux$ find . -name &quot;*.txt&quot;
-</code></pre>
+python@ubuntu:~/Desktop/Linux$ find . -name "?.txt"
+python@ubuntu:~/Desktop/Linux$ find . -name "*.txt"</code></pre>
 <blockquote>
 <p>通配符在 Linux 命令中可以和很多命令合用 </p>
 <p>ls  cd cp mv </p>
@@ -516,8 +532,8 @@ python@ubuntu:~/Desktop/Linux$ find . -name &quot;*.txt&quot;
 <p>python@ubuntu:~/Desktop/Linux$ ls 1*.txt
   12.txt  1h.txt  1.txt</p>
 </blockquote>
-<h3 id="26_1">2.6 压缩和解压缩⭐⭐⭐</h3>
-<h4 id="261-gzbzip2">2.6.1 gz和bzip2文件操作⭐⭐⭐</h4>
+<h3 id="26_1">2.6 压缩和解压缩⭐⭐⭐<a class="headerlink" href="#26_1" title="Permanent link">&para;</a></h3>
+<h4 id="261-gzbzip2">2.6.1 gz和bzip2文件操作⭐⭐⭐<a class="headerlink" href="#261-gzbzip2" title="Permanent link">&para;</a></h4>
 <p>格式:  tar 选项 压缩包名字  […..]</p>
 <p>常用选项: </p>
 <p>​   -c  create打包</p>
@@ -530,7 +546,7 @@ python@ubuntu:~/Desktop/Linux$ find . -name &quot;*.txt&quot;
 <blockquote>
 <p>-f 选项之后必须立马跟上 压缩包的名字</p>
 </blockquote>
-<pre><code class="language-shell"># 将当前目录下所有文件和目录 打包压缩成 1.tar.gz
+<pre class="highlight"><code class="language-shell"># 将当前目录下所有文件和目录 打包压缩成 1.tar.gz
 tar -zcvf 1.tar.gz *
 # # 将当前目录下所有文件和目录 打包压缩成 1.tar.bz2
 tar -jcvf 1.tar.bz2 *
@@ -541,23 +557,21 @@ tar -zxvf  1.tar.gz
 tar -jxvf 1.tar.bz2 
 
 # -C 解压到指定路径
-tar -jxvf 1.tar.bz2 -C ~/Desktop/
-</code></pre>
-<h4 id="262-zip">2.6.2 zip 文件操作⭐⭐</h4>
-<pre><code class="language-shell"># 压缩当前目录下所有的txt 文件成 my.zip
+tar -jxvf 1.tar.bz2 -C ~/Desktop/</code></pre>
+<h4 id="262-zip">2.6.2 zip 文件操作⭐⭐<a class="headerlink" href="#262-zip" title="Permanent link">&para;</a></h4>
+<pre class="highlight"><code class="language-shell"># 压缩当前目录下所有的txt 文件成 my.zip
 zip my.zip *.txt   
 # 解压当前目录下 my.zip
 unzip my.zip
 # 解压当前目录下 my.zip 到 桌面
-unzip my.zip -d ~/Desktop/
-</code></pre>
+unzip my.zip -d ~/Desktop/</code></pre>
 <blockquote>
 <p>unzip my.zip</p>
 <p>unzip my.zip -d ~/Desktop/</p>
 </blockquote>
-<h3 id="27_1">2.7 文件权限⭐⭐</h3>
+<h3 id="27_1">2.7 文件权限⭐⭐<a class="headerlink" href="#27_1" title="Permanent link">&para;</a></h3>
 <p>每个文本所拥有的的 读read r 写 write w 执行 eXecute x的权利。</p>
-<pre><code class="language-shell">python@ubuntu:~/Desktop/Linux/Test$ ll
+<pre class="highlight"><code class="language-shell">python@ubuntu:~/Desktop/Linux/Test$ ll
 drwxrwxr-x 4 python python 4096 7月  20 11:47 ./
 drwxrwxr-x 9 python python 4096 7月  20 11:26 ../
 -rw-rw-r-- 1 python python    0 7月  20 11:25 12.txt
@@ -588,16 +602,15 @@ x    1
 
 chmod 755 2.txt   # rwx r-x r-x
 chmod 644 2.txt   # rw-r--r--
-chmod 640 2.txt   # rw-r-----
-</code></pre>
+chmod 640 2.txt   # rw-r-----</code></pre>
 <blockquote>
 <p>sudo</p>
 </blockquote>
-<h3 id="28">2.8 用户基本操作⭐⭐</h3>
+<h3 id="28">2.8 用户基本操作⭐⭐<a class="headerlink" href="#28" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>root 用户   超级系统管理员  拥有系统最高权限</p>
 </blockquote>
-<pre><code class="language-shell"># sudo  命令  可以让一个命令以 系统管理员root权限运行&lt;安装卸载软件&gt;
+<pre class="highlight"><code class="language-shell"># sudo  命令  可以让一个命令以 系统管理员root权限运行&lt;安装卸载软件&gt;
 sudo mkdir haha
 
 # sudo -s 切换到 root 用户使用
@@ -612,13 +625,12 @@ which 指令  这个指令程序所在的路径
 reboot 重启
 shutdown -r 20:25 定时重启
 shutdown -r now 关机后重启
-shutdown -r +10 10分钟后重启
-</code></pre>
-<h3 id="29">2.9 用户管理⭐⭐</h3>
+shutdown -r +10 10分钟后重启</code></pre>
+<h3 id="29">2.9 用户管理⭐⭐<a class="headerlink" href="#29" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>用户管理和用户组管理 都需要 root 权限  即 sudo 命令</p>
 </blockquote>
-<pre><code class="language-shell"># 创建用户    创建用户时如果不指定用户组 会自动创建一个同名组
+<pre class="highlight"><code class="language-shell"># 创建用户    创建用户时如果不指定用户组 会自动创建一个同名组
 python@ubuntu:~$ useradd laowang -m 
 python@ubuntu:~$ useradd laowang -m -g python
 
@@ -643,8 +655,7 @@ python@ubuntu:~$ su - laowang #输入laowang 的密码  当前路径切换为用
 # 以 root 权限运行( 设置老王的附加组为 sudo)  
 python@ubuntu:~$ sudo usermod laowang -G sudo
 # 以 root 权限运行( 设置老王的附加组为 sudo) 并且设置老王的组为 python
-python@ubuntu:~$ sudo usermod laowang -G sudo -g python
-</code></pre>
+python@ubuntu:~$ sudo usermod laowang -G sudo -g python</code></pre>
 <p>操作附加组</p>
 <p>​   useradd laowang -m </p>
 <p>删除用户 </p>
@@ -654,16 +665,15 @@ python@ubuntu:~$ sudo usermod laowang -G sudo -g python
 <p>用户组  -g  家庭</p>
 <p>附加组  -G  组织</p>
 </blockquote>
-<h3 id="210">2.10 用户组管理⭐</h3>
-<pre><code class="language-shell">创建用户组  sudo groupadd heihei
+<h3 id="210">2.10 用户组管理⭐<a class="headerlink" href="#210" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-shell">创建用户组  sudo groupadd heihei
 
 修改用户组  sudo usermod -g 普通组 用户名
 
 删除用户组  sudo groupdel heihei
 
-查看用户组    cat /etc/group
-</code></pre>
-<h3 id="211">2.11 远程登录⭐⭐⭐</h3>
+查看用户组    cat /etc/group</code></pre>
+<h3 id="211">2.11 远程登录⭐⭐⭐<a class="headerlink" href="#211" title="Permanent link">&para;</a></h3>
 <p>目的: 通过连接互联网可以登录远程某台主机  操作 </p>
 <p>形式: 客户端电脑上安装 ssh 软件  在服务器上安装 ssh 服务</p>
 <p>步骤:</p>
@@ -672,44 +682,42 @@ python@ubuntu:~$ sudo usermod laowang -G sudo -g python
 <p>​       windows 双击 exe 一直下一步 直到完成</p>
 <p>​       运行-cmd-ssh  显示参数说明安装完成</p>
 <p>​   3 在服务器中获取服务器 IP</p>
-<pre><code>    在服务器端打开命令行窗口  `ifconfig ` 形如 192.168.xxx.xxx
+<pre class="codehilite"><code class="linenums">    在服务器端打开命令行窗口  `ifconfig ` 形如 192.168.xxx.xxx
 </code></pre>
+
 <p>​   4 在客户端中登录服务器    黑窗口中输入 ssh 用户名@服务器ip地址</p>
 <p>​           <code>ssh    python@192.168.134.100</code></p>
 <p>​       </p>
-<h3 id="212">2.12 远程拷贝⭐⭐</h3>
+<h3 id="212">2.12 远程拷贝⭐⭐<a class="headerlink" href="#212" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>scp和 ssh工具全家桶</p>
 </blockquote>
 <p>下载(服务器到客户端)</p>
 <p>本地拷贝文件:     cp  源文本   目标路径</p>
 <p>远程拷贝文件: scp  源文本   目标路径</p>
-<pre><code class="language-shell"># 上传(客户端到服务器)
+<pre class="highlight"><code class="language-shell"># 上传(客户端到服务器)
     scp  -r 本机地址路径  远程主机路径(远程服务器用户名@远程服务器ip地址:绝对路径)
     scp -r 01html.html python@192.168.134.100:/home/python/Desktop/
 
 # 下载(服务器到客户端)
     scp  -r 远程主机路径 本机地址路径  
-    scp -r python@192.168.134.100:/home/python/Desktop/老师你真帅.txt .
-</code></pre>
-<h2 id="2-linux">2. Linux 高级操作</h2>
-<h3 id="21_2">2.1 安装软件</h3>
-<pre><code class="language-shell"># 在线
+    scp -r python@192.168.134.100:/home/python/Desktop/老师你真帅.txt .</code></pre>
+<h2 id="2-linux">2. Linux 高级操作<a class="headerlink" href="#2-linux" title="Permanent link">&para;</a></h2>
+<h3 id="21_2">2.1 安装软件<a class="headerlink" href="#21_2" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-shell"># 在线
     sudo apt-get install sl
     sudo apt install sl
 
 # 离线&lt;明天学习网络需要使用&gt;
-    sudo dpkg -i mNetAssist-release-amd64.deb 
-</code></pre>
-<h3 id="22_2">2.2 卸载</h3>
-<pre><code class="language-shell"># 在线
+    sudo dpkg -i mNetAssist-release-amd64.deb </code></pre>
+<h3 id="22_2">2.2 卸载<a class="headerlink" href="#22_2" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-shell"># 在线
     sudo apt-get remove sl
 
 # 离线
-    sudo dpkg –r 安装包
-</code></pre>
-<h3 id="23_1">2.3 设置软件安装源</h3>
-<pre><code class="language-shell">https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/
+    sudo dpkg –r 安装包</code></pre>
+<h3 id="23_1">2.3 设置软件安装源<a class="headerlink" href="#23_1" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-shell">https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/
 # /etc/apt/sources.list
 
 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
@@ -721,9 +729,8 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
 
 deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
-# deb-src http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
-</code></pre>
-<h3 id="24-vim">2.4 vim</h3>
+# deb-src http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse</code></pre>
+<h3 id="24-vim">2.4 vim<a class="headerlink" href="#24-vim" title="Permanent link">&para;</a></h3>
 <p>命令行的文本编辑器</p>
 <p>数yy  复制</p>
 <p>数dd  剪切(删除)</p>

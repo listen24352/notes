@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh_CN" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Selenium - Listen</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../code.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Listen</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">grammar</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../python/grammar/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="dropdown-item">数据结构</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E5%87%BD%E6%95%B0/" class="dropdown-item">函数</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="dropdown-item">内置函数</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E7%B1%BB/" class="dropdown-item">类</a>
+</li>
+            
+<li>
+    <a href="../../python/grammar/%E8%A3%85%E9%A5%B0%E5%99%A8/" class="dropdown-item">装饰器</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Library</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../python/library/os/" class="dropdown-item">os</a>
+</li>
+            
+<li>
+    <a href="../../python/library/shutil/" class="dropdown-item">shutil</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Automated testing</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Selenium</a>
+</li>
+                                    
+<li>
+    <a href="../PyAutoGUI%20and%20pyperclip/" class="dropdown-item">PyAutoGUI</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deploy</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../deploy/Linux/" class="dropdown-item">Linux</a>
+</li>
+                                    
+<li>
+    <a href="../../deploy/nginx/" class="dropdown-item">Nginx</a>
+</li>
+                                    
+<li>
+    <a href="../../deploy/Docker/" class="dropdown-item">Docker</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">tool</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tool/Git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/Openpyxl/" class="dropdown-item">Openpyxl</a>
+</li>
+                                    
+<li>
+    <a href="../../tool/Pandas/" class="dropdown-item">Pandas</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../python/library/shutil/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../PyAutoGUI%20and%20pyperclip/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="true">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#webdriver" class="nav-link">WebDriver</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">入门</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">驱动</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">浏览器</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_7" class="nav-link">等待</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_8" class="nav-link">元素</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cdp" class="nav-link">CDP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_9" class="nav-link">交互</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actions" class="nav-link">Actions接口</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#bidi-api" class="nav-link">BiDi API</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_10" class="nav-link">额外功能</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_11" class="nav-link">故障排除</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#selenium-manager" class="nav-link">Selenium Manager</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#grid" class="nav-link">Grid</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#selenium-ide" class="nav-link">Selenium IDE</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_12" class="nav-link">安装</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_14" class="nav-link">开始使用</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="webdriver">WebDriver<a class="headerlink" href="#webdriver" title="Permanent link">&para;</a></h1>
+<p style="color: red; font-size: 22px;">
+    真正的用户正在操作浏览器
+</p>
+
+<p><a href="https://github.com/SeleniumHQ/seleniumhq.github.io/tree/trunk/examples/python">examples</a></p>
+<h2 id="_1">入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><a href="https://files.pythonhosted.org/packages/aa/85/fa44f23dd5d5066a72f7c4304cce4b5ff9a6e7fd92431a48b2c63fbf63ec/selenium-4.25.0-py3-none-any.whl">无网url</a></p>
+<pre class="highlight"><code class="language-python"># 有网首选
+pip install selenium
+
+# 无网
+下载 .whl 文件（无网url）
+pip install *.whl
+pip install selenium-4.25.0-py3-none-any.whl</code></pre>
+<h3 id="first_seleniumpy">first_selenium.py<a class="headerlink" href="#first_seleniumpy" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-python">from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+# 1. 使用驱动实例开启会话
+driver = webdriver.Chrome()
+
+# 2. 在浏览器上执行操作
+driver.get("https://www.selenium.dev/selenium/web/web-form.html")
+
+# 3. 请求 浏览器信息
+title = driver.title
+print(title)
+
+# 4. 建立等待策略
+driver.implicitly_wait(0.5)
+
+# 5. 发送命令 查找元素
+text_box = driver.find_element(by=By.NAME, value="my-text")
+submit_button = driver.find_element(by=By.CSS_SELECTOR, value="button")
+
+# 6. 操作元素
+text_box.send_keys("Selenium")
+submit_button.click()
+
+# 7. 获取元素信息
+message = driver.find_element(by=By.ID, value="message")
+text = message.text
+print(text)
+
+# 8. 结束会话
+# 这将结束驱动程序进程, 默认情况下, 该进程也会关闭浏览器. 无法向此驱动程序实例发送更多命令.
+driver.quit()</code></pre>
+<p><a href="https://www.selenium.dev/zh-cn/documentation/webdriver/getting_started/using_selenium/">使用selenium</a></p>
+<blockquote>
+<p>Web 应用的自动化测试、重复性任务、网页爬虫</p>
+<p>Test Runner
+即使不使用 Selenium 做测试，如果你有高级用例，使用一个 test runner 去更好地组织你的代码是很有意义的。学会使用 before/after hooks 和分组执行或者并行执行将会非常有用。</p>
+<p>pytest - 由于其简单性和强大的插件，许多人的首选。</p>
+</blockquote>
+<pre class="highlight"><code class="language-python">from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+
+def test_eight_components():
+    driver = setup()
+
+    title = driver.title
+    assert title == "Web form"
+
+    driver.implicitly_wait(0.5)
+
+    text_box = driver.find_element(by=By.NAME, value="my-text")
+    submit_button = driver.find_element(by=By.CSS_SELECTOR, value="button")
+
+    text_box.send_keys("Selenium")
+    submit_button.click()
+
+    message = driver.find_element(by=By.ID, value="message")
+    value = message.text
+    assert value == "Received!"
+
+    teardown(driver)
+
+def setup():
+    driver = webdriver.Chrome()
+    driver.get("https://www.selenium.dev/selenium/web/web-form.html")
+    return driver
+
+def teardown(driver):
+    driver.quit()
+</code></pre>
+<h2 id="_3">驱动<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.selenium.dev/zh-cn/documentation/webdriver/drivers/remote_webdriver/">远程驱动</a></p>
+<h3 id="_4">选项<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-python">options = webdriver.ChromeOptions()</code></pre>
+<h3 id="_5">服务<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-python"># 默认服务
+service = webdriver.ChromeService()
+driver = webdriver.Chrome(service=service)
+
+# 驱动位置 
+service = webdriver.ChromeService(executable_path=chromedriver_bin)
+
+# 驱动程序端口
+service = webdriver.ChromeService(port=1234)</code></pre>
+<h2 id="_6">浏览器<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="chrome">Chrome特定功能<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>默认情况下，Selenium 4与Chrome v75及更高版本兼容. 但是请注意Chrome浏览器的版本与chromedriver的主版本需要匹配.</p>
+</blockquote>
+<p><a href="https://www.selenium.dev/zh-cn/documentation/webdriver/browsers/chrome/#service">chrome</a></p>
+<pre class="highlight"><code class="language-python"></code></pre>
+<h2 id="_7">等待<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_8">元素<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="cdp">CDP<a class="headerlink" href="#cdp" title="Permanent link">&para;</a></h2>
+<h2 id="_9">交互<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="actions">Actions接口<a class="headerlink" href="#actions" title="Permanent link">&para;</a></h2>
+<h2 id="bidi-api">BiDi API<a class="headerlink" href="#bidi-api" title="Permanent link">&para;</a></h2>
+<h2 id="_10">额外功能<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_11">故障排除<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h1 id="selenium-manager">Selenium Manager<a class="headerlink" href="#selenium-manager" title="Permanent link">&para;</a></h1>
+<p style="color: red; font-size: 22px;">
+    Selenium Manager 是 Selenium 项目的官方驱动程序管理器，它在每个 Selenium 版本中都是开箱即用的。对应浏览器包含版本<br>
+    Chrome：Selenium 4.11.0<br>
+    Firefox: Selenium 4.12.0<br>
+    Edge： Selenium 4.14.0
+</p>
+
+<p>使用 Selenium 驱动 Chrome 的典型示例。假设在启动新会话时，本地计算机上没有安装 Chrome驱动。在这种情况下，Selenium Manager 将发现、下载和缓存当前稳定的 CfT 版本（在 ~/.cache/selenium/chrome 中）。</p>
+<h1 id="grid">Grid<a class="headerlink" href="#grid" title="Permanent link">&para;</a></h1>
+<p style="color: red; font-size: 22px;">
+    本地控制测试用例、远端自动执行。<br>
+    可以在不同平台的不同机器上运行测试用例。<br>
+    多个浏览器和操作系统的组合上运行测试。
+</p>
+
+<h1 id="selenium-ide">Selenium IDE<a class="headerlink" href="#selenium-ide" title="Permanent link">&para;</a></h1>
+<p><a href="https://www.selenium.dev/selenium-ide/docs/en/introduction/getting-started">Selenium IDE是一个记录和回放用户操作的浏览器扩展</a></p>
+<h2 id="_12">安装<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/</p>
+<h3 id="_13">查看扩展<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Chrome：chrome://extensions</li>
+<li>Firefox： about：addons</li>
+</ul>
+<h2 id="_14">开始使用<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Record a new test in a new project 在新项目中录制新测试
+Open an existing project 打开现有项目
+Create a new project 创建新项目
+Close the IDE 关闭 IDE</p>
+</blockquote></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
