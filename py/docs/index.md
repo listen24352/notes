@@ -21,5 +21,11 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 [python-markdown](https://python-markdown.github.io/)
 
-html [html demo](html/test.html) for further details.
+[html demo](html/test.html) for further details.
+
+[progit](pdf/progit.pdf)
+
+[nginx](pdf/NGINX.pdf)
+
+python -m pydoc -b
 

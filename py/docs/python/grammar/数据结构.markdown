@@ -1,0 +1,938 @@
+[TOC]
+
+# 数据结构
+
+## 文本序列类型-str
+
+### 常用的
+
+```python
+a = 'aabbcacdada'
+s = 'A decision is a choice made from among alternative courses of action that are available.'
+
+# 1.count
+"""
+str.count(sub[, start[, end]]) 
+返回子字符串 sub 在 [start, end] 范围内非重叠出现的次数。 可选参数 start 与 end 会被解读为切片表示法。
+如果 sub 为空，则返回字符之间的空字符串数，即字符串的长度加一。
+"""
+print(a.count('a'))  # 如果不指定开始结束会统计重叠次数
+print(a.count('a', 3, 8))
+print(a.count(''))
+
+# 5
+# 1
+# 12
+
+
+# 2.find rfind
+"""
+str.find(sub[, start[, end]])
+返回子字符串 sub 在 s[start:end] 切片内被找到的最小索引。
+可选参数 start 与 end 会被解读为切片表示法。
+如果 sub 未被找到则返回 -1。
+
+str.rfind(sub[, start[, end]])¶
+返回子字符串 sub 在字符串内被找到的最大（最右）索引，这样 sub 将包含在 s[start:end] 当中。
+可选参数 start 与 end 会被解读为切片表示法。
+如果未找到则返回 -1。
+"""
+print(a.find('a'))
+print(a.find('a', 3, 6))
+print(a.find('z'))
+
+print(a.rfind('a'))
+print(a.find('a', 3, 6))
+print(a.rfind('z'))
+
+# 0
+# 5
+# -1
+# 10
+# 5
+# -1
+
+
+# 3.index rindex
+"""
+str.index(sub[, start[, end]]) 
+类似于 find()，但在找不到子字符串时会引发 ValueError。
+
+str.rindex(sub[, start[, end]])
+类似于 rfind()，但在子字符串 sub 未找到时会引发 ValueError。
+"""
+print(a.index('a'))
+print(a.index('a', 3, 6))
+# 0
+# 5
+print(a.index('z'))  # ValueError: substring not found
+
+print(a.rindex('a'))
+print(a.rindex('a', 3, 6))
+# 10
+# 5
+print(a.rindex('z')) # ValueError: substring not found
+
+
+# 4.format format_map
+"""
+str.format(*args, **kwargs)
+执行字符串格式化操作。 调用此方法的字符串可以包含字符串字面值或者以花括号 {} 括起来的替换域。 
+每个替换域可以包含一个位置参数的数字索引，或者一个关键字参数的名称。 
+返回的字符串副本中每个替换域都会被替换为对应参数的字符串值。
+
+str.format_map(mapping)
+类似于 str.format(**mapping)，不同之处在于 mapping 会被直接使用而不是复制到一个 dict。 
+适宜使用此方法的一个例子是当 mapping 为 dict 的子类的情况
+
+"""
+print("The sum of 1 + 2 is {0}".format(1 + 2))
+
+
+class Default(dict):
+    def __missing__(self, key):
+        return key
+
+
+print('{name} was born in {country}'.format_map(Default(name='Guido')))
+
+
+# 5.replace
+"""
+str.replace(old, new[, count])
+返回字符串的副本，其中出现的所有子字符串 old 都将被替换为 new。 
+如果给出了可选参数 count，则只替换前 count 次出现。
+"""
+print(s.replace(' ', ','))
+# A,decision,is,a,choice,made,from,among,alternative,courses,of,action,that,are,available.
+
+print(s.replace(' ', ',', 5))
+# A,decision,is,a,choice,made from among alternative courses of action that are available.
+```
+
+### 字符串切割相关
+
+```python
+a = 'I like watermelon'
+s = 'A decision is a choice made from among alternative courses of action that are available.'
+
+# 1.removeprefix
+"""
+str.removeprefix(prefix, /)
+如果字符串以 prefix 字符串开头，返回 string[len(prefix):]。 
+否则，返回原始字符串的副本
+
+"""
+print('TestHook'.removeprefix('Test'))
+print(a.removeprefix('I like '))
+print('BaseTestCase'.removeprefix('Test'))
+
+# Hook
+# watermelon
+# BaseTestCase
+
+
+# 2.removesuffix
+"""
+str.removesuffix(suffix, /)
+如果字符串以 suffix 字符串结尾，并且 suffix 非空，返回 string[:-len(suffix)]。 
+否则，返回原始字符串的副本:
+"""
+print('MiscTests'.removesuffix('Tests'))
+print('TmpDirMixin'.removesuffix('Tests'))
+print(a.removesuffix('watermelon'))
+# Misc
+# TmpDirMixin
+# I like 
+
+
+# 3.split rsplit splitlines
+"""
+str.split(sep=None, maxsplit=- 1)
+返回一个由字符串内单词组成的列表，使用 sep 作为分隔字符串。 
+如果给出了 maxsplit，则最多进行 maxsplit 次拆分（因此，列表最多会有 maxsplit+1 个元素）。 
+如果 maxsplit 未指定或为 -1，则不限制拆分次数（进行所有可能的拆分）。
+
+如果给出了 sep，则连续的分隔符不会被组合在一起而是被视为分隔空字符串 (例如 '1,,2'.split(',') 将返回 ['1', '', '2'])。 
+sep 参数可能由多个字符组成 (例如 '1<>2<>3'.split('<>') 将返回 ['1', '2', '3'])。 
+使用指定的分隔符拆分空字符串将返回 ['']。
+"""
+print(s.split())
+print(s.split(maxsplit=10))  # 最大拆分几次
+
+# ['A', 'decision', 'is', 'a', 'choice', 'made', 'from', 'among', 'alternative', 'courses', 'of', 'action', 'that', 'are', 'available.']
+# ['A', 'decision', 'is', 'a', 'choice', 'made', 'from', 'among', 'alternative', 'courses', 'of action that are available.']
+
+"""
+str.rsplit(sep=None, maxsplit=- 1)
+返回一个由字符串内单词组成的列表，使用 sep 作为分隔字符串。 
+如果给出了 maxsplit，则最多进行 maxsplit 次拆分，从 最右边 开始。 
+如果 sep 未指定或为 None，任何空白字符串都会被作为分隔符。 
+除了从右边开始拆分，rsplit() 的其他行为都类似于split()。
+"""
+print(s.rsplit())
+print(s.rsplit(maxsplit=10))
+# ['A', 'decision', 'is', 'a', 'choice', 'made', 'from', 'among', 'alternative', 'courses', 'of', 'action', 'that', 'are', 'available.']
+# ['A decision is a choice', 'made', 'from', 'among', 'alternative', 'courses', 'of', 'action', 'that', 'are', 'available.']
+
+"""
+str.splitlines(keepends=False)
+返回由原字符串中各行组成的列表，在行边界的位置拆分。 结果列表中不包含行边界，除非给出了 keepends 且为真值。
+"""
+
+# 4.strip rstrip lstrip
+"""
+str.strip([chars])
+返回原字符串的副本，移除其中的前导和末尾字符。 
+chars 参数为指定要移除字符的字符串。 
+如果省略或为 None，则 chars 参数默认移除空白符。 
+实际上 chars 参数并非指定单个前缀或后缀；而是会移除参数值的所有组合:
+"""
+print('   spacious   '.strip())
+print('www.example.com'.strip('cmowz.'))
+print(' abac.spacious.xyz   '.strip('abcxyz. '))
+
+# spacious
+# example
+
+"""
+str.rstrip([chars])
+返回原字符串的副本，移除其中的末尾字符。 
+chars 参数为指定要移除字符的字符串。 
+如果省略或为 None，则 chars 参数默认移除空白符。 
+实际上 chars 参数并非指定单个后缀；而是会移除参数值的所有组合:
+
+"""
+print('   spacious   '.rstrip())
+print('www.example.com'.rstrip('cmowz.'))
+print(' abac.spacious.xyz   '.rstrip('abcxyz. '))
+
+#    spacious
+# www.example
+#  abac.spacious
+"""
+str.lstrip([chars])
+返回原字符串的副本，移除其中的前导字符。 
+chars 参数为指定要移除字符的字符串。 
+如果省略或为 None，则 chars 参数默认移除空白符。 
+实际上 chars 参数并非指定单个前缀；而是会移除参数值的所有组合:
+"""
+
+print('   spacious   '.lstrip())
+print('www.example.com'.lstrip('cmowz.'))
+print(' abac.spacious.xyz   '.lstrip('abcxyz. '))
+
+# spacious   
+# example.com
+# spacious.xyz  
+
+# 5.join
+"""
+str.join(iterable)
+返回一个由 iterable 中的字符串拼接而成的字符串。 
+如果 iterable 中存在任何非字符串值包括 bytes 对象则会引发 TypeError。 
+调用该方法的字符串将作为元素之间的分隔。
+"""
+name = ['my', 'name', 'is', 'listen']
+j = '_'
+print(j.join(name))
+# my_name_is_listen  先走join()的内容
+```
+
+### 字符串大小写
+
+#### casefold
+
+```python
+a = 'I like watermelon'
+b = 'ASDasdQW'
+c = 'A decision is a choice made from among alternative courses of action that are available.'
+
+# 1.casefold
+"""
+str.casefold()
+返回原字符串消除大小写的副本。 消除大小写的字符串可用于忽略大小写的匹配。
+消除大小写类似于转为小写，但是更加彻底一些，因为它会移除字符串中的所有大小写变化形式。
+"""
+print(b.casefold())
+# asdasdqw
+```
+
+#### capitalize
+
+```python
+# 2.capitalize
+"""
+返回原字符串的副本，其首个字符大写，其余为小写。
+"""
+b = 'an borrow'
+print(b.capitalize())
+# An borrow
+```
+
+#### upper
+
+```python
+# 3.upper
+"""
+str.upper()
+返回原字符串的副本，其中所有区分大小写的字符 4 均转换为大写。
+"""
+u = 'ASDasd'
+print(u.upper())
+# ASDASD
+```
+
+#### lower
+
+```python
+# 4.lower()
+"""
+str.lower()
+返回原字符串的副本，其所有区分大小写的字符 4 均转换为小写。
+"""
+u = 'ASDasd'
+print(u.lower())
+# asdasd
+```
+
+#### swapcase
+
+```python
+# 5.swapcase()
+"""
+str.swapcase()
+返回原字符串的副本，其中大写字符转换为小写，反之亦然。
+"""
+s = 'acbDEF'
+print(s.swapcase())
+# ACBdef
+```
+
+#### title
+
+```python
+# 6.title()
+t = 'A decision is a choice made from among alternative courses of action that are available.'
+"""
+返回原字符串的标题版本，其中每个单词第一个字母为大写，其余字母为小写。
+"""
+print(t.title())
+# A Decision Is A Choice Made From Among Alternative Courses Of Action That Are Available.
+```
+
+### 判断以……开头或结尾
+
+#### startswith
+
+```python
+t = 'A decision is a choice made from among alternative courses of action that are available.'
+# 1.startswith()
+"""
+str.startswith(prefix[, start[, end]])
+如果字符串以指定的 prefix 开始则返回 True，否则返回 False。
+prefix 也可以为由多个供查找的前缀构成的元组。
+如果有可选项 start，将从所指定位置开始检查。
+如果有可选项 end，将在所指定位置停止比较。
+"""
+
+print([a for a in dir(list) if not a.startswith('__')])
+# ['append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+```
+
+#### endswith
+
+```python
+# 2.endswith()
+"""
+str.endswith(suffix[, start[, end]])
+如果字符串以指定的 suffix 结束返回 True，否则返回 False。 
+suffix 也可以为由多个供查找的后缀构成的元组。 
+如果有可选项 start，将从所指定位置开始检查。 
+如果有可选项 end，将在所指定位置停止比较。
+"""
+print([e for e in t.split(' ') if e.endswith('e')])  # 选择以e结尾的
+```
+
+### 字符串左右对齐并返回长度
+
+#### ljust
+
+```python
+# 2.ljust()
+"""
+str.ljust(width[, fillchar])
+返回长度为 width 的字符串，原字符串在其中靠左对齐。 
+使用指定的 fillchar 填充空位 (默认使用 ASCII 空格符)。 
+如果 width 小于等于 len(s) 则返回原字符串的副本。
+"""
+print(c.ljust(3))
+print(c.ljust(10, '@'))
+# hello
+# hello@@@@@
+
+print(c.ljust(len(c) + 2, '@'))
+# hello@@
+```
+
+#### rjust
+
+```python
+# 3.rjust()
+"""
+str.rjust(width[, fillchar])
+返回长度为 width 的字符串，原字符串在其中靠右对齐。 
+使用指定的 fillchar 填充空位 (默认使用 ASCII 空格符)。 
+如果 width 小于等于 len(s) 则返回原字符串的副本。
+"""
+print(c.rjust(3))
+print(c.rjust(10, '@'))
+# hello
+# @@@@@hello
+
+print(c.rjust(len(c) + 2, '@'))
+# @@hello
+```
+
+#### center
+
+```python
+c = 'hello'
+# 1.center()
+"""
+str.center(width[, fillchar])
+返回长度为 width 的字符串，原字符串在其正中。 
+使用指定的 fillchar 填充两边的空位（默认使用 ASCII 空格符）。 
+如果 width 小于等于 len(s) 则返回原字符串的副本。
+"""
+print(c.center(1))
+print(c.center(7, '='))
+
+# hello
+# =hello=
+
+print(c.center(len(c) + 2, '@'))
+# @hello@
+```
+
+### is开头的
+
+```python
+# isalnum
+# isalpha
+# isascii
+# isdecimal
+# isdigit
+# isidentifier
+# islower
+# isnumeric
+# isprintable
+# isspace
+# istitle
+# isupper
+```
+
+### Unicode 码位序号
+
+```python
+# maketrans 此静态方法返回一个可供 str.translate() 使用的转换对照表。
+# translate 返回原字符串的副本，其中每个字符按给定的转换表进行映射。
+```
+
+### 杂项
+
+```python
+# encode 返回编码为 bytes 的字符串。
+# expandtabs 返回字符串的副本，其中所有的制表符会由一个或多个空格替换，具体取决于当前列位置和给定的制表符宽度。
+# partition 在 sep 首次出现的位置拆分字符串，返回一个 3 元组，其中包含分隔符之前的部分、分隔符本身，以及分隔符之后的部分。 如果分隔符未找到，则返回的 3 元组中包含字符本身以及两个空字符串。
+# rpartition 在 sep 最后一次出现的位置拆分字符串，返回一个 3 元组，其中包含分隔符之前的部分、分隔符本身，以及分隔符之后的部分。 如果分隔符未找到，则返回的 3 元组中包含两个空字符串以及字符串本身。
+# translate 返回原字符串的副本，其中每个字符按给定的转换表进行映射。 
+# zfill 返回原字符串的副本，在左边填充 ASCII '0' 数码使其长度变为 width。 正负值前缀 ('+'/'-') 的处理方式是在正负符号 之后 填充而非在之前。 如果 width 小于等于 len(s) 则返回原字符串的副本。
+```
+
+## 序列类型-list,tuple,range
+
+### list
+
+```python
+list.append(x)
+	# 在列表末尾添加一个元素，相当于 a[len(a):] = [x] 。
+    a = [1, 2, 3, 4, 5]
+    a.append('a')
+    a.append(3)
+    a.append([1, 2, 3])
+    a.append({1, 2, 3})
+    a.append((1, 2, 3))
+    a.append({'b': 1})
+	print(a)
+	[1, 2, 3, 4, 5, 'a', 3, [1, 2, 3], {1, 2, 3}, (1, 2, 3), {'b': 1}]
+    
+    a[len(a):] = [10]
+
+
+list.extend(iterable)
+	# 用可迭代对象的元素扩展列表。相当于 a[len(a):] = iterable 。
+    a = [1, 2, 3, 4, 5]
+    a.extend('a')
+    a.extend([1, 2, 3])
+    a.extend({1, 2, 3})
+    a.extend((1, 2, 3))
+    a.extend({'b': 1})
+    print(a)
+    [1, 2, 3, 4, 5, 'a', 1, 2, 3, 1, 2, 3, 1, 2, 3, 'b']
+    
+    a[len(a):] = range(3)
+
+list.insert(i, x)
+	#在指定位置插入元素。第一个参数是插入元素的索引，因此，a.insert(0, x) 在列表开头插入元素， a.insert(len(a), x) 等同于 a.append(x) 。
+    a = [1, 2, 3, 4, 5]
+    a.insert(0, 'a')
+    a.insert(0, [1, 2, 3])
+    a.insert(0, {1, 2, 3})
+    a.insert(0, (1, 2, 3))
+    a.insert(0, {'b': 1})
+    a.insert(0, 1)
+    print(a)
+    
+    [1, {'b': 1}, (1, 2, 3), {1, 2, 3}, [1, 2, 3], 'a', 1, 2, 3, 4, 5]
+
+list.remove(x)
+	# 从列表中删除第一个值为 x 的元素。未找到指定元素时，触发 ValueError 异常。
+    a = [1, 2, 3, 4, 5]
+    a.remove(1)
+	print(a)
+    
+    [2, 3, 4, 5]
+
+list.pop([i])
+	# 删除列表中指定位置的元素，并返回被删除的元素。未指定位置时，a.pop() 删除并返回列表的最后一个元素。（方法签名中 i 两边的方括号表示该参数是可选的，不是要求输入方括号。这种表示法常见于 Python 参考库）。
+	a = [1, 2, 3, 4, 5]
+    p = a.pop()  # 默认删除最后一个
+    print(p)
+    print(a)
+    
+    5
+    [1, 2, 3, 4]
+    
+    p = a.pop(2)  # 可以给出下标
+    print(p)
+    print(a)
+    
+    3
+    [1, 2, 4, 5]
+    
+    
+list.clear()
+	# 删除列表里的所有元素，相当于 del a[:] 。
+    
+    a = [1, 2, 3, 4, 5]
+    a.clear()
+    print(a)
+    
+    []
+    
+    del a[:]
+	print(a)
+    
+    []
+    
+list.index(x[, start[, end]])
+	# 返回列表中第一个值为 x 的元素的零基索引。未找到指定元素时，触发 ValueError 异常。
+	# 可选参数 start 和 end 是切片符号，用于将搜索限制为列表的特定子序列。返回的索引是相对于整个序列的开始计算的，而不是 start 参数。
+    a = [1, 1, 1, 2, 3, 4, 1]
+    print(a.index(1))
+    print(a.index(1, 2, 10))
+    0
+	2
+
+list.count(x)
+	# 返回列表中元素 x 出现的次数。
+    a = [1, 1, 1, 2, 3, 4, 1]
+    print(a.count(1))
+	print(a.count(2))
+    4
+	1
+
+list.sort(*, key=None, reverse=False)
+	# 就地排序列表中的元素（要了解自定义排序参数，详见 sorted()）。
+	a = [1, 1, 1, 2, 3, 4, 1]
+    a.sort()
+    print(a)
+    
+    [1, 1, 1, 1, 2, 3, 4]
+
+    a.sort(reverse=True)
+	print(a)
+    
+    [4, 3, 2, 1, 1, 1, 1]
+
+    
+list.reverse()
+	# 翻转列表中的元素。
+	a = [1, 2, 3, 'a', 'b', 'c']
+	a.reverse()
+	print(a)
+    
+    ['c', 'b', 'a', 3, 2, 1]
+
+    
+list.copy()
+	# 返回列表的浅拷贝。相当于a[:]。
+    a = [1, 2, 3, 'a', 'b', 'c']
+    print(id(a))
+    a1 = a.copy()
+    print(a1)
+    print(id(a1))
+    
+    1576055219456  # 浅拷贝不指向同一内存地址
+    [1, 2, 3, 'a', 'b', 'c']
+    1576055172480  # 浅拷贝不指向同一内存地址
+```
+
+### tuple
+
+```python
+['count', 'index']
+```
+
+### range
+
+```python
+
+```
+
+## 映射类型-dict
+
+### 字典的定义方式
+
+```python
+a = dict(one=1, two=2, three=3)
+b = {'one': 1, 'two': 2, 'three': 3}
+c = dict(zip(['one', 'two', 'three'], [1, 2, 3]))
+d = dict([('two', 2), ('one', 1), ('three', 3)])
+e = dict({'three': 3, 'one': 1, 'two': 2})
+f = dict({'one': 1, 'three': 3}, two=2)
+print(a == b == c == d == e == f)
+```
+
+### 字典的常用操作
+
+#### 1.d[key]
+
+```python
+# 返回 d 中以 key 为键的项。 如果映射中不存在 key 则会引发 KeyError。
+a = dict(one=1, two=2, three=3)
+print(a["two"])
+2
+print(a["twoo"])
+KeyError: 'twoo'
+```
+
+#### 2.**d[key]** **=** **value**
+
+```python
+# 将 d[key] 设为 value。
+d = {'one': 1, 'two': 2, 'three': 3}
+print(d['one'])
+1
+d['one'] = 10
+print(d['one'])
+10
+```
+
+#### 3.del d[key]
+
+```python
+# 将 d[key] 从 d 中移除。如果映射中不存在 key 则会引发 KeyError。
+d = {'one': 1, 'two': 2, 'three': 3}
+print(d)
+del d['one']
+print(d)
+
+{'two': 2, 'one': 10, 'three': 3}
+{'two': 2, 'three': 3}
+
+del d['onee']
+KeyError: 'onee'
+```
+
+### 字典的方法
+
+#### 1.**get**(*key*[, *default*])
+
+```python
+# 如果 key 存在于字典中则返回 key 的值，否则返回 default。 如果 default 未给出则默认为 `None`，因而此方法绝不会引发 KeyError。
+d = {'one': 1, 'two': 2, 'three': 3}
+
+print(d.get('one'))
+print(d.get('onee'))
+print(d.get('onee'),10)
+
+1
+None
+None 10
+```
+
+####  **setdefault**(*key*[, *default*])
+
+```python
+# 如果字典存在键 key ，返回它的值。如果不存在，插入值为 default 的键 key ，并返回 default 。default 默认为 `None`。
+
+d = {'one': 1, 'two': 2, 'three': 3}
+
+print(d.setdefault('one'))
+print(d.setdefault('onee'))
+print(d.setdefault('onee'),100)
+
+1
+None
+None 100
+
+```
+
+>与`get`方法不同的是，`setdefault`会在键不存在时添加该键到字典中。
+
+#### 2.**keys**()
+
+```python
+# 返回由字典键组成的一个新视图。
+d = {'one': 1, 'two': 2, 'three': 3}
+for k in d.keys():
+    print(k)
+one
+two
+three
+```
+
+#### 3.**values**() 
+
+```python
+# 返回由字典值组成的一个新视图。
+d = {'one': 1, 'two': 2, 'three': 3}
+print(d.values())
+dict_values([1, 2, 3])
+
+for i in d.values():
+    print(i)
+1
+2
+3
+```
+
+#### 4.**items**()
+
+```python
+# 返回由字典项 (`(键, 值)` 对) 组成的一个新视图。
+d = {'one': 1, 'two': 2, 'three': 3}
+
+for k,v in d.items():
+    print(k,v)
+    
+one 1
+two 2
+three 3
+```
+
+#### 5.**update**([*other*])
+
+```python
+# 使用来自 other 的键/值对更新字典，覆盖原有的键。 返回 `None`。
+
+d = {'one': 1, 'two': 2, 'three': 3}
+d1 = {'one': 10, 'name': 'jason'}
+d.update(d1)
+print(d)
+
+{'one': 10, 'two': 2, 'three': 3, 'name': 'jason'}
+```
+
+#### 6.**clear**()
+
+```python
+# 移除字典中的所有元素。
+d = {'one': 1, 'two': 2, 'three': 3}
+d.clear()
+print(d)
+{}
+```
+
+#### 7.**pop**(*key*[, *default*])
+
+```python
+# 如果 *key* 存在于字典中则将其移除并返回其值，否则返回 *default*。 如果 *default* 未给出且 *key* 不存在于字典中，则会引发 KeyError。
+d = {'one': 1, 'two': 2, 'three': 3}
+
+d.pop('one')
+print(d)
+{'two': 2, 'three': 3}
+```
+
+#### 8.popitem() 删除最后k,v
+
+```python
+# 从字典中移除并返回一个 `(键, 值)` 对。 键值对会按 LIFO (后进先出)的顺序被返回。
+d = {'one': 1, 'two': 2, 'three': 3}
+
+d.popitem()
+print(d)
+{'one': 1, 'two': 2}
+```
+
+#### 9.**reversed(d)** 
+
+```python
+# 返回一个逆序获取字典键的迭代器。 这是 `reversed(d.keys())` 的快捷方式。
+d = {'one': 1, 'two': 2, 'three': 3}
+
+for i in reversed(d):
+    print(i)
+    
+three
+two
+one
+```
+
+### 杂项
+
+###### 1、 list(d) 返回字典 *d* 中使用的所有键的列表。
+
+```python
+a = dict(one=1, two=2, three=3)
+print(list(a))
+['one', 'two', 'three']
+```
+
+###### 2、 len(d)返回字典 *d* 中的项数。
+
+```python
+a = dict(one=1, two=2, three=3)
+print(len(a))
+3
+```
+
+###### 3、 key in d 如果 *d* 中存在键 *key* 则返回 `True`，否则返回 `False`。
+
+```python
+d = {'one': 1, 'two': 2, 'three': 3}
+print('one' in d)
+print('five' in d)
+
+True
+False
+```
+
+###### 4、 **key** **not** **in** **d**等价于 `not key in d`。
+
+```python
+d = {'one': 1, 'two': 2, 'three': 3}
+print('five' not in d)
+print('one' not in d)
+
+True
+False
+```
+
+###### 5、 iter(d)返回以字典的键为元素的迭代器。 这是 `iter(d.keys())` 的快捷方式。
+
+```python
+d = {'one': 1, 'two': 2, 'three': 3}
+
+for i in iter(d):
+    print(i)
+    
+one
+two
+three
+```
+
+###### 6、 **copy**()返回原字典的浅拷贝。
+
+```python
+d = {'one': 1, 'two': 2, 'three': 3}
+print(d.copy())
+print(id(d))
+print(id(d.copy()))
+
+{'one': 1, 'two': 2, 'three': 3}
+2118555895488 
+2118555895680  # 浅拷贝不指向同一片内存地址
+```
+
+###### 7、 *classmethod* **fromkeys**(*iterable*[, *value*])使用来自 *iterable* 的键创建一个新字典，并将键值设为 *value*。返回新字典的类方法。 *value* 默认为 `None`。
+
+```python
+d = {}
+d = d.fromkeys(range(3),list(range(3)))
+print(d)
+
+{0: [0, 1, 2], 1: [0, 1, 2], 2: [0, 1, 2]}
+```
+
+### 合并字典
+
+###### 1、 **d** **|** **other** 
+
+```python
+# 合并 d 和 other 中的键和值来创建一个新的字典，两者必须都是字典。当 d 和 other 有相同键时， other 的值优先。
+
+d = {'one': 1, 'two': 2, 'three': 3}
+d1 = {'one': 10, 'two': 20, 'three': 30}
+print(d | d1)
+{'one': 10, 'two': 20, 'three': 30}
+
+
+d = {'one': 1, 'two': 2, 'three': 3}
+d1 = {'name': 'jason', 'age': 18}
+print(d | d1)
+{'one': 1, 'two': 2, 'three': 3, 'name': 'jason', 'age': 18}
+```
+
+###### 2、 **d** **|=** **other**
+
+```python
+#  用 other 的键和值更新字典 d ，other 可以是 [mapping] 或 [iterable]的键值对。当 d 和 other有相同键时， other 的值优先。
+d = {'one': 1, 'two': 2, 'three': 3}
+d1 = {'name': 'jason', 'age': 18}
+d |= d1
+print(d)
+{'one': 1, 'two': 2, 'three': 3, 'name': 'jason', 'age': 18}
+
+
+d = {'one': 1, 'two': 2, 'three': 3}
+d1 = {'one': 10, 'two': 20, 'three': 30}
+d |= d1
+print(d)
+{'one': 10, 'two': 20, 'three': 30}
+
+# mapping
+# iterable
+```
+
+## 集合类型-set
+
+```python
+['add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
+```
+
+## 数字类型-int,float,complex
+
+### int
+
+```python
+['as_integer_ratio', 'bit_count', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'is_integer', 'numerator', 'real', 'to_bytes']
+```
+
+### float
+
+```python
+['as_integer_ratio', 'conjugate', 'fromhex', 'hex', 'imag', 'is_integer', 'real']
+```
+
+### complex
+
+```python
+['conjugate', 'imag', 'real']
+```
+
+
+

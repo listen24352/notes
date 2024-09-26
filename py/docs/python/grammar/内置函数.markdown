@@ -1,0 +1,115 @@
+[TOC]
+
+# 内置函数
+
+## 函数式编程
+
+```python
+filter
+map
+```
+
+## 数学相关的
+
+```python
+# abs 返回一个数的绝对值。 
+max
+min
+divmod  # 以两个（非复数）数字为参数，在作整数除法时，返回商和余数。
+pow
+round
+float
+```
+
+## 进制相关
+
+```python
+bin # 将一个整数转换为带前缀 "0b" 的二进制数字符串。
+oct # 将整数转换为带前缀 "0o" 的八进制数字符串。
+int # 
+hex # 将整数转换为带前缀 "0x" 前缀的小写十六进制数字符串。
+```
+
+## Unicode
+
+```python
+ord
+chr  # 返回 Unicode 码位为整数 i 的字符的字符串格式。例如，chr(97) 返回字符串 'a'，chr(8364) 返回字符串 '€'。这是 ord() 的逆函数。实参的合法范围是 0 到 1,114,111（16 进制表示是 0x10FFFF）。如果 i 超过这个范围，会触发 ValueError 异常。
+```
+
+```python
+all  # 如果 iterable 的所有元素均为真值（或可迭代对象为空）则返回 True 。
+any  # 如果 iterable 的任一元素为真值则返回 True。 如果可迭代对象为空，返回 False。
+```
+
+## 数据类型转换
+
+```python
+list
+dict
+str
+tuple
+int
+set
+```
+
+```python
+print
+input
+id
+len
+range
+sorted
+type
+'reversed'  #  返回一个反向的 iterator。
+```
+
+```python
+bool  # 返回布尔值，即 True 或 False 两者之一。
+breakpoint  # 此函数会在调用点进入调试器。
+bytearray  # 返回一个新的 bytes 数组。 bytearray 类是一个可变序列，包含范围为 0 <= x < 256 的整数。
+bytes  # 返回一个新的“bytes”对象，这是一个不可变序列，包含范围为 0 <= x < 256 的整数。
+callable  # 如果 object 参数是可调用的则返回 True，否则返回 False。
+classmethod  # 把一个方法封装成类方法
+complex #   返回值为 real + imag*1j 的复数，或将字符串或数字转换为复数。
+dir  # 如果没有实参，则返回当前本地作用域中的名称列表。如果有实参，它会尝试返回该对象的有效属性列表。
+enumerate  # 返回一个枚举对象。iterable 必须是一个序列，或 iterator，或其他支持迭代的对象。
+
+
+'aiter'  
+'anext'
+'ascii'
+'compile'
+'delattr',
+'eval', 
+'exec', 
+'exit', 
+'format', 
+'frozenset', 
+'getattr', 
+'globals', 
+'hasattr', 
+'hash', 
+'help', 
+'isinstance', 
+'issubclass', 
+'', 
+'license
+'locals'  # 更新并返回表示当前本地符号表的字典。
+'memoryview' 
+'iter'
+'next' 
+'object' 
+'open' # 打开 file 并返回对应的 file object。 如果该文件不能被打开，则引发 OSError
+'property'  # 返回 property 属性。
+'quit' 
+'repr'  # 返回包含一个对象的可打印表示形式的字符串。
+
+'setattr'  # 本函数与 getattr() 相对应。其参数为一个对象、一个字符串和一个任意值。字符串可以为某现有属性的名称，或为新属性。只要对象允许，函数会将值赋给属性。如 setattr(x, 'foobar', 123) 等价于 x.foobar = 123。
+'slice'  # 返回一个表示由 range(start, stop, step) 指定的索引集的 slice 对象。 start 和 step 参数默认为 None。
+staticmethod  # 将方法转换为静态方法。
+super  # 返回一个代理对象，它会将方法调用委托给 type 的父类或兄弟类。 这对于访问已在类中被重写的继承方法很有用。 
+vars  # 返回模块、类、实例或任何其它具有 __dict__ 属性的对象的 __dict__ 属性。
+zip  # 在多个迭代器上并行迭代，从每个迭代器返回一个数据项组成元组。
+```
+
