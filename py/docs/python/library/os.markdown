@@ -38,3 +38,40 @@ os.remove('./1.py')
 os.rename('original_file.txt', 'renamed_file.txt')
 ```
 
+## demo
+
+```python
+import os
+from datetime import datetime
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+LOG_DIR = BASE_DIR / 'log'
+
+from selenium import webdriver
+
+
+def get_log_path_and_name():
+    """
+    根据当前日期生成日志文件夹和文件名，并返回日志文件的完整路径（字符串形式）
+    """
+    now = datetime.now()
+    log_dir = LOG_DIR / f"{now.year}-{now.month:02d}"
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+    log_file = log_dir / f"{now.year}-{now.month:02d}-{now.day:02d}.log"
+    return str(log_file)
+
+if __name__ == '__main__':
+    log_path = get_log_path_and_name()
+    print(log_path)
+
+# service = webdriver.ChromeService(service_args=['--append-log', '--readable-timestamp'],
+#                                   log_output=get_log_path_and_name())
+#
+# driver = webdriver.Chrome(service=service)
+# driver.get('https://www.baidu.com')
+
+```
+

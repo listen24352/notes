@@ -593,13 +593,67 @@ list.copy()
 
 ```python
 ['count', 'index']
+
+t = 1, 2, 3, 1, 1
+
+print(type(t))
+print(t.count(1))
+print(t.index(2))
 ```
 
 ### range
 
-```python
+> 内置函数 range() 用于生成等差数列
 
+<p style="color: red; font-size: 22px;">等差数列是一种常见的数列形式，它的特点是任意两个相邻项的差都相等。</p>
+
+```python
+for i in range(5):
+    print(i)
+
+0
+1
+2
+3
+4
+
+range(5, 10)
+   5, 6, 7, 8, 9
+
+range(0, 10, 3)
+   0, 3, 6, 9
+
+range(-10, -100, -30)
+  -10, -40, -70
 ```
+
+```python
+a = ['Mary', 'had', 'a', 'little', 'lamb']
+for i in range(len(a)):
+    print(i, a[i])
+    
+0 Mary
+1 had
+2 a
+3 little
+4 lamb
+
+enumerate()
+seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+list(enumerate(seasons))
+[(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
+list(enumerate(seasons, start=1))
+[(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
+
+
+sum(range(101))
+5050
+
+list(range(5))
+[0, 1, 2, 3, 4]
+```
+
+
 
 ## 映射类型-dict
 
@@ -666,11 +720,11 @@ d = {'one': 1, 'two': 2, 'three': 3}
 
 print(d.get('one'))
 print(d.get('onee'))
-print(d.get('onee'),10)
+print(d.get('onee',10))
 
 1
 None
-None 10
+10
 ```
 
 ####  **setdefault**(*key*[, *default*])
@@ -681,12 +735,14 @@ None 10
 d = {'one': 1, 'two': 2, 'three': 3}
 
 print(d.setdefault('one'))
-print(d.setdefault('onee'))
-print(d.setdefault('onee'),100)
+print(d.setdefault('six'))
+print(d.setdefault('four',42))
+print(d)
 
 1
 None
-None 100
+42
+{'one': 1, 'two': 2, 'three': 3, 'six': None, 'four': 42}
 
 ```
 
