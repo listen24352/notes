@@ -827,9 +827,59 @@ list.copy()
     [1, 2, 3, 'a', 'b', 'c']
     1576055172480  # 浅拷贝不指向同一内存地址</code></pre>
 <h3 id="tuple">tuple<a class="headerlink" href="#tuple" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-python">['count', 'index']</code></pre>
+<pre class="highlight"><code class="language-python">['count', 'index']
+
+t = 1, 2, 3, 1, 1
+
+print(type(t))
+print(t.count(1))
+print(t.index(2))</code></pre>
 <h3 id="range">range<a class="headerlink" href="#range" title="Permanent link">&para;</a></h3>
-<pre class="highlight"><code class="language-python"></code></pre>
+<blockquote>
+<p>内置函数 range() 用于生成等差数列</p>
+</blockquote>
+<p style="color: red; font-size: 22px;">等差数列是一种常见的数列形式，它的特点是任意两个相邻项的差都相等。</p>
+
+<pre class="highlight"><code class="language-python">for i in range(5):
+    print(i)
+
+0
+1
+2
+3
+4
+
+range(5, 10)
+   5, 6, 7, 8, 9
+
+range(0, 10, 3)
+   0, 3, 6, 9
+
+range(-10, -100, -30)
+  -10, -40, -70</code></pre>
+<pre class="highlight"><code class="language-python">a = ['Mary', 'had', 'a', 'little', 'lamb']
+for i in range(len(a)):
+    print(i, a[i])
+
+0 Mary
+1 had
+2 a
+3 little
+4 lamb
+
+enumerate()
+seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+list(enumerate(seasons))
+[(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
+list(enumerate(seasons, start=1))
+[(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
+
+
+sum(range(101))
+5050
+
+list(range(5))
+[0, 1, 2, 3, 4]</code></pre>
 <h2 id="-dict">映射类型-dict<a class="headerlink" href="#-dict" title="Permanent link">&para;</a></h2>
 <h3 id="_8">字典的定义方式<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <pre class="highlight"><code class="language-python">a = dict(one=1, two=2, three=3)
@@ -874,23 +924,25 @@ d = {'one': 1, 'two': 2, 'three': 3}
 
 print(d.get('one'))
 print(d.get('onee'))
-print(d.get('onee'),10)
+print(d.get('onee',10))
 
 1
 None
-None 10</code></pre>
+10</code></pre>
 <h4 id="setdefaultkey-default"><strong>setdefault</strong>(<em>key</em>[, <em>default</em>])<a class="headerlink" href="#setdefaultkey-default" title="Permanent link">&para;</a></h4>
 <pre class="highlight"><code class="language-python"># 如果字典存在键 key ，返回它的值。如果不存在，插入值为 default 的键 key ，并返回 default 。default 默认为 `None`。
 
 d = {'one': 1, 'two': 2, 'three': 3}
 
 print(d.setdefault('one'))
-print(d.setdefault('onee'))
-print(d.setdefault('onee'),100)
+print(d.setdefault('six'))
+print(d.setdefault('four',42))
+print(d)
 
 1
 None
-None 100
+42
+{'one': 1, 'two': 2, 'three': 3, 'six': None, 'four': 42}
 </code></pre>
 <blockquote>
 <p>与<code>get</code>方法不同的是，<code>setdefault</code>会在键不存在时添加该键到字典中。</p>
