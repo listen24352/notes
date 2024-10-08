@@ -1,3 +1,5 @@
+[TOC]
+
 # WebDriver
 
 <p style="color: red; font-size: 22px;">
@@ -142,6 +144,24 @@ service = webdriver.ChromeService(port=1234)
 
 
 ## 等待
+
+### 隐式
+
+```python
+
+```
+
+### 显示
+
+```python
+
+```
+
+### 强制
+
+```
+
+```
 
 ## 元素
 
