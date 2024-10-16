@@ -56,7 +56,7 @@ sudo rm -rf /var/lib/containerd
 
 ```shell
 # 镜像加速
-# https://cr.console.aliyun.com/cn-hangzhou/instances
+# https://cr.console.aliyun.com/cn-beijing/instances/mirrors
 
 
 # /etc/docker/daemon.json 文件不存在创建

@@ -1,32 +1,22 @@
-# Welcome to MkDocs
+# 自动化
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## [python](https://docs.python.org/zh-cn/3/)
 
-## test
+## [request](https://requests.readthedocs.io/en/stable/)
 
-### Commands
+## [selenium](https://www.selenium.dev/zh-cn/)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## [pytest](https://docs.pytest.org/en/stable/)
 
+## [allure](https://allurereport.org/docs/)
 
-### Project layout
+## [docker](https://www.docker.com/)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## [jenkins](https://www.jenkins.io/)
 
+## [git](https://git-scm.com/)
 
-[python-markdown](https://python-markdown.github.io/)
+## [gitlab](https://gitlab.com/rluna-gitlab/gitlab-ce)
 
-[html demo](html/test.html) for further details.
-
-[progit](pdf/progit.pdf)
-
-[nginx](pdf/NGINX.pdf)
-
-python -m pydoc -b
+## [jira](https://www.atlassian.com/zh/software/jira/guides/getting-started/introduction#what-is-jira-software)
 
