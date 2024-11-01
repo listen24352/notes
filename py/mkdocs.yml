@@ -15,6 +15,7 @@ nav:
   - Automated testing:
       - Selenium: testing/Selenium.markdown
       - PyAutoGUI: testing/PyAutoGUI and pyperclip.md
+      - Pytest: testing/pytest.md
   # - Servers:
   #     - pass
   - Deploy:
