@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>部署Django - Listen</title>
+        <title>Django - Listen</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -101,7 +101,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deploy</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deploy</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -114,6 +114,10 @@
                                     
 <li>
     <a href="../Docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Django</a>
 </li>
                                 </ul>
                             </li>
@@ -142,6 +146,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../Docker/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../tool/Git/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                               <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
                                 <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
@@ -252,17 +266,19 @@ ExecStart=/home/leo/.venv/web/bin/gunicorn --workers 3 --bind unix:/tmp/192.168.
 [Install]  
 WantedBy=multi-user.target
 
+
+
+
+sudo systemctl daemon-reload  
+sudo systemctl start gunicorn  
+sudo systemctl enable gunicorn
+
 # 重新加载systemd并启动Gunicorn服务
 
 Warning: The unit file, source configuration file or drop-ins of gunicorn.service changed on disk. Run 'systemctl daemon-reload' to reload units.
 警告:gunicorn的单元文件、源配置文件或插件。磁盘上的服务已更改。运行'systemctl daemon-reload'重新加载单元。
 
 Created symlink /etc/systemd/system/multi-user.target.wants/gunicorn.service → /etc/systemd/system/gunicorn.service.
-
-
-sudo systemctl daemon-reload  
-sudo systemctl start gunicorn  
-sudo systemctl enable gunicorn
 </code></pre>
 <h2 id="nginx">nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
 <pre class="highlight"><code class="language-python">sudo vim /etc/nginx/sites-available/192.168.68.130
