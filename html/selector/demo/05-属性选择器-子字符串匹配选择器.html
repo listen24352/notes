@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子字符串匹配选择器--大小写敏感</title>
+    <style>
+        /* 
+        开头
+        [attr^=value]  li[class^="box-"]
+        
+        结尾
+        [attr$=value]	li[class$="-box"]
+        
+        通配符
+        [attr*=value]	li[class*="box"]
+        */
+        li[class^='a'] {
+            font-size: 200%;
+        }
+
+        li[class$='a'] {
+            background-color: yellow;
+        }
+
+        li[class*='a'] {
+            color: red;
+        }
+
+        /* 大小写敏感 */
+        p[class*='a' i] {
+            size: 30px;
+            color: chartreuse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Attribute substring matching selectors</h1>
+    <ul>
+        <li class="a">Item 1</li>
+        <li class="ab">Item 2</li>
+        <li class="bca">Item 3</li>
+        <li class="bcabc">Item 4</li>
+    </ul>
+
+    <div>
+        <p class="Ab">忽略大小写</p>
+    </div>
+</body>
+
+</html>
