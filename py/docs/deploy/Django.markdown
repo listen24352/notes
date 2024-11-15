@@ -49,17 +49,19 @@ ExecStart=/home/leo/.venv/web/bin/gunicorn --workers 3 --bind unix:/tmp/192.168.
 [Install]  
 WantedBy=multi-user.target
 
+
+
+
+sudo systemctl daemon-reload  
+sudo systemctl start gunicorn  
+sudo systemctl enable gunicorn
+
 # 重新加载systemd并启动Gunicorn服务
 
 Warning: The unit file, source configuration file or drop-ins of gunicorn.service changed on disk. Run 'systemctl daemon-reload' to reload units.
 警告:gunicorn的单元文件、源配置文件或插件。磁盘上的服务已更改。运行'systemctl daemon-reload'重新加载单元。
 
 Created symlink /etc/systemd/system/multi-user.target.wants/gunicorn.service → /etc/systemd/system/gunicorn.service.
-
-
-sudo systemctl daemon-reload  
-sudo systemctl start gunicorn  
-sudo systemctl enable gunicorn
 
 ```
 

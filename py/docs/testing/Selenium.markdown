@@ -169,6 +169,93 @@ service = webdriver.ChromeService(port=1234)
 
 ## 交互
 
+## 元素定位
+
+[locators](https://www.selenium.dev/zh-cn/documentation/webdriver/elements/locators/)
+
+[如果没有唯一的 id，那么最好使用写得好的 CSS 选择器来查找元素。](https://www.selenium.dev/zh-cn/documentation/test_practices/encouraged/locators/)
+
+[CSS 选择器](https://www.w3school.com.cn/cssref/css_selectors.asp)
+
+### 元素选择策略
+
+> 在 WebDriver 中有 8 种不同的内置元素定位策略
+
+| 定位器 Locator                 | 描述                                                         |
+| ------------------------------ | ------------------------------------------------------------ |
+| class name 类名                | 定位class属性与搜索值匹配的元素（不允许使用复合类名）        |
+| css selector CSS 选择器        | 定位 CSS 选择器匹配的元素                                    |
+| id 身份证                      | 定位 id 属性与搜索值匹配的元素                               |
+| name 名字                      | 定位 name 属性与搜索值匹配的元素                             |
+| link text 链接文本             | 定位link text可视文本与搜索值完全匹配的锚元素                |
+| partial link text 部分链接文本 | 定位link text可视文本部分与搜索值部分匹配的锚点元素。如果匹配多个元素，则只选择第一个元素。 |
+| tag name 标签名称              | 定位标签名称与搜索值匹配的元素                               |
+| xpath XPath 公司               | 定位与 XPath 表达式匹配的元素                                |
+
+```python
+driver.find_element(By.ID, "lname").clear()
+driver.find_element(By.CSS_SELECTOR, "#fname").send_keys('css_selector')
+driver.find_element(By.XPATH, "//input[@value='f']").click()
+driver.find_element(By.NAME, "newsletter").click()
+driver.find_element(By.CLASS_NAME, "information").send_keys('class_name')
+print(driver.find_element(By.TAG_NAME, "a").tag_name)
+print(driver.find_element(By.LINK_TEXT, "Selenium Official Page").text)
+print(driver.find_element(By.PARTIAL_LINK_TEXT, "Official Page").text)
+```
+
+### 相对定位符
+
+| 定位符                     | 描述                                                         |
+| -------------------------- | ------------------------------------------------------------ |
+| Above                      | 一个元素的上面一个元素                                       |
+| Below                      | 一个元素的下面一个元素                                       |
+| Left of                    | 一个元素的左面一个元素                                       |
+| Right of                   | 一个元素的右面一个元素                                       |
+| Near                       | 识别距离提供的定位符最多 `50 像素`的元素                     |
+| Chaining relative locators | 链接相对定位器:识别为在一个元素的上方/下方和另一个元素的右侧/左侧。 |
+
+```python
+# Above 上面
+email_locator = locate_with(By.CSS_SELECTOR, "input").above({By.ID: "lname"})
+driver.find_element(email_locator).send_keys("above")
+
+# Below 下面
+password_locator = locate_with(By.TAG_NAME, "input").below({By.ID: "fname"})
+driver.find_element(password_locator).send_keys("below")
+
+# Left of 左侧
+left_of = locate_with(By.TAG_NAME, "input").to_left_of({By.CSS_SELECTOR: 'input[value="f"]'})
+driver.find_element(left_of).click()
+
+# Right of 右侧
+# right = [By.CSS_SELECTOR, 'input[value="m"]']
+submit_locator = locate_with(By.TAG_NAME, "input").to_right_of({By.CSS_SELECTOR: 'input[value="m"]'})
+driver.find_element(submit_locator).click()
+
+# Near 50像素
+near_locator = locate_with(By.TAG_NAME, "input").near({By.CSS_SELECTOR: 'input[value="1"]'})
+driver.find_element(near_locator).send_keys("near_locator")
+
+
+# Chaining relative locators 链接相对定位器
+# 上右
+above_to_right_of = locate_with(By.TAG_NAME, "input").above({By.ID: "baidu"}).to_right_of({By.ID: "1"})
+driver.find_element(above_to_right_of).click()
+
+# 上左
+above_to_left_of = locate_with(By.TAG_NAME, "input").above({By.ID: "baidu"}).to_left_of({By.ID: "2"})
+driver.find_element(above_to_left_of).click()
+
+# 下右
+below_to_right_of = locate_with(By.TAG_NAME, "input").below({By.ID: "baidu"}).to_right_of({By.ID: 'email'})
+driver.find_element(below_to_right_of).send_keys("below_to_right_of")
+# 下左
+below_to_left_of = locate_with(By.TAG_NAME, "input").below({By.ID: "baidu"}).to_left_of({By.ID: 'password'})
+driver.find_element(below_to_left_of).send_keys("123456@qq.com")
+```
+
+
+
 ## Actions接口
 
 ## BiDi API

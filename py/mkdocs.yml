@@ -22,6 +22,7 @@ nav:
     - Linux: deploy/Linux.md
     - Nginx: deploy/nginx.md
     - Docker: deploy/Docker.md
+    - Django: deploy/Django.markdown
   - tool:
     - Git: tool/Git.md
     - Openpyxl: tool/Openpyxl.markdown
