@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>等于、包含、以……开始</title>
+    <style>
+        /* 
+        匹配带有一个名为attr的属性的元素——方括号里的值。
+        [attr]          a[title]
+
+        匹配带有一个名为attr的属性的元素，其值正为value——引号中的字符串。
+        [attr=value]    a[href="https://example.com"]
+
+        包含
+        (注意，在一列中的好几个值，是用空格隔开的。)
+        [attr~=vale]    p[class~="special"]
+
+        匹配带有一个名为attr的属性的元素，其值可正为value，或者开始为value，后面紧随着一个连字符。
+        [attr|=vale]	div[lang|="zh"]
+        */
+        li[class] {
+            font-size: 200%;
+        }
+
+        li[class='a'] {
+            background-color: yellow;
+        }
+
+        li[class~='a'] {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Attribute presence and value selectors</h1>
+    <ul>
+        <li>Item 1</li>
+        <li class="a">Item 2</li>
+        <li class="a b">Item 3</li>
+        <li class="ab">Item 4</li>
+    </ul>
+</body>
+
+</html>
