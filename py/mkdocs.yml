@@ -1,5 +1,13 @@
 site_name: Listen
 nav:
+  - 计算机科学与技术:
+    - 操作系统: computer_science/操作系统.markdown
+    - 计算机网络与信息安全: computer_science/计算机网络与信息安全.markdown
+    - 计算机系统原理: computer_science/计算机系统原理.markdown
+    - 软件工程: computer_science/软件工程.markdown
+    - 数据结构与算法: computer_science/数据结构与算法.markdown
+    - 网络应用开发与系统集成: computer_science/网络应用开发与系统集成.markdown
+    - 数据库原理与技术: computer_science/数据库原理与技术.markdown
   - Python:
     - grammar:
       - 数据结构: python/grammar/数据结构.markdown

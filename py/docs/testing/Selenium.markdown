@@ -117,16 +117,20 @@ def teardown(driver):
 
 > 在 WebDriver 中有 8 种不同的内置元素定位策略
 
-| 定位器 Locator                 | 描述                                                         |
-| ------------------------------ | ------------------------------------------------------------ |
-| class name 类名                | 定位class属性与搜索值匹配的元素（不允许使用复合类名）        |
-| css selector CSS 选择器        | 定位 CSS 选择器匹配的元素                                    |
-| id 身份证                      | 定位 id 属性与搜索值匹配的元素                               |
-| name 名字                      | 定位 name 属性与搜索值匹配的元素                             |
-| link text 链接文本             | 定位link text可视文本与搜索值完全匹配的锚元素                |
-| partial link text 部分链接文本 | 定位link text可视文本部分与搜索值部分匹配的锚点元素。如果匹配多个元素，则只选择第一个元素。 |
-| tag name 标签名称              | 定位标签名称与搜索值匹配的元素                               |
-| xpath XPath 公司               | 定位与 XPath 表达式匹配的元素                                |
+
+
+
+
+| 定位器 Locator    | 描述                                                         |
+| ----------------- | ------------------------------------------------------------ |
+| class name        | 定位class属性与搜索值匹配的元素（不允许使用复合类名）        |
+| css selector      | 定位 CSS 选择器匹配的元素                                    |
+| id                | 定位 id 属性与搜索值匹配的元素                               |
+| name              | 定位 name 属性与搜索值匹配的元素                             |
+| link text         | 定位link text可视文本与搜索值完全匹配的锚元素                |
+| partial link text | 定位link text可视文本部分与搜索值部分匹配的锚点元素。如果匹配多个元素，则只选择第一个元素。 |
+| tag name          | 定位标签名称与搜索值匹配的元素                               |
+| xpath             | 定位与 XPath 表达式匹配的元素                                |
 
 ```python
 driver.find_element(By.ID, "lname").clear()
@@ -151,6 +155,9 @@ print(driver.find_element(By.PARTIAL_LINK_TEXT, "Official Page").text)
 | Chaining relative locators | 链接相对定位器:识别为在一个元素的上方/下方和另一个元素的右侧/左侧。 |
 
 ```python
+from selenium.webdriver.support.relative_locator import locate_with
+
+
 # Above 上面
 email_locator = locate_with(By.CSS_SELECTOR, "input").above({By.ID: "lname"})
 driver.find_element(email_locator).send_keys("above")
@@ -211,12 +218,6 @@ import time
 time.sleep(3)
 ```
 
-## Actions接口
-
-```python
-
-```
-
 ## 文件上传
 
 ### 单个文件
@@ -244,6 +245,65 @@ pyautogui.hotkey('ctrl', 'v')  # 将剪贴板上的文件路径粘贴到应用�
 pyautogui.press('enter')  # 模拟回车
 ```
 
+## Select元素
+
+![image-20241119145015959](../images/select.png)
+
+### 单选
+
+```python
+# 具有 disabled 属性的选项可能无法被选择.
+select_element = driver.find_element(By.NAME, "selectomatic")
+select = Select(select_element)
+
+# 文本
+select.select_by_visible_text('Four')
+print(select.first_selected_option.text)
+# 值
+select.select_by_value("two")
+print(select.first_selected_option.text)
+
+# 索引
+select.select_by_index(3)
+print(select.first_selected_option.text)
+```
+
+### 复选
+
+```python
+select_multi = driver.find_element(By.ID, 'multi')
+select = Select(select_multi)
+
+option_list = select.options
+for i in option_list:
+    print(i.text)
+    # print(option_list)
+selected_option_list = select.all_selected_options
+for i in selected_option_list:
+    print(i.text)
+    
+    
+# 选中所有
+select_multi = driver.find_element(By.ID, 'multi')
+select = Select(select_multi)
+# 确保 <select> 支持多选
+if select.is_multiple:
+    # 遍历所有选项并选择
+    for option in select.options:
+        select.select_by_visible_text(option.text)  # 或使用 select_by_value(option.get_attribute('value'))
+    print("已选择全部选项")
+
+# 验证选中的选项
+selected_options = [option.text for option in select.all_selected_options]
+print("选中的选项:", selected_options)
+```
+
+## Actions接口
+
+![action_chains](../images/action_chains.png)
+
+## Cookie
+
 ## 切换win窗口、标签页、IFrames框架
 
 | 属性、方法名                                                 | 解释                                                         |
@@ -270,6 +330,23 @@ pyautogui.press('enter')  # 模拟回车
 | ele.screenshot('./image.png')                                | 元素截图                                                     |
 | driver.execute_script('return arguments[0].innerText', header) | 执行脚本                                                     |
 | from selenium.webdriver.common.print_page_options import PrintOptions | 打印页面Chromium                                             |
+
+### 滑块操作
+
+```python
+# 定位滑块
+ele_k = self.driver.find_element(*LoginPage.ele_s)
+ele_t = self.driver.find_element(*LoginPage.ele_e)
+distance = ele_t.size['width'] - ele_k.size['width']
+# 执行鼠标操作
+ac = ActionChains(self.driver)
+ac.drag_and_drop_by_offset(ele_k, xoffset=distance, yoffset=0).perform()
+time.sleep(1)
+# 滑块状态
+status = self.driver.find_element(*LoginPage.status)
+print(status.text)  # 验证通过
+
+```
 
 ### window窗口
 
@@ -333,17 +410,64 @@ driver.find_element(By.LINK_TEXT, '亲，请登录').click()
 driver.switch_to.default_content()
 ```
 
-## JavaScript 警告框,提示框和确认框
+## JavaScript警告框,提示框和确认框
+
+```python
+print(alert.text)  # 获取弹出框中的文本
+print(alert.send_leys('向弹框中输入内容'))  # 向弹框中输入内容
+
+
+# Alerts 警告框
+driver.find_element(By.ID, "1").click()
+wait = WebDriverWait(driver, 5)
+alert = wait.until(lambda d: d.switch_to.alert)
+alert.accept()
+time.sleep(2)
+
+# Confirm 确认框
+driver.find_element(By.ID, "2").click()
+wait = WebDriverWait(driver, 5)
+confirm = wait.until(lambda d: d.switch_to.alert)
+confirm.dismiss()  # 确认按钮
+confirm.accept()  # 取消按钮
+time.sleep(2)
+
+# Prompt 提示框
+driver.find_element(By.ID, "3").click()
+wait = WebDriverWait(driver, 5)
+prompt = wait.until(lambda d: d.switch_to.alert)
+prompt.accept()
+prompt.accept()
+time.sleep(2)
+
+
+```
+
+## webdriver方法
+
+![](../images/webdriver.png)
+
+## webelement方法
+
+![](../images/webelement.png)
 
 ## 浏览器配置
 
 [远程驱动](https://www.selenium.dev/zh-cn/documentation/webdriver/drivers/remote_webdriver/)
 
+[chrome](https://www.selenium.dev/zh-cn/documentation/webdriver/browsers/chrome/#service)
+
+### Chrome特定功能
+
+> 默认情况下，Selenium 4与Chrome v75及更高版本兼容. 但是请注意Chrome浏览器的版本与chromedriver的主版本需要匹配.
+
+#### server
+
 ```python
 # 默认服务
 service = webdriver.ChromeService()
 
-# 驱动位置 
+# 制定驱动位置 
 service = webdriver.ChromeService(executable_path=chromedriver_bin)
 
 # 驱动程序端口
@@ -371,11 +495,7 @@ def get_log_path_and_name():
 
 ```
 
-### Chrome特定功能
-
-> 默认情况下，Selenium 4与Chrome v75及更高版本兼容. 但是请注意Chrome浏览器的版本与chromedriver的主版本需要匹配.
-
-[chrome](https://www.selenium.dev/zh-cn/documentation/webdriver/browsers/chrome/#service)
+#### options
 
 ```python
 options = webdriver.ChromeOptions()
@@ -401,20 +521,15 @@ options.browser_version = 'stable'
 options.add_experimental_option("detach", True)
 # 禁止显示"Chrome 正受到自动测试软件的控制。"
 options.add_experimental_option('excludeSwitches', ['enable-automation'])
-
 ```
 
+# Grid
 
-
-
-
-
-
-## CDP
-
-## BiDi API
-
-
+<p style="color: red; font-size: 22px;">
+    本地控制测试用例、远端自动执行。<br>
+    可以在不同平台的不同机器上运行测试用例。<br>
+    多个浏览器和操作系统的组合上运行测试。
+</p>
 
 # Selenium Manager
 
@@ -426,15 +541,6 @@ options.add_experimental_option('excludeSwitches', ['enable-automation'])
 </p>
 
 使用 Selenium 驱动 Chrome 的典型示例。假设在启动新会话时，本地计算机上没有安装 Chrome驱动。在这种情况下，Selenium Manager 将发现、下载和缓存当前稳定的 CfT 版本（在 ~/.cache/selenium/chrome 中）。
-
-# Grid
-
-<p style="color: red; font-size: 22px;">
-    本地控制测试用例、远端自动执行。<br>
-    可以在不同平台的不同机器上运行测试用例。<br>
-    多个浏览器和操作系统的组合上运行测试。
-</p>
-
 
 
 # Selenium IDE
